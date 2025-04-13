@@ -1,3 +1,5 @@
+import { RoleEnum } from '../common';
+
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
 import { Class } from './class.entity';
 import { Chat } from './chat.entity';
@@ -18,14 +20,23 @@ export class Account {
   @Column({ nullable: true })
   name: string;
 
+  @Column({ nullable: true })
+  avatar: string;
+
+  @Column({ nullable: true })
+  displayName: string;
+
+  @Column({ nullable: false })
+  isActived: boolean;
+
+  @Column({ nullable: true })
+  tel: string;
+
   @Column({ type: 'enum', enum: ['Male', 'Female', 'Other'], nullable: true })
   gender: 'Male' | 'Female' | 'Other';
 
-  @Column({ default: false })
-  teacher: boolean;
-
-  @Column({ default: false })
-  admin: boolean;
+  @Column({ type: 'enum', enum: RoleEnum, default: RoleEnum.student })
+  role: RoleEnum;
 
   @Column({ type: 'decimal', precision: 10, scale: 2, nullable: true })
   income: number;

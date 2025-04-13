@@ -1,5 +1,6 @@
-export enum AccountRoleEnum {
+export enum RoleEnum {
   ADMIN = 'admin',
-  CUSTOMER = 'customer',
+  student = 'student',
+  TEACHER = 'teacher',
   STAFF = 'staff',
 }

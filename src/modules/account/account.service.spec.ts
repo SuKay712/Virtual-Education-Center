@@ -4,7 +4,7 @@ import { Repository } from 'typeorm';
 import { Account } from '../../entities';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { I18nService } from 'nestjs-i18n';
-import { AccountGenderEnum, AccountRoleEnum } from '../../common';
+import { AccountGenderEnum, RoleEnum } from '../../common';
 import type { AccountUpdateDto } from './dtos/accountUpdateDto';
 import { BadRequestException, NotFoundException } from '@nestjs/common';
 import type { PasswordUpdateDto } from './dtos/passwordUpdateDto';
