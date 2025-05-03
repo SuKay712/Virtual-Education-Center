@@ -1,16 +1,16 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
-import { Account } from './account.entity';
+import { Lecture } from './lecture.entity';
 
-@Entity('notification')
-export class Notification {
+@Entity('theory')
+export class Theory {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @ManyToOne(() => Account, (account) => account.notifications)
-  account: Account;
+  @ManyToOne(() => Lecture, (lecture) => lecture.theories)
+  lecture: Lecture;
 
   @Column()
-  content: string;
+  url: string;
 
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   created_at: Date;

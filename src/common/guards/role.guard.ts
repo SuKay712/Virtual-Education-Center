@@ -1,10 +1,10 @@
 import { Injectable, CanActivate, ExecutionContext } from '@nestjs/common';
 import { Observable } from 'rxjs';
-import { RoleEnum } from '../enums/account-role.enum';
+import { Role } from '../enums';
 
 @Injectable()
 export class RoleGuard implements CanActivate {
-  constructor(private roles: RoleEnum[]) {}
+  constructor(private roles: Role[]) {}
   canActivate(
     context: ExecutionContext
   ): boolean | Promise<boolean> | Observable<boolean> {

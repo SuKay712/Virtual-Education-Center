@@ -12,7 +12,7 @@ import {
 import { Account } from '../../entities';
 import { AccountService } from './account.service';
 // import { CurrentAccount } from '../../common/decorator/currentAccount.decorator';
-import { RoleEnum, CurrentAccount, Lang } from '../../common';
+import { Role, CurrentAccount, Lang } from '../../common';
 import { RoleGuard } from '../../common/guards/role.guard';
 import { AuthGuard } from '../../common/guards/auth.guard';
 import { AccountUpdateDto } from './dtos/accountUpdateDto';

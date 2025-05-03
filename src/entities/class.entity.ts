@@ -1,39 +1,46 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany } from 'typeorm';
 import { Lecture } from './lecture.entity';
-import { Account } from './account.entity';
+import { Booking } from './booking.entity';
+import { Meeting } from './meeting.entity';
 
-@Entity()
+@Entity('class')
 export class Class {
   @PrimaryGeneratedColumn()
   id: number;
 
+  @Column()
+  name: string;
+
   @ManyToOne(() => Lecture, (lecture) => lecture.classes)
   lecture: Lecture;
 
-  @ManyToOne(() => Account, (account) => account.classesAsStudent)
-  student: Account;
-
-  @ManyToOne(() => Account, (account) => account.classesAsTeacher)
-  teacher: Account;
-
-  @Column({ type: 'datetime', nullable: true })
+  @Column({ type: 'datetime' })
   time_start: Date;
 
-  @Column({ type: 'datetime', nullable: true })
+  @Column({ type: 'datetime' })
   time_end: Date;
 
-  @Column({ type: 'int', nullable: true })
+  @Column({ nullable: true })
+  content: string;
+
+  @Column({ nullable: true })
   rating: number;
 
-  @Column({ type: 'text', nullable: true })
+  @Column({ nullable: true })
   comment: string;
 
-  @Column({ type: 'int', nullable: true })
-  meeting_id: number;
+  @Column({ nullable: true })
+  price: string;
+
+  @ManyToOne(() => Meeting, (meeting) => meeting.classes)
+  meeting: Meeting;
 
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   created_at: Date;
 
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP', onUpdate: 'CURRENT_TIMESTAMP' })
   updated_at: Date;
+
+  @OneToMany(() => Booking, (booking) => booking.classEntity)
+  bookings: Booking[];
 }

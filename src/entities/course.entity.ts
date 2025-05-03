@@ -2,7 +2,7 @@ import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
 import { Lecture } from './lecture.entity';
 import { Bill } from './bill.entity';
 
-@Entity()
+@Entity('course')
 export class Course {
   @PrimaryGeneratedColumn()
   id: number;
@@ -10,13 +10,13 @@ export class Course {
   @Column()
   name: string;
 
-  @Column({ type: 'decimal', precision: 10, scale: 2 })
+  @Column('decimal')
   price: number;
 
-  @Column({ nullable: true })
+  @Column()
   num_classes: number;
 
-  @Column({ type: 'text', nullable: true })
+  @Column({ nullable: true })
   description: string;
 
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })

@@ -1,5 +1,5 @@
 import { IsEmail, IsNotEmpty } from 'class-validator';
-import { AccountGenderEnum } from '../../../common';
+import { Gender } from '../../../common';
 import { Optional } from '@nestjs/common';
 
 export class AccountUpdateDto {
@@ -12,5 +12,5 @@ export class AccountUpdateDto {
   @Optional()
   tel: string;
   @Optional()
-  gender: AccountGenderEnum;
+  gender: Gender;
 }

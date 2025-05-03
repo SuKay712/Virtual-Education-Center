@@ -1,15 +1,12 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
-import { Account } from './account.entity';
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
+import { Chat } from './chat.entity';
 
-@Entity('notification')
-export class Notification {
+@Entity('chatbox')
+export class Chatbox {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @ManyToOne(() => Account, (account) => account.notifications)
-  account: Account;
-
-  @Column()
+  @Column({ type: 'text', nullable: true })
   content: string;
 
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
@@ -17,4 +14,7 @@ export class Notification {
 
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP', onUpdate: 'CURRENT_TIMESTAMP' })
   updated_at: Date;
+
+  @OneToMany(() => Chat, (chat) => chat.chatbox)
+  chats: Chat[];
 }

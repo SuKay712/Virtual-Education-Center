@@ -1,17 +1,17 @@
-import { RoleEnum } from '../common';
-
+import { Role, Gender } from '../common';
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
-import { Class } from './class.entity';
 import { Chat } from './chat.entity';
 import { Bill } from './bill.entity';
 import { Notification } from './notification.entity';
+import { Lecture } from './lecture.entity';
+import { Booking } from './booking.entity';
 
-@Entity()
+@Entity('account')
 export class Account {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({ unique: true })
   email: string;
 
   @Column()
@@ -20,26 +20,26 @@ export class Account {
   @Column({ nullable: true })
   name: string;
 
+  @Column({ type: 'enum', enum: Gender, nullable: true })
+  gender: Gender;
+
+  @Column({ nullable: true })
+  birthday: string;
+
+  @Column({ nullable: true })
+  phone: string;
+
   @Column({ nullable: true })
   avatar: string;
 
   @Column({ nullable: true })
-  displayName: string;
+  address: string;
 
-  @Column({ nullable: false })
+  @Column({ default: false })
   isActived: boolean;
 
-  @Column({ nullable: true })
-  tel: string;
-
-  @Column({ type: 'enum', enum: ['Male', 'Female', 'Other'], nullable: true })
-  gender: 'Male' | 'Female' | 'Other';
-
-  @Column({ type: 'enum', enum: RoleEnum, default: RoleEnum.student })
-  role: RoleEnum;
-
-  @Column({ type: 'decimal', precision: 10, scale: 2, nullable: true })
-  income: number;
+  @Column({ type: 'enum', enum: Role, default: Role.Student })
+  role: Role;
 
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   created_at: Date;
@@ -47,11 +47,12 @@ export class Account {
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP', onUpdate: 'CURRENT_TIMESTAMP' })
   updated_at: Date;
 
-  @OneToMany(() => Class, (classEntity) => classEntity.student)
-  classesAsStudent: Class[];
+  // Relationships
+  @OneToMany(() => Lecture, (lecture) => lecture.student)
+  lectures: Lecture[];
 
-  @OneToMany(() => Class, (classEntity) => classEntity.teacher)
-  classesAsTeacher: Class[];
+  @OneToMany(() => Booking, (booking) => booking.teacher)
+  bookingsAsTeacher: Booking[];
 
   @OneToMany(() => Chat, (chat) => chat.sender)
   sentChats: Chat[];

@@ -1,23 +1,23 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
+import { Class } from './class.entity';
 import { Account } from './account.entity';
-import { Chatbox } from './chatbox.entity';
 
-@Entity('chat')
-export class Chat {
+@Entity('booking')
+export class Booking {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @ManyToOne(() => Chatbox, (chatbox) => chatbox.chats)
-  chatbox: Chatbox;
+  @ManyToOne(() => Class, (classEntity) => classEntity.bookings)
+  classEntity: Class;
 
-  @ManyToOne(() => Account, (account) => account.sentChats)
-  sender: Account;
+  @ManyToOne(() => Account, (account) => account.bookingsAsTeacher)
+  teacher: Account;
 
-  @ManyToOne(() => Account, (account) => account.receivedChats)
-  receiver: Account;
+  @Column()
+  status: number;
 
-  @Column({ type: 'text' })
-  content: string;
+  @Column()
+  payment: boolean;
 
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   created_at: Date;

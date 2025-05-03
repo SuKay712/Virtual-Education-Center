@@ -1,17 +1,20 @@
+// filepath: e:\Workspace\Virtual-Education-Center\backend\src\entities\lecture.entity.ts
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany } from 'typeorm';
 import { Course } from './course.entity';
+import { Account } from './account.entity';
 import { Class } from './class.entity';
+import { Theory } from './theory.entity';
 
-@Entity()
+@Entity('lecture')
 export class Lecture {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
-  name: string;
+  @ManyToOne(() => Course, (course) => course.lectures)
+  course: Course;
 
-  @Column({ type: 'text', nullable: true })
-  content: string;
+  @ManyToOne(() => Account, (account) => account.lectures)
+  student: Account;
 
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   created_at: Date;
@@ -19,9 +22,9 @@ export class Lecture {
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP', onUpdate: 'CURRENT_TIMESTAMP' })
   updated_at: Date;
 
-  @ManyToOne(() => Course, (course) => course.lectures)
-  course: Course;
-
   @OneToMany(() => Class, (classEntity) => classEntity.lecture)
   classes: Class[];
+
+  @OneToMany(() => Theory, (theory) => theory.lecture)
+  theories: Theory[];
 }
