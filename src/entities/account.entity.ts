@@ -3,8 +3,8 @@ import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
 import { Chat } from './chat.entity';
 import { Bill } from './bill.entity';
 import { Notification } from './notification.entity';
-import { Lecture } from './lecture.entity';
 import { Booking } from './booking.entity';
+import { Class } from './class.entity';
 
 @Entity('account')
 export class Account {
@@ -47,9 +47,8 @@ export class Account {
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP', onUpdate: 'CURRENT_TIMESTAMP' })
   updated_at: Date;
 
-  // Relationships
-  @OneToMany(() => Lecture, (lecture) => lecture.student)
-  lectures: Lecture[];
+  @OneToMany(() => Class, (classEntity) => classEntity.student)
+  classes: Class[];
 
   @OneToMany(() => Booking, (booking) => booking.teacher)
   bookingsAsTeacher: Booking[];

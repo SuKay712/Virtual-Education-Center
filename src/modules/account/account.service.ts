@@ -5,7 +5,7 @@ import {
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Account } from '../../entities';
+import { Account, Class } from '../../entities';
 import { AccountUpdateDto } from './dtos/accountUpdateDto';
 import { I18nService } from 'nestjs-i18n';
 import { clean, PasswordUtils } from '../../common';
@@ -62,5 +62,18 @@ export class AccountService {
 
     account.avatar = avatarUrl;
     return this.accountRepo.save(account);
+  }
+
+  async getClassesByAccountId(accountId: number): Promise<Class[]> {
+    const account = await this.accountRepo.findOne({
+      where: { id: accountId },
+      relations: ['classes', 'classes.lecture', 'classes.lecture.course'],
+    });
+
+    if (!account) {
+      throw new Error('Account not found');
+    }
+
+    return account.classes;
   }
 }

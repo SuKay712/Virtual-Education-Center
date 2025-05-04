@@ -2,17 +2,18 @@ import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany } from 'ty
 import { Lecture } from './lecture.entity';
 import { Booking } from './booking.entity';
 import { Meeting } from './meeting.entity';
+import { Account } from './account.entity';
 
 @Entity('class')
 export class Class {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
-  name: string;
-
   @ManyToOne(() => Lecture, (lecture) => lecture.classes)
   lecture: Lecture;
+
+  @ManyToOne(() => Account, (account) => account.classes)
+  student: Account;
 
   @Column({ type: 'datetime' })
   time_start: Date;
@@ -21,16 +22,10 @@ export class Class {
   time_end: Date;
 
   @Column({ nullable: true })
-  content: string;
-
-  @Column({ nullable: true })
   rating: number;
 
   @Column({ nullable: true })
   comment: string;
-
-  @Column({ nullable: true })
-  price: string;
 
   @ManyToOne(() => Meeting, (meeting) => meeting.classes)
   meeting: Meeting;

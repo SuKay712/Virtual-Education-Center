@@ -10,11 +10,11 @@ export class Lecture {
   @PrimaryGeneratedColumn()
   id: number;
 
+  @Column()
+  name: string;
+
   @ManyToOne(() => Course, (course) => course.lectures)
   course: Course;
-
-  @ManyToOne(() => Account, (account) => account.lectures)
-  student: Account;
 
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   created_at: Date;

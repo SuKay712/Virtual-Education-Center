@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Beginner English Conversation",
+    "price": 79.99,
+    "num_classes": 8,
+    "description": "Master everyday English conversations with this beginner-friendly course. Designed for non-native speakers, it covers greetings, introductions, and common phrases used in daily interactions, with interactive role-plays to build confidence.",
+    "created_at": "2025-05-04T00:00:00.000Z",
+    "updated_at": "2025-05-04T00:00:00.000Z"
+  },
+  {
+    "name": "Business English Mastery",
+    "price": 129.99,
+    "num_classes": 12,
+    "description": "Elevate your professional communication skills with this Business English course. Learn to write emails, conduct meetings, and negotiate effectively in English, tailored for corporate environments and career advancement.",
+    "created_at": "2025-05-04T00:00:00.000Z",
+    "updated_at": "2025-05-04T00:00:00.000Z"
+  },
+  {
+    "name": "IELTS Preparation Intensive",
+    "price": 159.99,
+    "num_classes": 15,
+    "description": "Prepare for the IELTS exam with this comprehensive course covering all four sections: listening, reading, writing, and speaking. Includes practice tests, strategies for high scores, and personalized feedback to help you achieve your target band.",
+    "created_at": "2025-05-04T00:00:00.000Z",
+    "updated_at": "2025-05-04T00:00:00.000Z"
+  },
+  {
+    "name": "English Grammar Fundamentals",
+    "price": 89.99,
+    "num_classes": 10,
+    "description": "Strengthen your English grammar skills with this in-depth course. From verb tenses to sentence structure, this course provides clear explanations and practical exercises to help learners of all levels write and speak accurately.",
+    "created_at": "2025-05-04T00:00:00.000Z",
+    "updated_at": "2025-05-04T00:00:00.000Z"
+  },
+  {
+    "name": "Advanced English Vocabulary",
+    "price": 99.99,
+    "num_classes": 10,
+    "description": "Expand your English vocabulary with this advanced course focusing on idiomatic expressions, phrasal verbs, and academic words. Perfect for students and professionals aiming to sound more fluent and natural in English.",
+    "created_at": "2025-05-04T00:00:00.000Z",
+    "updated_at": "2025-05-04T00:00:00.000Z"
+  },
+  {
+    "name": "English for Travel and Tourism",
+    "price": 69.99,
+    "num_classes": 8,
+    "description": "Learn essential English phrases for traveling with this practical course. Covers booking hotels, ordering food, asking for directions, and handling emergencies, making it ideal for globetrotters and tourism professionals.",
+    "created_at": "2025-05-04T00:00:00.000Z",
+    "updated_at": "2025-05-04T00:00:00.000Z"
+  },
+  {
+    "name": "TOEFL Success Strategies",
+    "price": 149.99,
+    "num_classes": 14,
+    "description": "Ace the TOEFL exam with this strategic course designed for non-native English speakers. Learn time-management techniques, essay-writing skills, and practice with real TOEFL-style questions to boost your score.",
+    "created_at": "2025-05-04T00:00:00.000Z",
+    "updated_at": "2025-05-04T00:00:00.000Z"
+  },
+  {
+    "name": "English Pronunciation Workshop",
+    "price": 109.99,
+    "num_classes": 10,
+    "description": "Improve your English pronunciation and clarity with this interactive workshop. Focuses on vowel and consonant sounds, stress patterns, and intonation, helping you speak confidently and be understood clearly.",
+    "created_at": "2025-05-04T00:00:00.000Z",
+    "updated_at": "2025-05-04T00:00:00.000Z"
+  },
+  {
+    "name": "English for Academic Writing",
+    "price": 139.99,
+    "num_classes": 12,
+    "description": "Develop skills for writing essays, research papers, and reports in English. This course teaches academic writing conventions, citation styles, and critical thinking, ideal for university students and researchers.",
+    "created_at": "2025-05-04T00:00:00.000Z",
+    "updated_at": "2025-05-04T00:00:00.000Z"
+  },
+  {
+    "name": "Conversational English for Fluency",
+    "price": 119.99,
+    "num_classes": 12,
+    "description": "Achieve fluency in English with this engaging course focused on real-world conversations. Practice discussing topics like culture, hobbies, and current events while improving listening and speaking skills in a supportive environment.",
+    "created_at": "2025-05-04T00:00:00.000Z",
+    "updated_at": "2025-05-04T00:00:00.000Z"
+  }
+]
