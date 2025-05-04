@@ -1,8 +1,10 @@
-import { IsEmail, IsNotEmpty } from 'class-validator';
+import { IsDate, IsEmail, isNotEmpty, IsNotEmpty, IsPhoneNumber } from 'class-validator';
+import { Gender, Role } from 'src/common';
+import { Match } from 'src/common/decorator';
 
 export class RegisterDto {
   @IsNotEmpty()
-  name: String;
+  name: string;
 
   @IsEmail()
   email: string;
@@ -12,4 +14,15 @@ export class RegisterDto {
 
   @IsNotEmpty()
   confirmPassword: string;
+
+  @IsNotEmpty()
+  gender: Gender;
+
+  @IsPhoneNumber()
+  phone: string;
+
+  role: Role;
+
+  @IsDate()
+  birthday: Date;
 }

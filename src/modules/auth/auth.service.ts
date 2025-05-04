@@ -35,11 +35,11 @@ export class AuthService {
     }
 
     //check password
-    // const isMatchPassword = await bcrypt.compare(
-    //   requestBody.password,
-    //   accountByEmail.password
-    // );
-    const isMatchPassword = requestBody.password === accountByEmail.password;
+    const isMatchPassword = await bcrypt.compare(
+      requestBody.password,
+      accountByEmail.password
+    );
+    // const isMatchPassword = requestBody.password === accountByEmail.password;
     if (!isMatchPassword) {
       throw new BadRequestException('Incorrect password!');
     }
@@ -83,12 +83,13 @@ export class AuthService {
     if (accountData.password !== accountData.confirmPassword) {
       throw new BadRequestException('Confirm password invalid');
     }
-    accountData.password = PasswordUtils.hashPassword(accountData.password);
+    const { confirmPassword, ...filteredAccountData } = accountData;
+
+    filteredAccountData.password = PasswordUtils.hashPassword(accountData.password);
+
     const newAccount = {
-      email: accountData.email,
-      password: accountData.password,
-      name: accountData.name,
-      isActived: true, // Đặt trạng thái tài khoản là kích hoạt
+      ...filteredAccountData,
+      isActived: true,
     };
 
     this.accountService.create(newAccount);
@@ -109,7 +110,7 @@ export class AuthService {
     // Gửi email xác minh qua MailerService
     // await this.customMailerService.sendVerificationEmail(newAccount.email, verificationLink);
 
-    return { email: accountData.email, verificationLink };
+    return { newAccount, verificationLink };
   }
   // async verifyEmail(token: string) {
   //   const payload = await this.jwtService.verifyAsync(token, {

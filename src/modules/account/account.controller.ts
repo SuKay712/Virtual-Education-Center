@@ -1,8 +1,6 @@
 import {
   Body,
-  ClassSerializerInterceptor,
   Controller,
-  Get,
   Post,
   Put,
   UploadedFile,
@@ -11,25 +9,38 @@ import {
 } from '@nestjs/common';
 import { Account } from '../../entities';
 import { AccountService } from './account.service';
-// import { CurrentAccount } from '../../common/decorator/currentAccount.decorator';
-import { Role, CurrentAccount, Lang } from '../../common';
-import { RoleGuard } from '../../common/guards/role.guard';
-import { AuthGuard } from '../../common/guards/auth.guard';
-import { AccountUpdateDto } from './dtos/accountUpdateDto';
-import { LoggingInterceptor } from '../../common/interceptors';
 import { FileInterceptor } from '@nestjs/platform-express';
-import { PasswordUpdateDto } from './dtos/passwordUpdateDto';
+import { CloudinaryConfig } from '../../common/config/cloudinary.config';
+import { AuthGuard } from 'src/common/guards/auth.guard';
 
-@Controller('accounts')
-@UseInterceptors(LoggingInterceptor)
+@Controller('account')
 export class AccountController {
   constructor(
-    private readonly accountService: AccountService
+    private readonly accountService: AccountService,
+    private readonly cloudinaryConfig: CloudinaryConfig
   ) {}
 
-  @Post()
-  async create(@Body() requestBody: any): Promise<Account> {
-    return this.accountService.create(requestBody);
-  }
+  @Put('/upload-avatar')
+  @UseGuards(AuthGuard)
+  @UseInterceptors(FileInterceptor('file'))
+  async uploadAvatar(
+    @UploadedFile() file: Express.Multer.File,
+    @Body() requestBody: any
+  ): Promise<Account> {
+    try {
+      console.log(1)
+      // Upload avatar lên Cloudinary
+      const result = await this.accountService.uploadToCloudinary(file);
 
+      // // Lưu URL avatar vào cơ sở dữ liệu
+      const updatedAccount = await this.accountService.updateAvatar(
+        requestBody.email,
+        result.secure_url
+      );
+
+      return updatedAccount;
+    } catch (error) {
+      throw new Error('Failed to upload avatar');
+    }
+  }
 }

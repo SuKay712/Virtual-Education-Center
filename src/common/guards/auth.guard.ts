@@ -17,32 +17,33 @@ export class AuthGuard implements CanActivate {
     private jwtService: JwtService
   ) {}
   async canActivate(context: ExecutionContext): Promise<boolean> {
-    // const request = context.switchToHttp().getRequest();
-    // const token = this.extractTokenFromHeader(request);
-    // if (!token) {
-    //   throw new UnauthorizedException();
-    // }
-    // try {
-    //   const payload = await this.jwtService.verifyAsync(token, {
-    //     secret: process.env.JWT_SECRET,
-    //   });
-    //   // 💡 We're assigning the payload to the request object here
-    //   // so that we can access it in our route handlers
-    //   // console.log(payload);
-    //   const account = await this.accountService.findByEmail(payload.email);
-    //   if (!account) {
-    //     throw new BadRequestException(
-    //       'account not belong to token, please try again'
-    //     );
-    //   }
-    //   request.currentaccount = account;
-    // } catch (error) {
-    //   if (error instanceof TokenExpiredError) {
-    //     throw new ForbiddenException('Token has expired');
-    //   }
+    const request = context.switchToHttp().getRequest();
+    console.log(request);
+    const token = this.extractTokenFromHeader(request);
+    if (!token) {
+      throw new UnauthorizedException();
+    }
+    try {
+      const payload = await this.jwtService.verifyAsync(token, {
+        secret: process.env.JWT_SECRET,
+      });
+      // 💡 We're assigning the payload to the request object here
+      // so that we can access it in our route handlers
+      // console.log(payload);
+      const account = await this.accountService.findByEmail(payload.email);
+      if (!account) {
+        throw new BadRequestException(
+          'account not belong to token, please try again'
+        );
+      }
+      request.currentaccount = account;
+    } catch (error) {
+      if (error instanceof TokenExpiredError) {
+        throw new ForbiddenException('Token has expired');
+      }
 
-    //   throw new UnauthorizedException();
-    // }
+      throw new UnauthorizedException();
+    }
     return true;
   }
   private extractTokenFromHeader(request: Request): string | undefined {

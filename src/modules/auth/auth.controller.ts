@@ -40,7 +40,6 @@ export class AuthController {
     return {
       message: 'Registration successful! Please verify your email.',
       result: result,
-      verificationLink: result.verificationLink,
     };
   }
 

@@ -24,7 +24,7 @@ export class Account {
   gender: Gender;
 
   @Column({ nullable: true })
-  birthday: string;
+  birthday: Date;
 
   @Column({ nullable: true })
   phone: string;
