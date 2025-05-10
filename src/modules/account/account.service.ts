@@ -114,7 +114,7 @@ export class AccountService {
   async getBookingsByAccountId(accountId: number): Promise<Booking[]> {
     const bookings = await this.bookingRepo.find({
       where: { teacher: { id: accountId } },
-      relations: ['classEntity', 'classEntity.lecture', 'classEntity.lecture.course'],
+      relations: ['classEntity', 'classEntity.lecture', 'classEntity.bookings', 'classEntity.lecture.course'],
       order: {
         created_at: 'DESC'
       }

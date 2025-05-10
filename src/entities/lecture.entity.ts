@@ -17,9 +17,6 @@ export class Lecture {
   @Column()
   description: string;
 
-  @Column()
-  video_url: string;
-
   @ManyToOne(() => Course, (course) => course.lectures)
   course: Course;
 
