@@ -14,7 +14,7 @@ import { PasswordUtils } from '../../common';
 import * as dotenv from 'dotenv';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Account } from '../../entities';
-import { Not, Repository } from 'typeorm';
+import { Binary, Not, Repository } from 'typeorm';
 @Injectable()
 export class AuthService {
   constructor(
@@ -26,6 +26,7 @@ export class AuthService {
   ) {}
 
   async login(requestBody: LoginDto) {
+    console.log('requestBody', requestBody);
     //check email exist
     const accountByEmail = await this.accountService.findByEmail(
       requestBody.email
@@ -69,6 +70,8 @@ export class AuthService {
       avatar: accountByEmail.avatar,
       gender: accountByEmail.gender,
       role: accountByEmail.role,
+      birthday: accountByEmail.birthday,
+      address: accountByEmail.address,
     };
   }
 

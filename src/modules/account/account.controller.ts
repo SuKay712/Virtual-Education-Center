@@ -14,6 +14,7 @@ import { AccountService } from './account.service';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { CloudinaryConfig } from '../../common/config/cloudinary.config';
 import { AuthGuard } from 'src/common/guards/auth.guard';
+import { PasswordUpdateDto } from './dtos/passwordUpdateDto';
 
 @Controller('account')
 export class AccountController {
@@ -51,5 +52,15 @@ export class AccountController {
     } catch (error) {
       throw new Error('Failed to upload avatar');
     }
+  }
+
+  @Put('/update-password')
+  @UseGuards(AuthGuard)
+  async updatePassword(
+    @Req() request: any,
+    @Body() passwordUpdateDto: PasswordUpdateDto
+  ): Promise<string> {
+    const currentAccount = request.currentaccount;
+    return this.accountService.updatePassword(currentAccount.id, passwordUpdateDto);
   }
 }

@@ -3,7 +3,7 @@ import { Class } from './class.entity';
 import { Account } from './account.entity';
 
 @Entity('booking')
-export class Booking {
+export class  Booking {
   @PrimaryGeneratedColumn()
   id: number;
 

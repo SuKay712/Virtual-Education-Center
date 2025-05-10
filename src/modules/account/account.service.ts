@@ -13,6 +13,7 @@ import { log } from 'console';
 import { PasswordUpdateDto } from './dtos/passwordUpdateDto';
 import { CloudinaryConfig } from 'src/common/config/cloudinary.config';
 import { v2 as cloudinary } from 'cloudinary';
+import { format } from 'date-fns';
 
 @Injectable()
 export class AccountService {
@@ -67,13 +68,44 @@ export class AccountService {
   async getClassesByAccountId(accountId: number): Promise<Class[]> {
     const account = await this.accountRepo.findOne({
       where: { id: accountId },
-      relations: ['classes', 'classes.lecture', 'classes.lecture.course'],
+      relations: ['classes', 'classes.lecture', 'classes.lecture.course', 'classes.bookings'],
     });
 
     if (!account) {
       throw new Error('Account not found');
     }
 
-    return account.classes;
+    return account.classes
+  }
+
+  async updatePassword(
+    accountId: number,
+    passwordUpdateDto: PasswordUpdateDto
+  ): Promise<string> {
+    const { currentPassword, newPassword, confirmPassword } = passwordUpdateDto;
+
+    const account = await this.accountRepo.findOne({ where: { id: accountId } });
+
+    if (!account) {
+      throw new NotFoundException('Account not found');
+    }
+
+    const isPasswordValid = PasswordUtils.checkPassword(
+      currentPassword,
+      account.password
+    );
+
+    if (!isPasswordValid) {
+      throw new BadRequestException('Current password is incorrect');
+    }
+
+    if (newPassword !== confirmPassword) {
+      throw new BadRequestException('New password and confirm password do not match');
+    }
+
+    account.password = PasswordUtils.hashPassword(newPassword);
+    await this.accountRepo.save(account);
+
+    return 'Password updated successfully';
   }
 }
