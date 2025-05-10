@@ -1,10 +1,11 @@
 import { Role, Gender } from '../common';
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany, AfterLoad } from 'typeorm';
 import { Chat } from './chat.entity';
 import { Bill } from './bill.entity';
 import { Notification } from './notification.entity';
 import { Booking } from './booking.entity';
 import { Class } from './class.entity';
+import { format } from 'date-fns';
 
 @Entity('account')
 export class Account {
@@ -64,4 +65,14 @@ export class Account {
 
   @OneToMany(() => Notification, (notification) => notification.account)
   notifications: Notification[];
+
+  @AfterLoad()
+  transformDates() {
+    if (this.created_at) {
+      this.created_at = format(new Date(this.created_at), 'HH:mm dd/MM/yyyy') as any;
+    }
+    if (this.updated_at) {
+      this.updated_at = format(new Date(this.updated_at), 'HH:mm dd/MM/yyyy') as any;
+    }
+  }
 }

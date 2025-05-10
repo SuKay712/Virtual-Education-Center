@@ -5,7 +5,7 @@ import {
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Account, Class } from '../../entities';
+import { Account, Class, Booking } from '../../entities';
 import { AccountUpdateDto } from './dtos/accountUpdateDto';
 import { I18nService } from 'nestjs-i18n';
 import { clean, PasswordUtils } from '../../common';
@@ -20,6 +20,8 @@ export class AccountService {
   constructor(
     @InjectRepository(Account)
     private readonly accountRepo: Repository<Account>,
+    @InjectRepository(Booking)
+    private readonly bookingRepo: Repository<Booking>,
     private readonly cloudinaryConfig: CloudinaryConfig
     // private readonly i18n: I18nService
   ) {}
@@ -107,5 +109,21 @@ export class AccountService {
     await this.accountRepo.save(account);
 
     return 'Password updated successfully';
+  }
+
+  async getBookingsByAccountId(accountId: number): Promise<Booking[]> {
+    const bookings = await this.bookingRepo.find({
+      where: { teacher: { id: accountId } },
+      relations: ['classEntity', 'classEntity.lecture', 'classEntity.lecture.course'],
+      order: {
+        created_at: 'DESC'
+      }
+    });
+
+    if (!bookings) {
+      return [];
+    }
+
+    return bookings;
   }
 }

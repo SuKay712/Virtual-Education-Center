@@ -1,6 +1,7 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany, AfterLoad } from 'typeorm';
 import { Lecture } from './lecture.entity';
 import { Bill } from './bill.entity';
+import { format } from 'date-fns';
 
 @Entity('course')
 export class Course {
@@ -30,4 +31,14 @@ export class Course {
 
   @OneToMany(() => Bill, (bill) => bill.course)
   bills: Bill[];
+
+  @AfterLoad()
+  transformDates() {
+    if (this.created_at) {
+      this.created_at = format(new Date(this.created_at), 'HH:mm dd/MM/yyyy') as any;
+    }
+    if (this.updated_at) {
+      this.updated_at = format(new Date(this.updated_at), 'HH:mm dd/MM/yyyy') as any;
+    }
+  }
 }

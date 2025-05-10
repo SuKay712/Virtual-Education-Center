@@ -1,8 +1,9 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany, AfterLoad } from 'typeorm';
 import { Lecture } from './lecture.entity';
 import { Booking } from './booking.entity';
 import { Meeting } from './meeting.entity';
 import { Account } from './account.entity';
+import { format } from 'date-fns';
 
 @Entity('class')
 export class Class {
@@ -38,4 +39,21 @@ export class Class {
 
   @OneToMany(() => Booking, (booking) => booking.classEntity)
   bookings: Booking[];
+
+  // Transform dates to formatted strings
+  @AfterLoad()
+  transformDates() {
+    if (this.time_start) {
+      this.time_start = format(new Date(this.time_start), 'HH:mm dd/MM/yyyy') as any;
+    }
+    if (this.time_end) {
+      this.time_end = format(new Date(this.time_end), 'HH:mm dd/MM/yyyy') as any;
+    }
+    if (this.created_at) {
+      this.created_at = format(new Date(this.created_at), 'HH:mm dd/MM/yyyy') as any;
+    }
+    if (this.updated_at) {
+      this.updated_at = format(new Date(this.updated_at), 'HH:mm dd/MM/yyyy') as any;
+    }
+  }
 }

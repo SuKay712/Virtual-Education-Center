@@ -9,7 +9,7 @@ import {
   UseGuards,
   UseInterceptors,
 } from '@nestjs/common';
-import { Account, Class } from '../../entities';
+import { Account, Class, Booking } from '../../entities';
 import { AccountService } from './account.service';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { CloudinaryConfig } from '../../common/config/cloudinary.config';
@@ -62,5 +62,12 @@ export class AccountController {
   ): Promise<string> {
     const currentAccount = request.currentaccount;
     return this.accountService.updatePassword(currentAccount.id, passwordUpdateDto);
+  }
+
+  @Get('/bookings')
+  @UseGuards(AuthGuard)
+  async getBookings(@Req() request: any): Promise<Booking[]> {
+    const currentAccount = request.currentaccount;
+    return this.accountService.getBookingsByAccountId(currentAccount.id);
   }
 }
