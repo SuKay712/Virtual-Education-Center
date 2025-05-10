@@ -70,7 +70,7 @@ export class AccountService {
   async getClassesByAccountId(accountId: number): Promise<Class[]> {
     const account = await this.accountRepo.findOne({
       where: { id: accountId },
-      relations: ['classes', 'classes.lecture', 'classes.lecture.course', 'classes.bookings'],
+      relations: ['classes', 'classes.lecture.course', 'classes.bookings.teacher', 'classes.student'],
     });
 
     if (!account) {
@@ -114,7 +114,7 @@ export class AccountService {
   async getBookingsByAccountId(accountId: number): Promise<Booking[]> {
     const bookings = await this.bookingRepo.find({
       where: { teacher: { id: accountId } },
-      relations: ['classEntity', 'classEntity.lecture', 'classEntity.bookings', 'classEntity.lecture.course'],
+      relations: ['classEntity', 'classEntity.lecture', 'classEntity.bookings', 'classEntity.bookings.teacher', 'classEntity.lecture.course', 'classEntity.student'],
       order: {
         created_at: 'DESC'
       }

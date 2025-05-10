@@ -16,7 +16,7 @@ export class BookingService {
   async updateBookingStatus(bookingId: number, updateDto: UpdateBookingStatusDto, currentAccountId): Promise<Booking> {
     const booking = await this.bookingRepo.findOne({
       where: { id: bookingId },
-      relations: ['classEntity', 'teacher', 'classEntity.bookings'],
+      relations: ['classEntity', 'classEntity.student', 'classEntity.bookings.teacher'],
     });
 
     if (!booking) {
