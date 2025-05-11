@@ -1,32 +1,56 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, AfterLoad } from 'typeorm';
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  JoinColumn,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 import { Account } from './account.entity';
 import { Course } from './course.entity';
-import { format } from 'date-fns';
+import { BillPaymentMethodEnum } from '../common/enums/bill-payment-method.enum';
+import { BillStatusEnum } from '../common/enums/bill-status.enum';
 
 @Entity('bill')
 export class Bill {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @ManyToOne(() => Account, (account) => account.bills)
+  @Column({ type: 'decimal', precision: 10, scale: 2 })
+  price: number;
+
+  @Column({
+    type: 'enum',
+    enum: BillPaymentMethodEnum,
+    default: BillPaymentMethodEnum.CASH,
+  })
+  paymentMethod: BillPaymentMethodEnum;
+
+  @Column({
+    type: 'enum',
+    enum: BillStatusEnum,
+    default: BillStatusEnum.PENDING,
+  })
+  status: BillStatusEnum;
+
+  @Column({ nullable: true })
+  paymentCode: string;
+
+  @Column({ default: false })
+  isPaid: boolean;
+
+  @ManyToOne(() => Account, { eager: true })
+  @JoinColumn()
   account: Account;
 
-  @ManyToOne(() => Course, (course) => course.bills)
+  @ManyToOne(() => Course, { eager: true })
+  @JoinColumn()
   course: Course;
 
-  @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
-  created_at: Date;
+  @CreateDateColumn()
+  createdAt: Date;
 
-  @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP', onUpdate: 'CURRENT_TIMESTAMP' })
-  updated_at: Date;
-
-  @AfterLoad()
-  transformDates() {
-    if (this.created_at) {
-      this.created_at = format(new Date(this.created_at), 'HH:mm dd/MM/yyyy') as any;
-    }
-    if (this.updated_at) {
-      this.updated_at = format(new Date(this.updated_at), 'HH:mm dd/MM/yyyy') as any;
-    }
-  }
+  @UpdateDateColumn()
+  updatedAt: Date;
 }
