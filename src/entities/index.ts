@@ -9,3 +9,4 @@ export * from './booking.entity';
 export * from './meeting.entity';
 export * from './theory.entity';
 export * from './chatbox.entity';
+export * from './free_time.entity';

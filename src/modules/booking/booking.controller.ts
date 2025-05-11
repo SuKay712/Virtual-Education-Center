@@ -2,13 +2,9 @@ import {
   Param,
   Body,
   Controller,
-  Get,
-  Post,
   Put,
   Req,
-  UploadedFile,
   UseGuards,
-  UseInterceptors,
 } from '@nestjs/common';
 import { BookingService } from './booking.service';
 import { UpdateBookingStatusDto } from './dtos/update-booking-status.dto';
@@ -25,7 +21,7 @@ export class BookingController {
     @Body() updateDto: UpdateBookingStatusDto,
     @Req() request: any,
   ) {
-    const currentAccount = request.currentaccount
+    const currentAccount = request.currentAccount
     return this.bookingService.updateBookingStatus(id, updateDto, currentAccount.id);
   }
 }

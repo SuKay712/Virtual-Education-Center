@@ -1,10 +1,7 @@
 import { IsEnum, IsNotEmpty } from 'class-validator';
+import { BookingStatus } from 'src/common/enums/booking-status.enum';
 
-export enum BookingStatus {
-  PENDING = 0,
-  ACCEPTED = 1,
-  REJECTED = 2,
-}
+
 
 export class UpdateBookingStatusDto {
   @IsNotEmpty()

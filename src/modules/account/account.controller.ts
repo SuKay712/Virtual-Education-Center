@@ -26,7 +26,7 @@ export class AccountController {
   @Get('/classes')
   @UseGuards(AuthGuard)
   async getClasses(@Req() request: any): Promise<Class[]> {
-    const currentAccount = request.currentaccount; // Lấy thông tin tài khoản hiện tại từ AuthGuard
+    const currentAccount = request.currentAccount; // Lấy thông tin tài khoản hiện tại từ AuthGuard
     return this.accountService.getClassesByAccountId(currentAccount.id);
   }
 
@@ -35,18 +35,18 @@ export class AccountController {
   @UseInterceptors(FileInterceptor('file'))
   async uploadAvatar(
     @UploadedFile() file: Express.Multer.File,
-    @Body() requestBody: any
+    @Req() request: any
   ): Promise<Account> {
     try {
-      console.log(1)
       // Upload avatar lên Cloudinary
+      const currentAccount = request.currentAccount;
       const result = await this.accountService.uploadToCloudinary(file);
-
       // // Lưu URL avatar vào cơ sở dữ liệu
       const updatedAccount = await this.accountService.updateAvatar(
-        requestBody.email,
+        currentAccount.email,
         result.secure_url
       );
+      console.log('Cloudinary result:', updatedAccount);
 
       return updatedAccount;
     } catch (error) {
@@ -60,14 +60,14 @@ export class AccountController {
     @Req() request: any,
     @Body() passwordUpdateDto: PasswordUpdateDto
   ): Promise<string> {
-    const currentAccount = request.currentaccount;
+    const currentAccount = request.currentAccount;
     return this.accountService.updatePassword(currentAccount.id, passwordUpdateDto);
   }
 
   @Get('/bookings')
   @UseGuards(AuthGuard)
   async getBookings(@Req() request: any): Promise<Booking[]> {
-    const currentAccount = request.currentaccount;
+    const currentAccount = request.currentAccount;
     return this.accountService.getBookingsByAccountId(currentAccount.id);
   }
 }

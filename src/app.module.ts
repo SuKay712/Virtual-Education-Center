@@ -7,8 +7,17 @@ import { AccountModule } from './modules/account/account.module';
 import { CloudinaryConfig } from './common/config/cloudinary.config';
 import { ConfigModule } from '@nestjs/config';
 import { BookingModule } from './modules/booking/booking.module';
+import { FreeTimeModule } from './modules/free-time/free-time.module';
+
 @Module({
-  imports: [AuthModule, DatabaseModule, AccountModule, BookingModule, ConfigModule.forRoot({ isGlobal: true })],
+  imports: [
+    AuthModule,
+    DatabaseModule,
+    AccountModule,
+    BookingModule,
+    FreeTimeModule,
+    ConfigModule.forRoot({ isGlobal: true }),
+  ],
   controllers: [AppController],
   providers: [
     AppService,

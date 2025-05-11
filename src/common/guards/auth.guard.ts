@@ -35,7 +35,7 @@ export class AuthGuard implements CanActivate {
           'account not belong to token, please try again'
         );
       }
-      request.currentaccount = account;
+      request.currentAccount = account;
     } catch (error) {
       if (error instanceof TokenExpiredError) {
         throw new ForbiddenException('Token has expired');

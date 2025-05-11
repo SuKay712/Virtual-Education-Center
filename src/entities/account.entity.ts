@@ -5,6 +5,7 @@ import { Bill } from './bill.entity';
 import { Notification } from './notification.entity';
 import { Booking } from './booking.entity';
 import { Class } from './class.entity';
+import { FreeTime } from './free_time.entity';
 import { format } from 'date-fns';
 
 @Entity('account')
@@ -65,6 +66,9 @@ export class Account {
 
   @OneToMany(() => Notification, (notification) => notification.account)
   notifications: Notification[];
+
+  @OneToMany(() => FreeTime, (freeTime) => freeTime.teacher)
+  freeTimes: FreeTime[];
 
   @AfterLoad()
   transformDates() {
