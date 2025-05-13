@@ -25,7 +25,6 @@ export class BillService {
   ) {}
 
   async createBill(account: Account, billRequest: BillRequestDto): Promise<Bill> {
-
     const course = await this.courseRepository.findOne({
       where: { id: billRequest.courseId },
     });
@@ -48,6 +47,7 @@ export class BillService {
   async getBillById(id: number): Promise<Bill> {
     const bill = await this.billRepository.findOne({
       where: { id },
+      relations: ['course']
     });
 
     if (!bill) {
@@ -70,5 +70,21 @@ export class BillService {
     bill.isPaid = status === BillStatusEnum.PAID;
     bill.paymentCode = paymentCode;
     return this.billRepository.save(bill);
+  }
+
+  async getBillsByAccountId(accountId: number): Promise<Bill[]> {
+    const bills = await this.billRepository.find({
+      where: { account: { id: accountId } },
+      relations: ['course'],
+      order: {
+        createdAt: 'DESC'
+      }
+    });
+
+    if (!bills) {
+      return [];
+    }
+
+    return bills;
   }
 }

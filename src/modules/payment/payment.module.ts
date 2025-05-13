@@ -12,14 +12,16 @@ import {
   Account,
   Bill,
   Booking,
+  Class,
   Course,
 } from '../../entities';
-import { BillService } from '../bill/bill.service';
 import { MomoPaymentController } from './momo-payment.controller';
 import { MomoPaymentService } from './momo-payment.service';
 import { AccountModule } from '../account/account.module';
 import { ConfigModule } from '@nestjs/config';
 import { CloudinaryConfig } from '../../common/config/cloudinary.config';
+import { ClassModule } from '../class/class.module';
+import { BillModule } from '../bill/bill.module';
 
 @Module({
   imports: [
@@ -28,15 +30,17 @@ import { CloudinaryConfig } from '../../common/config/cloudinary.config';
       Account,
       Booking,
       Course,
+      Class,
     ]),
     ConfigModule,
     AccountModule,
+    ClassModule,
+    BillModule,
   ],
   controllers: [MomoPaymentController],
   providers: [
     AuthGuard,
     AccountService,
-    BillService,
     MomoPaymentService,
     CloudinaryConfig,
   ],

@@ -40,7 +40,7 @@ export class Bill {
   @Column({ default: false })
   isPaid: boolean;
 
-  @ManyToOne(() => Account, { eager: true })
+  @ManyToOne(() => Account, { eager: false })
   @JoinColumn()
   account: Account;
 

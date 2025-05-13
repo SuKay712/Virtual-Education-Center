@@ -1,15 +1,17 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { BillController } from './bill.controller';
+import { Account, Bill, Course } from '../../entities';
 import { BillService } from './bill.service';
-import { Bill } from '../../entities/bill.entity';
-import { Course } from '../../entities/course.entity';
-import { Account } from '../../entities/account.entity';
+import { BillController } from './bill.controller';
+import { AccountModule } from '../account/account.module';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Bill, Course, Account])],
+  imports: [
+    TypeOrmModule.forFeature([Bill, Course, Account]),
+    AccountModule,
+  ],
   controllers: [BillController],
   providers: [BillService],
-  exports: [BillService],
+  exports: [BillService]
 })
 export class BillModule {}

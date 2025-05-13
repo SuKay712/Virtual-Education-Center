@@ -10,6 +10,7 @@ import { Account } from '../../entities/account.entity';
 import { Repository } from 'typeorm';
 import { I18nService } from 'nestjs-i18n';
 import { BillService } from '../bill/bill.service';
+import { ClassService } from '../class/class.service';
 import axios from 'axios';
 import {
   CurrentAccount,
@@ -25,6 +26,7 @@ export class MomoPaymentService {
   constructor(
     private readonly configService: ConfigService,
     private readonly billService: BillService,
+    private readonly classService: ClassService,
   ) {}
 
   async createPayment(billRequest: BillRequestDto, account: Account) {
@@ -128,9 +130,23 @@ export class MomoPaymentService {
 
         if (extraData && extraData[0]) {
           const billData = extraData[0].bill;
+          const billRequest = extraData[0];
+          const currentAccount = extraData[0].currentAccount;
+
           if (billData.id) {
+            // Update bill status
             await this.billService.updateBillStatus(billData.id, BillStatusEnum.PAID, extraData[0].paymentCode);
             console.log('Bill status updated to PAID');
+
+            // Create classes for the course
+            await this.classService.createClassesForCourse(
+              billRequest.courseId,
+              currentAccount.id,
+              billRequest.time_start,
+              billRequest.time_end,
+              billRequest.day_of_week,
+            );
+            console.log('Classes created successfully');
           } else {
             console.error('Bill ID not found in extraData');
           }

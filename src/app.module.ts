@@ -9,7 +9,8 @@ import { ConfigModule } from '@nestjs/config';
 import { BookingModule } from './modules/booking/booking.module';
 import { FreeTimeModule } from './modules/free-time/free-time.module';
 import { PaymentModule } from './modules/payment/payment.module';
-
+import { BillModule } from './modules/bill/bill.module';
+import { ClassModule } from './modules/class/class.module';
 @Module({
   imports: [
     AuthModule,
@@ -18,6 +19,8 @@ import { PaymentModule } from './modules/payment/payment.module';
     BookingModule,
     FreeTimeModule,
     PaymentModule,
+    BillModule,
+    ClassModule,
     ConfigModule.forRoot({ isGlobal: true }),
   ],
   controllers: [AppController],

@@ -2,6 +2,7 @@ import {
   Body,
   Controller,
   Get,
+  Param,
   Post,
   Put,
   Req,
@@ -15,6 +16,7 @@ import { FileInterceptor } from '@nestjs/platform-express';
 import { CloudinaryConfig } from '../../common/config/cloudinary.config';
 import { AuthGuard } from 'src/common/guards/auth.guard';
 import { PasswordUpdateDto } from './dtos/passwordUpdateDto';
+import { AccountUpdateDto } from './dtos/accountUpdateDto';
 
 @Controller('account')
 export class AccountController {
