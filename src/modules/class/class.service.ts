@@ -28,8 +28,25 @@ export class ClassService {
     });
 
     return existingClasses.some(existingClass => {
-      const existingStart = new Date(existingClass.time_start);
-      const existingEnd = new Date(existingClass.time_end);
+      // Parse time strings
+      const parseTimeString = (timeStr: string | Date) => {
+        if (timeStr instanceof Date) {
+          return timeStr;
+        }
+        const [time, date] = timeStr.split(' ');
+        const [hours, minutes] = time.split(':');
+        const [day, month, year] = date.split('/');
+        return new Date(
+          parseInt(year),
+          parseInt(month) - 1, // Month is 0-based in JavaScript
+          parseInt(day),
+          parseInt(hours),
+          parseInt(minutes)
+        );
+      };
+
+      const existingStart = parseTimeString(existingClass.time_start);
+      const existingEnd = parseTimeString(existingClass.time_end);
 
       // Reset seconds and milliseconds for comparison
       const cleanExistingStart = setMilliseconds(setSeconds(existingStart, 0), 0);
@@ -98,11 +115,13 @@ export class ClassService {
         const lecture = course.lectures[lectureIndex];
 
         // Calculate class date based on day of week and week number
-        // Start from next Monday and add the appropriate number of days
         const daysToAdd = (dayOfWeek - 1 + 7) % 7; // Convert to 0-based (Monday = 0)
         const classDate = addDays(nextMondayDate, daysToAdd + (weekOffset * 7));
 
-        // Set time for the class and reset seconds and milliseconds
+        // Set time for the class
+        const [startHour, startMinute] = timeStart.split(':').map(Number);
+        const [endHour, endMinute] = timeEnd.split(':').map(Number);
+
         const classStartTime = setMilliseconds(
           setSeconds(
             setMinutes(setHours(classDate, startHour), startMinute),

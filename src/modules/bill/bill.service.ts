@@ -74,7 +74,9 @@ export class BillService {
 
   async getBillsByAccountId(accountId: number): Promise<Bill[]> {
     const bills = await this.billRepository.find({
-      where: { account: { id: accountId } },
+      where: {
+        account: { id: accountId },
+      },
       relations: ['course'],
       order: {
         createdAt: 'DESC'

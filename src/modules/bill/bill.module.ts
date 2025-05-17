@@ -1,14 +1,16 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Account, Bill, Course } from '../../entities';
+import { Account, Bill, Class, Course } from '../../entities';
 import { BillService } from './bill.service';
 import { BillController } from './bill.controller';
 import { AccountModule } from '../account/account.module';
+import { ClassModule } from '../class/class.module';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([Bill, Course, Account]),
+    TypeOrmModule.forFeature([Bill, Course, Account, Class]),
     AccountModule,
+    ClassModule,
   ],
   controllers: [BillController],
   providers: [BillService],

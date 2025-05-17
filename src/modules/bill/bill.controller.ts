@@ -30,10 +30,4 @@ export class BillController {
   async getBills(@Req() req) {
     return this.billService.getBillsByAccountId(req.currentAccount.id);
   }
-
-  @Get(':id')
-  @UseGuards(AuthGuard)
-  async getBillById(@Param('id') id: number) {
-    return this.billService.getBillById(id);
-  }
 }

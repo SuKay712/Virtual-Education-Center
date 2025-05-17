@@ -3,6 +3,7 @@ import {
   ForbiddenException,
   Injectable,
   NotFoundException,
+  BadRequestException,
 } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { InjectRepository } from '@nestjs/typeorm';
@@ -20,14 +21,69 @@ import { BillPaymentMethodEnum } from '../../common/enums/bill-payment-method.en
 import { BillRequestDto } from '../bill/dtos/billRequestDtos';
 import { BillStatusEnum } from '../../common/enums/bill-status.enum';
 import * as CryptoJS from 'crypto-js';
+import * as crypto from 'crypto';
 
 @Injectable()
 export class MomoPaymentService {
+  private readonly accessKey: string;
+  private readonly secretKey: string;
+  private readonly partnerCode: string;
+  private readonly returnUrl: string;
+  private readonly ipnUrl: string;
+  private readonly refundUrl: string;
+
   constructor(
     private readonly configService: ConfigService,
     private readonly billService: BillService,
     private readonly classService: ClassService,
-  ) {}
+  ) {
+    this.accessKey = this.configService.get<string>('MOMO_ACCESS_KEY');
+    this.secretKey = this.configService.get<string>('MOMO_SECRET_KEY');
+    this.partnerCode = this.configService.get<string>('MOMO_PARTNER_CODE');
+    this.returnUrl = this.configService.get<string>('MOMO_RETURN_URL');
+    this.ipnUrl = this.configService.get<string>('MOMO_IPN_URL');
+    this.refundUrl = this.configService.get<string>('MOMO_REFUND_URL');
+  }
+
+  private async refundPayment(
+    transId: string,
+    amount: number,
+  ): Promise<any> {
+    const accessKey = this.configService.get<string>('MOMO_ACCESS_KEY');
+    const secretKey = this.configService.get<string>('MOMO_SECRET_KEY');
+    const momoRefundEndpoint = this.configService.get<string>('MOMO_ENDPOINT_REFUND');
+    const partnerCode = 'MOMO';
+    const requestId = partnerCode + new Date().getTime();
+    const orderId = requestId;
+    const description = 'refund';
+
+    // Tạo chuỗi raw signature theo đúng format của MoMo
+    const rawSignature = `accessKey=${accessKey}&amount=${amount}&description=${description}&orderId=${orderId}&partnerCode=${partnerCode}&requestId=${requestId}&transId=${transId}`;
+
+    const signature = CryptoJS.HmacSHA256(rawSignature, secretKey).toString(CryptoJS.enc.Hex);
+
+    const requestBody = {
+      partnerCode: partnerCode,
+      requestId: requestId,
+      amount: amount,
+      transId: transId,
+      orderId: orderId,
+      description: description,
+      signature: signature,
+      lang: 'vi'
+    };
+
+    console.log('Raw signature:', rawSignature);
+    console.log('Request body:', requestBody);
+
+    try {
+      const response = await axios.post(momoRefundEndpoint, requestBody);
+      return response.data;
+    } catch (error: any) {
+      console.error('Refund error:', error.response?.data || error.message);
+      throw error;
+    }
+  }
 
   async createPayment(billRequest: BillRequestDto, account: Account) {
     const deployedLink = this.configService.get<string>('DEPLOY_SERVICE_LINK_NGROK');
@@ -73,7 +129,7 @@ export class MomoPaymentService {
       'ipnUrl=' + `${deployedLink}/momo-payment/callback`,
       'orderId=' + billId,
       'orderInfo=' + `Course Payment - Bill #${bill.course.name}`,
-      'partnerCode=' + partnerCode,
+      'partnerCode=' + this.partnerCode,
       'redirectUrl=' + `http://localhost:3000/student/course`,
       'requestId=' + requestId,
       'requestType=' + requestType
@@ -114,11 +170,9 @@ export class MomoPaymentService {
     console.log('Response from MoMo:', response);
 
     try {
-      // Kiểm tra trạng thái thanh toán
       if (response && response.resultCode === 0) {
         console.log('Payment Successful');
 
-        // Giải mã extraData
         const extraData = response.extraData
           ? JSON.parse(Buffer.from(response.extraData, 'base64').toString())
           : null;
@@ -130,19 +184,46 @@ export class MomoPaymentService {
           const currentAccount = extraData[0].currentAccount;
 
           if (billData.id) {
-            // Update bill status
-            await this.billService.updateBillStatus(billData.id, BillStatusEnum.PAID, extraData[0].paymentCode);
-            console.log('Bill status updated to PAID');
+            try {
+              await this.classService.createClassesForCourse(
+                billRequest.courseId,
+                currentAccount.id,
+                billRequest.time_start,
+                billRequest.time_end,
+                billRequest.day_of_week,
+              );
+              console.log('Classes created successfully');
+              await this.billService.updateBillStatus(billData.id, BillStatusEnum.PAID, extraData[0].paymentCode);
+              console.log('Bill status updated to PAID');
+            } catch (classError) {
+              console.error('Error creating classes:', classError);
 
-            // Create classes for the course
-            await this.classService.createClassesForCourse(
-              billRequest.courseId,
-              currentAccount.id,
-              billRequest.time_start,
-              billRequest.time_end,
-              billRequest.day_of_week,
-            );
-            console.log('Classes created successfully');
+              try {
+                // Đợi 5 giây để đảm bảo giao dịch thanh toán đã hoàn tất
+                await new Promise(resolve => setTimeout(resolve, 5000));
+
+                const refundResult = await this.refundPayment(
+                  response.transId,
+                  response.amount,
+                );
+                console.log('Refund result:', refundResult);
+
+                if (refundResult.resultCode === 0) {
+                  await this.billService.updateBillStatus(
+                    billData.id,
+                    BillStatusEnum.CANCELLED,
+                    extraData[0].paymentCode
+                  );
+                  console.log('Refund successful after class creation failure');
+                } else {
+                  console.error('Refund failed after class creation failure:', refundResult.message);
+                }
+              } catch (refundError) {
+                console.error('Error during refund after class creation failure:', refundError);
+              }
+
+              throw new Error(`Failed to create classes: ${classError instanceof Error ? classError.message : 'Unknown error'}. Refund process initiated.`);
+            }
           } else {
             console.error('Bill ID not found in extraData');
           }
