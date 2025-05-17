@@ -5,7 +5,7 @@ import {
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Account, Class, Booking } from '../../entities';
+import { Account, Class, Booking, Course } from '../../entities';
 import { AccountUpdateDto } from './dtos/accountUpdateDto';
 import { I18nService } from 'nestjs-i18n';
 import { clean, PasswordUtils } from '../../common';
@@ -13,7 +13,7 @@ import { log } from 'console';
 import { PasswordUpdateDto } from './dtos/passwordUpdateDto';
 import { CloudinaryConfig } from 'src/common/config/cloudinary.config';
 import { v2 as cloudinary } from 'cloudinary';
-import { format } from 'date-fns';
+import { format, addDays, startOfWeek, endOfWeek, nextMonday, parse, isSameDay } from 'date-fns';
 
 @Injectable()
 export class AccountService {
@@ -22,6 +22,8 @@ export class AccountService {
     private readonly accountRepo: Repository<Account>,
     @InjectRepository(Booking)
     private readonly bookingRepo: Repository<Booking>,
+    @InjectRepository(Course)
+    private readonly courseRepo: Repository<Course>,
     private readonly cloudinaryConfig: CloudinaryConfig
     // private readonly i18n: I18nService
   ) {}
@@ -67,7 +69,7 @@ export class AccountService {
     return this.accountRepo.save(account);
   }
 
-  async getClassesByAccountId(accountId: number): Promise<Class[]> {
+  async getClassesByAccountId(accountId: number): Promise<{ classes: Class[], otherCourses: Course[] }> {
     const account = await this.accountRepo.findOne({
       where: { id: accountId },
       relations: ['classes', 'classes.lecture.course', 'classes.bookings.teacher', 'classes.student'],
@@ -77,7 +79,76 @@ export class AccountService {
       throw new Error('Account not found');
     }
 
-    return account.classes
+    // Get all courses
+    const allCourses = await this.courseRepo.find({
+      relations: ['lectures'],
+    });
+
+    // Get course IDs that the account is enrolled in
+    const enrolledCourseIds = account.classes.map(c => c.lecture.course.id);
+
+    // Filter out courses that the account is not enrolled in
+    const otherCourses = allCourses.filter(course => !enrolledCourseIds.includes(course.id));
+
+    return {
+      classes: account.classes,
+      otherCourses
+    };
+  }
+
+  async getClassesByAccountIdNextWeek(accountId: number): Promise<{ classes: Class[], otherCourses: Course[] }> {
+    const account = await this.accountRepo.findOne({
+      where: { id: accountId },
+      relations: ['classes', 'classes.lecture.course', 'classes.bookings.teacher', 'classes.student'],
+    });
+
+    if (!account) {
+      throw new Error('Account not found');
+    }
+
+    // Get next Monday
+    const nextMondayDate = nextMonday(new Date());
+
+    // Filter classes for next week
+    const nextWeekClasses = account.classes.filter(classItem => {
+      try {
+        // Parse the date string in format "HH:mm dd/MM/yyyy"
+        const timeStartStr = String(classItem.time_start);
+        const [time, date] = timeStartStr.split(' ');
+        const [hours, minutes] = time.split(':');
+        const [day, month, year] = date.split('/');
+
+        const classStartDate = new Date(
+          parseInt(year),
+          parseInt(month) - 1, // Month is 0-based in JavaScript
+          parseInt(day),
+          parseInt(hours),
+          parseInt(minutes)
+        );
+
+        // Only include classes that start from next Monday
+        return classStartDate >= nextMondayDate;
+      } catch (error) {
+        console.error('Error parsing date:', error);
+        return false;
+      }
+    });
+
+    // Get all courses
+    const allCourses = await this.courseRepo.find({
+      relations: ['lectures'],
+    });
+
+    // Get course IDs that the account is enrolled in
+    const enrolledCourseIds = nextWeekClasses.map(c => c.lecture.course.id);
+
+    // Filter out courses that the account is not enrolled in
+    const otherCourses = allCourses.filter(course => !enrolledCourseIds.includes(course.id));
+
+    return {
+      classes: nextWeekClasses,
+      otherCourses
+    };
   }
 
   async updatePassword(

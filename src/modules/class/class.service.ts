@@ -2,7 +2,7 @@ import { Injectable, NotFoundException, BadRequestException } from '@nestjs/comm
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Class, Course, Lecture, Account } from '../../entities';
-import { addDays, addWeeks, setHours, setMinutes, isWithinInterval, setSeconds, setMilliseconds } from 'date-fns';
+import { addDays, addWeeks, setHours, setMinutes, isWithinInterval, setSeconds, setMilliseconds, nextMonday } from 'date-fns';
 
 @Injectable()
 export class ClassService {
@@ -87,6 +87,9 @@ export class ClassService {
     let lectureIndex = 0;
     let weekOffset = 0;
 
+    // Get next Monday as the starting point
+    const nextMondayDate = nextMonday(new Date());
+
     // Create classes for each lecture
     while (lectureIndex < totalLectures) {
       for (const dayOfWeek of sortedDaysOfWeek) {
@@ -95,23 +98,21 @@ export class ClassService {
         const lecture = course.lectures[lectureIndex];
 
         // Calculate class date based on day of week and week number
-        const classDate = new Date();
-        const daysUntilNextClass = (dayOfWeek - classDate.getDay() + 7) % 7;
-        // Add 7 days to start from next week
-        const nextClassDate = addDays(classDate, daysUntilNextClass + 7);
-        const finalClassDate = addWeeks(nextClassDate, weekOffset);
+        // Start from next Monday and add the appropriate number of days
+        const daysToAdd = (dayOfWeek - 1 + 7) % 7; // Convert to 0-based (Monday = 0)
+        const classDate = addDays(nextMondayDate, daysToAdd + (weekOffset * 7));
 
         // Set time for the class and reset seconds and milliseconds
         const classStartTime = setMilliseconds(
           setSeconds(
-            setMinutes(setHours(finalClassDate, startHour), startMinute),
+            setMinutes(setHours(classDate, startHour), startMinute),
             0
           ),
           0
         );
         const classEndTime = setMilliseconds(
           setSeconds(
-            setMinutes(setHours(finalClassDate, endHour), endMinute),
+            setMinutes(setHours(classDate, endHour), endMinute),
             0
           ),
           0

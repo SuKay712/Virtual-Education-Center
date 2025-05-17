@@ -74,12 +74,11 @@ export class MomoPaymentService {
       'orderId=' + billId,
       'orderInfo=' + `Course Payment - Bill #${bill.course.name}`,
       'partnerCode=' + partnerCode,
-      'redirectUrl=' + `https://www.youtube.com/watch?v=psZ1g9fMfeo&list=RDAdrOBcLLhJ8&index=24`,
+      'redirectUrl=' + `http://localhost:3000/student/course`,
       'requestId=' + requestId,
       'requestType=' + requestType
     ].join('&');
 
-    console.log('Raw signature:', rawSignature);
 
     const signature = CryptoJS.HmacSHA256(rawSignature, secretKey).toString(CryptoJS.enc.Hex);
 
@@ -89,16 +88,13 @@ export class MomoPaymentService {
       amount: bill.course.price * 1000,
       orderId: billId,
       orderInfo: `Course Payment - Bill #${bill.course.name}`,
-      redirectUrl: `https://www.youtube.com/watch?v=psZ1g9fMfeo&list=RDAdrOBcLLhJ8&index=24`,
+      redirectUrl: `http://localhost:3000/student/course`,
       ipnUrl: `${deployedLink}/momo-payment/callback`,
       extraData: extraData,
       requestType: requestType,
       signature: signature,
       lang: 'vi',
     };
-
-    console.log('Request body:', requestBody);
-    console.log('Momo endpoint:', momoEndpoint);
 
     try {
       const response = await axios.post(

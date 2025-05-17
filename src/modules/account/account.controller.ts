@@ -10,7 +10,7 @@ import {
   UseGuards,
   UseInterceptors,
 } from '@nestjs/common';
-import { Account, Class, Booking } from '../../entities';
+import { Account, Class, Booking, Course } from '../../entities';
 import { AccountService } from './account.service';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { CloudinaryConfig } from '../../common/config/cloudinary.config';
@@ -27,9 +27,16 @@ export class AccountController {
 
   @Get('/classes')
   @UseGuards(AuthGuard)
-  async getClasses(@Req() request: any): Promise<Class[]> {
+  async getClasses(@Req() request: any):Promise<{ classes: Class[], otherCourses: Course[] }> {
     const currentAccount = request.currentAccount; // Lấy thông tin tài khoản hiện tại từ AuthGuard
     return this.accountService.getClassesByAccountId(currentAccount.id);
+  }
+
+  @Get('/classes/next-week')
+  @UseGuards(AuthGuard)
+  async getClassesNextWeek(@Req() request: any):Promise<{ classes: Class[], otherCourses: Course[] }> {
+    const currentAccount = request.currentAccount;
+    return this.accountService.getClassesByAccountIdNextWeek(currentAccount.id);
   }
 
   @Put('/upload-avatar')
