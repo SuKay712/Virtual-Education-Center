@@ -5,6 +5,7 @@ import { Booking, Account, Class } from '../../entities';
 import { UpdateBookingStatusDto } from './dtos/update-booking-status.dto';
 import { CreateBookingDto } from './dtos/create-booking.dto';
 import { BookingStatus } from '../../common/enums/booking-status.enum';
+import { NotificationService } from '../notification/notification.service';
 
 @Injectable()
 export class BookingService {
@@ -15,13 +16,14 @@ export class BookingService {
     private readonly accountRepo: Repository<Account>,
     @InjectRepository(Class)
     private readonly classRepo: Repository<Class>,
+    private readonly notificationService: NotificationService,
   ) {}
 
   async createBooking(createBookingDto: CreateBookingDto): Promise<Booking[]> {
     // Find the class
     const classEntity = await this.classRepo.findOne({
       where: { id: createBookingDto.classId },
-      relations: ['bookings', 'bookings.teacher'],
+      relations: ['bookings', 'bookings.teacher', 'lecture'],
     });
 
     if (!classEntity) {
@@ -57,13 +59,23 @@ export class BookingService {
       })
     );
 
-    return this.bookingRepo.save(bookings);
+    const savedBookings = await this.bookingRepo.save(bookings);
+
+    // Create notifications for each teacher
+    for (const booking of savedBookings) {
+      await this.notificationService.createNotification(
+        booking.teacher.id,
+        `You have been invited to teach a class: ${classEntity.lecture.name} at ${classEntity.time_start}`
+      );
+    }
+
+    return savedBookings;
   }
 
   async updateBookingStatus(bookingId: number, updateDto: UpdateBookingStatusDto, currentAccountId): Promise<Booking> {
     const booking = await this.bookingRepo.findOne({
       where: { id: bookingId },
-      relations: ['teacher', 'classEntity', 'classEntity.student', 'classEntity.bookings.teacher'],
+      relations: ['teacher', 'classEntity', 'classEntity.student', 'classEntity.bookings.teacher', 'classEntity.lecture'],
     });
 
     if (!booking) {
@@ -89,7 +101,17 @@ export class BookingService {
     }
 
     booking.status = updateDto.status;
-    return this.bookingRepo.save(booking);
+    const updatedBooking = await this.bookingRepo.save(booking);
+
+    // Create notification for student when booking status changes
+    if (updatedBooking.status === 1) {
+      await this.notificationService.createNotification(
+        booking.classEntity.student.id,
+        `Your class "${booking.classEntity.lecture.name}" has been accepted`
+      );
+    }
+
+    return updatedBooking;
   }
 
   async getBookingsByCurrentAccount(currentAccountId: number): Promise<Booking[]> {
