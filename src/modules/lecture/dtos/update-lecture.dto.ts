@@ -8,8 +8,4 @@ export class UpdateLectureDto {
   @IsOptional()
   @IsString()
   description?: string;
-
-  @IsOptional()
-  @IsNumber()
-  courseId?: number;
 }

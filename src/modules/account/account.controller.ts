@@ -9,6 +9,7 @@ import {
   UploadedFile,
   UseGuards,
   UseInterceptors,
+  Delete,
 } from '@nestjs/common';
 import { Account, Class, Booking, Course } from '../../entities';
 import { AccountService } from './account.service';
@@ -17,8 +18,13 @@ import { CloudinaryConfig } from '../../common/config/cloudinary.config';
 import { AuthGuard } from 'src/common/guards/auth.guard';
 import { PasswordUpdateDto } from './dtos/passwordUpdateDto';
 import { AccountUpdateDto } from './dtos/accountUpdateDto';
+import { Role } from 'src/common';
+import { RoleGuard } from 'src/common/guards/role.guard';
+import { CreateAccountDto } from './dtos/createAccountDto';
+import { AdminUpdateAccountDto } from './dtos/adminUpdateAccountDto';
 
 @Controller('account')
+@UseGuards(AuthGuard)
 export class AccountController {
   constructor(
     private readonly accountService: AccountService,
@@ -26,21 +32,18 @@ export class AccountController {
   ) {}
 
   @Get('/classes')
-  @UseGuards(AuthGuard)
   async getClasses(@Req() request: any):Promise<{ classes: Class[], otherCourses: Course[] }> {
     const currentAccount = request.currentAccount; // Lấy thông tin tài khoản hiện tại từ AuthGuard
     return this.accountService.getClassesByAccountId(currentAccount.id);
   }
 
   @Get('/classes/next-week')
-  @UseGuards(AuthGuard)
   async getClassesNextWeek(@Req() request: any):Promise<{ classes: Class[], otherCourses: Course[] }> {
     const currentAccount = request.currentAccount;
     return this.accountService.getClassesByAccountIdNextWeek(currentAccount.id);
   }
 
   @Put('/upload-avatar')
-  @UseGuards(AuthGuard)
   @UseInterceptors(FileInterceptor('file'))
   async uploadAvatar(
     @UploadedFile() file: Express.Multer.File,
@@ -64,7 +67,6 @@ export class AccountController {
   }
 
   @Put('/update-password')
-  @UseGuards(AuthGuard)
   async updatePassword(
     @Req() request: any,
     @Body() passwordUpdateDto: PasswordUpdateDto
@@ -74,9 +76,50 @@ export class AccountController {
   }
 
   @Get('/bookings')
-  @UseGuards(AuthGuard)
   async getBookings(@Req() request: any): Promise<Booking[]> {
     const currentAccount = request.currentAccount;
     return this.accountService.getBookingsByAccountId(currentAccount.id);
+  }
+
+  @Get('/admin')
+  @UseGuards(new RoleGuard([Role.Admin]))
+  async getAllAccounts(): Promise<Account[]> {
+    return this.accountService.getAllAccounts();
+  }
+
+  @Post('/admin')
+  @UseGuards(new RoleGuard([Role.Admin]))
+  async createAdminAccount(@Body() createAccountDto: CreateAccountDto): Promise<Account> {
+    return this.accountService.createAccount(createAccountDto);
+  }
+
+  @Put('/admin/:id')
+  @UseGuards(new RoleGuard([Role.Admin]))
+  async updateAdminAccount(
+    @Param('id') id: string,
+    @Body() adminUpdateAccountDto: AdminUpdateAccountDto
+  ): Promise<Account> {
+    return this.accountService.updateAccount(id, adminUpdateAccountDto);
+  }
+
+  @Put('/admin/:id/upload-avatar')
+  @UseGuards(new RoleGuard([Role.Admin]))
+  @UseInterceptors(FileInterceptor('file'))
+  async uploadAdminAvatar(
+    @Param('id') id: string,
+    @UploadedFile() file: Express.Multer.File
+  ): Promise<Account> {
+    try {
+      const result = await this.accountService.uploadToCloudinary(file);
+      return this.accountService.updateAvatarById(id, result.secure_url);
+    } catch (error) {
+      throw new Error('Failed to upload avatar');
+    }
+  }
+
+  @Delete('/admin/:id')
+  @UseGuards(new RoleGuard([Role.Admin]))
+  async deleteAdminAccount(@Param('id') id: string): Promise<string> {
+    return this.accountService.deleteAccount(id);
   }
 }

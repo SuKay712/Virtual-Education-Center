@@ -2,6 +2,7 @@ import {
   BadRequestException,
   Injectable,
   NotFoundException,
+  ForbiddenException,
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
@@ -11,9 +12,12 @@ import { I18nService } from 'nestjs-i18n';
 import { clean, PasswordUtils } from '../../common';
 import { log } from 'console';
 import { PasswordUpdateDto } from './dtos/passwordUpdateDto';
-import { CloudinaryConfig } from 'src/common/config/cloudinary.config';
+import { CloudinaryConfig } from '../../common/config/cloudinary.config';
 import { v2 as cloudinary } from 'cloudinary';
 import { format, addDays, startOfWeek, endOfWeek, nextMonday, parse, isSameDay } from 'date-fns';
+import { CreateAccountDto } from './dtos/createAccountDto';
+import { AdminUpdateAccountDto } from './dtos/adminUpdateAccountDto';
+import { Role } from 'src/common/enums';
 
 @Injectable()
 export class AccountService {
@@ -196,5 +200,79 @@ export class AccountService {
     }
 
     return bookings;
+  }
+
+  async getAllAccounts(): Promise<Account[]> {
+    return this.accountRepo.find({
+      select: {
+        id: true,
+        email: true,
+        name: true,
+        gender: true,
+        birthday: true,
+        phone: true,
+        avatar: true,
+        address: true,
+        isActived: true,
+        role: true,
+        created_at: true,
+        updated_at: true
+      }
+    });
+  }
+
+  async createAccount(createAccountDto: CreateAccountDto): Promise<Account> {
+    const { email, password, confirmPassword, isActived, role } = createAccountDto;
+
+    // Check if email already exists
+    const existingAccount = await this.findByEmail(email);
+    if (existingAccount) {
+      throw new BadRequestException('Email already exists');
+    }
+
+    // Validate password match
+    if (password !== confirmPassword) {
+      throw new BadRequestException('Password and confirm password do not match');
+    }
+
+    const newAccount = this.accountRepo.create({
+      email,
+      password: PasswordUtils.hashPassword(password),
+      isActived,
+      role
+    });
+
+    return this.accountRepo.save(newAccount);
+  }
+
+  async updateAccount(id: string, adminUpdateAccountDto: AdminUpdateAccountDto): Promise<Account> {
+    const account = await this.accountRepo.findOne({ where: { id: parseInt(id) } });
+    if (!account) {
+      throw new NotFoundException('Account not found');
+    }
+
+    // Update only the fields that are provided
+    Object.assign(account, adminUpdateAccountDto);
+    return this.accountRepo.save(account);
+  }
+
+  async updateAvatarById(id: string, avatarUrl: string): Promise<Account> {
+    const account = await this.accountRepo.findOne({ where: { id: parseInt(id) } });
+    if (!account) {
+      throw new NotFoundException('Account not found');
+    }
+
+    account.avatar = avatarUrl;
+    return this.accountRepo.save(account);
+  }
+
+  async deleteAccount(id: string): Promise<string> {
+    const account = await this.accountRepo.findOne({ where: { id: parseInt(id) } });
+    if (!account) {
+      throw new NotFoundException('Account not found');
+    }
+
+    await this.accountRepo.remove(account);
+    return 'Account deleted successfully';
   }
 }

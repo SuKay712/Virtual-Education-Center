@@ -1,31 +1,27 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, AfterLoad } from 'typeorm';
+// src/entities/theory.entity.ts
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, CreateDateColumn, UpdateDateColumn } from 'typeorm';
 import { Lecture } from './lecture.entity';
-import { format } from 'date-fns';
 
-@Entity('theory')
+@Entity()
 export class Theory {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
-  content: string;
+  @Column('longblob')
+  content: Buffer;
 
-  @ManyToOne(() => Lecture, (lecture) => lecture.theories)
+  @Column()
+  name: string;
+
+  @Column({ name: 'mime_type' })
+  mimeType: string;
+
+  @ManyToOne(() => Lecture, lecture => lecture.theories)
   lecture: Lecture;
 
-  @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
+  @CreateDateColumn()
   created_at: Date;
 
-  @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP', onUpdate: 'CURRENT_TIMESTAMP' })
+  @UpdateDateColumn()
   updated_at: Date;
-
-  @AfterLoad()
-  transformDates() {
-    if (this.created_at) {
-      this.created_at = format(new Date(this.created_at), 'HH:mm dd/MM/yyyy') as any;
-    }
-    if (this.updated_at) {
-      this.updated_at = format(new Date(this.updated_at), 'HH:mm dd/MM/yyyy') as any;
-    }
-  }
 }

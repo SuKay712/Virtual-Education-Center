@@ -11,6 +11,10 @@ import { FreeTimeModule } from './modules/free-time/free-time.module';
 import { PaymentModule } from './modules/payment/payment.module';
 import { BillModule } from './modules/bill/bill.module';
 import { ClassModule } from './modules/class/class.module';
+import { CourseModule } from './modules/course/course.module';
+import { LectureModule } from './modules/lecture/lecture.module';
+import { TheoryModule } from './modules/theory/theory.module';
+
 @Module({
   imports: [
     AuthModule,
@@ -21,6 +25,9 @@ import { ClassModule } from './modules/class/class.module';
     PaymentModule,
     BillModule,
     ClassModule,
+    CourseModule,
+    LectureModule,
+    TheoryModule,
     ConfigModule.forRoot({ isGlobal: true }),
   ],
   controllers: [AppController],
