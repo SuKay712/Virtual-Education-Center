@@ -1,11 +1,13 @@
 import { Role, Gender } from '../common';
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany, AfterLoad } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany, ManyToMany, AfterLoad } from 'typeorm';
 import { Chat } from './chat.entity';
 import { Bill } from './bill.entity';
 import { Notification } from './notification.entity';
 import { Booking } from './booking.entity';
 import { Class } from './class.entity';
 import { FreeTime } from './free_time.entity';
+import { Chatbox } from './chatbox.entity';
+import { ChatGroup } from './chat-group.entity';
 import { format } from 'date-fns';
 
 @Entity('account')
@@ -69,6 +71,12 @@ export class Account {
 
   @OneToMany(() => FreeTime, (freeTime) => freeTime.teacher)
   freeTimes: FreeTime[];
+
+  @OneToMany(() => Chatbox, (chatbox) => chatbox.student)
+  studentChatboxes: Chatbox[];
+
+  @ManyToMany(() => ChatGroup, (chatGroup) => chatGroup.members)
+  chatGroups: ChatGroup[];
 
   @AfterLoad()
   transformDates() {

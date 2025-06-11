@@ -64,6 +64,7 @@ export class AuthService {
     return {
       msg: 'User has been login successfully!',
       acess_token,
+      id: accountByEmail.id,
       name: accountByEmail.name,
       email: accountByEmail.email,
       phone: accountByEmail.phone,

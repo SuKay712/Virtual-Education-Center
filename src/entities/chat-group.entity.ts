@@ -1,28 +1,32 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany, ManyToOne, AfterLoad } from 'typeorm';
-import { Chat } from './chat.entity';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToMany, JoinTable, OneToMany, AfterLoad } from 'typeorm';
 import { Account } from './account.entity';
-import { ChatGroup } from './chat-group.entity';
+import { Chatbox } from './chatbox.entity';
 import { format } from 'date-fns';
 
-@Entity('chatbox')
-export class Chatbox {
+@Entity('chat_group')
+export class ChatGroup {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: 'text', nullable: true })
-  content: string;
+  @Column()
+  name: string;
 
-  @OneToMany(() => Chat, (chat) => chat.chatbox)
-  chats: Chat[];
+  @ManyToMany(() => Account)
+  @JoinTable({
+    name: 'chat_group_members',
+    joinColumn: {
+      name: 'chat_group_id',
+      referencedColumnName: 'id',
+    },
+    inverseJoinColumn: {
+      name: 'account_id',
+      referencedColumnName: 'id',
+    },
+  })
+  members: Account[];
 
-  @ManyToOne(() => Account, (account) => account.studentChatboxes)
-  student: Account;
-
-  @ManyToOne(() => Account)
-  admin: Account;
-
-  @ManyToOne(() => ChatGroup, (chatGroup) => chatGroup.chatboxes)
-  chatGroup: ChatGroup;
+  @OneToMany(() => Chatbox, (chatbox) => chatbox.chatGroup)
+  chatboxes: Chatbox[];
 
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   created_at: Date;

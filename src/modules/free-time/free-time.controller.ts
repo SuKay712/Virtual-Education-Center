@@ -2,6 +2,8 @@ import { Controller, Post, Body, Get, Param, UseGuards, Request, Req, Put } from
 import { FreeTimeService } from './free-time.service';
 import { CreateFreeTimeDto } from './dto/create-free-time.dto';
 import { AuthGuard } from 'src/common/guards/auth.guard';
+import { RoleGuard } from 'src/common/guards/role.guard';
+import { Role } from 'src/common/enums';
 
 @Controller('free-times')
 @UseGuards(AuthGuard)
@@ -18,6 +20,12 @@ export class FreeTimeController {
   async list(@Req() req) {
     const currentAccount = req.currentAccount
     return this.freeTimeService.list(currentAccount.id);
+  }
+
+  @Get('/admin')
+  @UseGuards(new RoleGuard([Role.Admin]))
+  async getAllFreeTimes() {
+    return this.freeTimeService.getAllFreeTimes();
   }
 
   @Put('/:id/update')

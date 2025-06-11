@@ -5,12 +5,14 @@ import { BookingController } from './booking.controller';
 import { BookingService } from './booking.service';
 import { NotificationModule } from '../notification/notification.module';
 import { AccountModule } from '../account/account.module';
+import { FreeTimeModule } from '../free-time/free-time.module';
 
 @Module({
   imports: [
     TypeOrmModule.forFeature([Booking, Account, Class]),
     NotificationModule,
     AccountModule,
+    FreeTimeModule,
   ],
   controllers: [BookingController],
   providers: [BookingService],

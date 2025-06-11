@@ -222,8 +222,39 @@ export class FreeTimeService {
   }
 
   async list(teacherId: number): Promise<FreeTime[]> {
-    return this.freeTimeRepository.find({
+    console.log('Getting free times for teacher:', teacherId);
+    const freeTimes = await this.freeTimeRepository.find({
       where: { teacher: { id: teacherId } },
+      order: {
+        time_start: 'ASC'
+      }
     });
+    console.log('Found free times:', freeTimes.map(ft => ({
+      id: ft.id,
+      start: ft.time_start,
+      end: ft.time_end
+    })));
+    return freeTimes;
+  }
+
+  async getAllFreeTimes(): Promise<FreeTime[]> {
+    return this.freeTimeRepository.find({
+      relations: ['teacher'],
+      order: {
+        time_start: 'DESC'
+      }
+    });
+  }
+
+  async delete(freeTimeId: number): Promise<void> {
+    const freeTime = await this.freeTimeRepository.findOne({
+      where: { id: freeTimeId }
+    });
+
+    if (!freeTime) {
+      throw new NotFoundException('Free time not found');
+    }
+
+    await this.freeTimeRepository.remove(freeTime);
   }
 }

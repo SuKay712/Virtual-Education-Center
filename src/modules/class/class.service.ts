@@ -1,8 +1,10 @@
 import { Injectable, NotFoundException, BadRequestException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Class, Course, Lecture, Account } from '../../entities';
+import { Class, Course, Lecture, Account, Booking } from '../../entities';
 import { addDays, addWeeks, setHours, setMinutes, isWithinInterval, setSeconds, setMilliseconds, nextMonday } from 'date-fns';
+import { UpdateClassDto } from './dtos/update-class.dto';
+import { In } from 'typeorm';
 
 @Injectable()
 export class ClassService {
@@ -15,6 +17,8 @@ export class ClassService {
     private readonly lectureRepository: Repository<Lecture>,
     @InjectRepository(Account)
     private readonly accountRepository: Repository<Account>,
+    @InjectRepository(Booking)
+    private readonly bookingRepository: Repository<Booking>,
   ) {}
 
   private async hasTimeConflict(
@@ -159,5 +163,109 @@ export class ClassService {
     }
 
     return this.classRepository.save(classes);
+  }
+
+  async getAllClassesWithBookings() {
+    return this.classRepository.find({
+      relations: [
+        'lecture',
+        'lecture.course',
+        'student',
+        'bookings',
+        'bookings.teacher',
+        'meeting'
+      ],
+      order: {
+        time_start: 'DESC'
+      }
+    });
+  }
+
+  private parseTime(timeStr: string): Date {
+    const [time, date] = timeStr.split(' ');
+    const [hours, minutes] = time.split(':');
+    const [day, month, year] = date.split('/');
+    return new Date(
+      parseInt(year),
+      parseInt(month) - 1,
+      parseInt(day),
+      parseInt(hours),
+      parseInt(minutes)
+    );
+  }
+
+  async updateClass(classId: number, updateClassDto: UpdateClassDto): Promise<Class> {
+    // Find the class with its relations
+    const classEntity = await this.classRepository.findOne({
+      where: { id: classId },
+      relations: ['student', 'bookings', 'bookings.teacher'],
+    });
+
+    if (!classEntity) {
+      throw new NotFoundException('Class not found');
+    }
+    console.log(classEntity);
+
+    // Update time if provided
+    if (updateClassDto.time_start || updateClassDto.time_end) {
+      const newStart = updateClassDto.time_start ? this.parseTime(updateClassDto.time_start) : new Date(classEntity.time_start);
+      const newEnd = updateClassDto.time_end ? this.parseTime(updateClassDto.time_end) : new Date(classEntity.time_end);
+
+      // Validate time range
+      if (newStart >= newEnd) {
+        throw new BadRequestException('Time start must be less than time end');
+      }
+
+      classEntity.time_start = newStart;
+      classEntity.time_end = newEnd;
+    }
+
+    console.log(updateClassDto.teacherIds);
+    // Add new bookings if teacherIds are provided
+    if (updateClassDto.teacherIds && updateClassDto.teacherIds.length > 0) {
+      // Get all teachers
+      const teachers = await this.accountRepository.findBy({
+        id: In(updateClassDto.teacherIds)
+      });
+
+      if (teachers.length !== updateClassDto.teacherIds.length) {
+        throw new NotFoundException('One or more teachers not found');
+      }
+
+      // Check for existing bookings
+      const existingTeacherIds = classEntity.bookings.map(booking => booking.teacher.id);
+      const duplicateTeacherIds = updateClassDto.teacherIds.filter(id => existingTeacherIds.includes(id));
+
+      if (duplicateTeacherIds.length > 0) {
+        throw new BadRequestException(
+          `Teachers with IDs [${duplicateTeacherIds.join(', ')}] already have bookings for this class`
+        );
+      }
+
+      // Create bookings for each teacher
+      const bookings = teachers.map(teacher =>
+        this.bookingRepository.create({
+          classEntity: classEntity,
+          teacher,
+          status: 0,
+          payment: false,
+        })
+      );
+
+      const savedBookings = await this.bookingRepository.save(bookings);
+      console.log(savedBookings);
+
+      // Add the new bookings to the class's bookings array
+      classEntity.bookings = [...classEntity.bookings, ...savedBookings];
+    }
+
+    // Save the updated class with its new bookings
+    const updatedClass = await this.classRepository.save(classEntity);
+    console.log(updatedClass);
+    // Return the class with all its relations
+    return this.classRepository.findOne({
+      where: { id: updatedClass.id },
+      relations: ['student', 'bookings', 'bookings.teacher', 'lecture', 'lecture.course'],
+    });
   }
 }
