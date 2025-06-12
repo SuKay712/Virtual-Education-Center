@@ -1,40 +1,35 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Notification, Account } from '../../entities';
+import { Notification } from '../../entities';
+import { NotificationGateway } from './notification.gateway';
 
 @Injectable()
 export class NotificationService {
   constructor(
     @InjectRepository(Notification)
     private readonly notificationRepo: Repository<Notification>,
-    @InjectRepository(Account)
-    private readonly accountRepo: Repository<Account>,
+    private readonly notificationGateway: NotificationGateway,
   ) {}
 
-  async createNotification(accountId: number, content: string): Promise<Notification> {
-    const account = await this.accountRepo.findOne({
-      where: { id: accountId }
-    });
-
-    if (!account) {
-      throw new Error('Account not found');
-    }
-
+  async createNotification(userId: number, content: string): Promise<Notification> {
     const notification = this.notificationRepo.create({
-      account,
-      content
+      account: { id: userId },
+      content,
     });
+    console.log(notification);
+    const savedNotification = await this.notificationRepo.save(notification);
 
-    return this.notificationRepo.save(notification);
+    // Gửi thông báo realtime qua WebSocket
+    this.notificationGateway.sendNotificationToUser(userId, content);
+
+    return savedNotification;
   }
 
-  async getNotificationsByAccountId(accountId: number): Promise<Notification[]> {
+  async getNotificationsByUserId(userId: number): Promise<Notification[]> {
     return this.notificationRepo.find({
-      where: { account: { id: accountId } },
-      order: {
-        created_at: 'DESC'
-      }
+      where: { account: { id: userId } },
+      order: { created_at: 'DESC' },
     });
   }
 }

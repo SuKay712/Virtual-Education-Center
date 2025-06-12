@@ -7,6 +7,7 @@ import { CreateBookingDto } from './dtos/create-booking.dto';
 import { BookingStatus } from '../../common/enums/booking-status.enum';
 import { NotificationService } from '../notification/notification.service';
 import { FreeTimeService } from '../free-time/free-time.service';
+import { NotificationGateway } from '../notification/notification.gateway';
 
 @Injectable()
 export class BookingService {
@@ -19,6 +20,7 @@ export class BookingService {
     private readonly classRepo: Repository<Class>,
     private readonly notificationService: NotificationService,
     private readonly freeTimeService: FreeTimeService,
+    private readonly notificationGateway: NotificationGateway,
   ) {}
 
   async createBooking(createBookingDto: CreateBookingDto): Promise<Booking[]> {
@@ -64,10 +66,14 @@ export class BookingService {
 
     // Create notifications for each teacher
     for (const booking of savedBookings) {
-      await this.notificationService.createNotification(
+      const notification = await this.notificationService.createNotification(
         booking.teacher.id,
-        `You have been invited to teach a class: ${classEntity.lecture.name} at ${classEntity.time_start}`
+        `Bạn vừa được tạo booking cho lớp học: ${classEntity.lecture.name} tại ${classEntity.time_start}`
       );
+
+      console.log(notification);
+      // Gửi thông báo realtime qua WebSocket
+      this.notificationGateway.sendNotificationToUser(booking.teacher.id, notification.content);
     }
 
     return savedBookings;
@@ -95,6 +101,16 @@ export class BookingService {
       if (hasAcceptedBooking) {
         throw new BadRequestException('This class already has an accepted booking');
       }
+
+      // Kiểm tra giáo viên đã có booking accepted nào trùng giờ chưa
+      const teacherAcceptedBookings = await this.bookingRepo.find({
+        where: {
+          teacher: { id: booking.teacher.id },
+          status: 1, // đã accept
+        },
+        relations: ['classEntity'],
+      });
+
 
       // Get teacher's free times
       const teacherFreeTimes = await this.freeTimeService.list(booking.teacher.id);
@@ -164,24 +180,31 @@ export class BookingService {
         }
       };
 
+      const newClassStart = parseTimeString(booking.classEntity.time_start);
+      const newClassEnd = parseTimeString(booking.classEntity.time_end);
+
+      const isOverlapping = teacherAcceptedBookings.some(b => {
+        if (b.classEntity.id === booking.classEntity.id) return false; // bỏ qua chính booking này
+        const start = parseTimeString(b.classEntity.time_start);
+        const end = parseTimeString(b.classEntity.time_end);
+        return (newClassStart < end && newClassEnd > start);
+      });
+
+      if (isOverlapping) {
+        throw new BadRequestException('Bạn đã nhận lớp học khác trong khung giờ này rồi');
+      }
+
       const classStart = parseTimeString(booking.classEntity.time_start);
       const classEnd = parseTimeString(booking.classEntity.time_end);
 
-      console.log('Class times:', {
-        start: classStart.toLocaleString('en-US', { timeZone: 'Asia/Ho_Chi_Minh' }),
-        end: classEnd.toLocaleString('en-US', { timeZone: 'Asia/Ho_Chi_Minh' })
-      });
+
 
       // Find any free time that overlaps with the class time
       const overlappingFreeTime = teacherFreeTimes.find(freeTime => {
         const freeTimeStart = parseTimeString(freeTime.time_start);
         const freeTimeEnd = parseTimeString(freeTime.time_end);
 
-        console.log('Checking free time:', {
-          id: freeTime.id,
-          start: freeTimeStart.toLocaleString('en-US', { timeZone: 'Asia/Ho_Chi_Minh' }),
-          end: freeTimeEnd.toLocaleString('en-US', { timeZone: 'Asia/Ho_Chi_Minh' })
-        });
+
 
         // Check if there's any overlap between the free time and class time
         return (classStart <= freeTimeEnd && classEnd >= freeTimeStart);
@@ -220,7 +243,7 @@ export class BookingService {
     if (updatedBooking.status === 1) {
       await this.notificationService.createNotification(
         booking.classEntity.student.id,
-        `Your class "${booking.classEntity.lecture.name}" has been accepted`
+        `Lớp học "${booking.classEntity.lecture.name}" đã được chấp nhận`
       );
     }
 
@@ -238,7 +261,7 @@ export class BookingService {
           time_end: LessThan(currentDate)
         }
       },
-      relations: ['classEntity', 'classEntity.lecture', 'classEntity.student'],
+      relations: ['classEntity', 'classEntity.lecture', 'classEntity.student',],
       order: {
         created_at: 'DESC'
       }
@@ -272,6 +295,16 @@ export class BookingService {
       if (hasAcceptedBooking) {
         throw new BadRequestException('This class already has an accepted booking');
       }
+
+      // Kiểm tra giáo viên đã có booking accepted nào trùng giờ chưa
+      const teacherAcceptedBookings = await this.bookingRepo.find({
+        where: {
+          teacher: { id: booking.teacher.id },
+          status: 1, // đã accept
+        },
+        relations: ['classEntity'],
+      });
+
 
       // Get teacher's free times
       const teacherFreeTimes = await this.freeTimeService.list(booking.teacher.id);
@@ -341,6 +374,21 @@ export class BookingService {
         }
       };
 
+
+      const newClassStart = parseTimeString(booking.classEntity.time_start);
+      const newClassEnd = parseTimeString(booking.classEntity.time_end);
+
+      const isOverlapping = teacherAcceptedBookings.some(b => {
+        if (b.classEntity.id === booking.classEntity.id) return false; // bỏ qua chính booking này
+        const start = parseTimeString(b.classEntity.time_start);
+        const end = parseTimeString(b.classEntity.time_end);
+        return (newClassStart < end && newClassEnd > start);
+      });
+
+      if (isOverlapping) {
+        throw new BadRequestException('Bạn đã nhận lớp học khác trong khung giờ này rồi');
+      }
+
       const classStart = parseTimeString(booking.classEntity.time_start);
       const classEnd = parseTimeString(booking.classEntity.time_end);
 
@@ -393,7 +441,7 @@ export class BookingService {
     if (updatedBooking.status === 1) {
       await this.notificationService.createNotification(
         booking.classEntity.student.id,
-        `Your class "${booking.classEntity.lecture.name}" has been accepted`
+        `Lớp học "${booking.classEntity.lecture.name}" đã được chấp nhận`
       );
     }
 

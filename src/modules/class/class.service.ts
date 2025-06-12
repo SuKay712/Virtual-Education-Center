@@ -1,10 +1,12 @@
-import { Injectable, NotFoundException, BadRequestException } from '@nestjs/common';
+import { Injectable, NotFoundException, BadRequestException, ForbiddenException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { Repository, In } from 'typeorm';
 import { Class, Course, Lecture, Account, Booking } from '../../entities';
 import { addDays, addWeeks, setHours, setMinutes, isWithinInterval, setSeconds, setMilliseconds, nextMonday } from 'date-fns';
 import { UpdateClassDto } from './dtos/update-class.dto';
-import { In } from 'typeorm';
+import { UpdateClassRatingDto } from './dtos/update-class-rating.dto';
+import { NotificationService } from '../notification/notification.service';
+import { NotificationGateway } from '../notification/notification.gateway';
 
 @Injectable()
 export class ClassService {
@@ -19,6 +21,8 @@ export class ClassService {
     private readonly accountRepository: Repository<Account>,
     @InjectRepository(Booking)
     private readonly bookingRepository: Repository<Booking>,
+    private readonly notificationService: NotificationService,
+    private readonly notificationGateway: NotificationGateway,
   ) {}
 
   private async hasTimeConflict(
@@ -198,13 +202,12 @@ export class ClassService {
     // Find the class with its relations
     const classEntity = await this.classRepository.findOne({
       where: { id: classId },
-      relations: ['student', 'bookings', 'bookings.teacher'],
+      relations: ['student', 'bookings', 'bookings.teacher', 'lecture'],
     });
 
     if (!classEntity) {
       throw new NotFoundException('Class not found');
     }
-    console.log(classEntity);
 
     // Update time if provided
     if (updateClassDto.time_start || updateClassDto.time_end) {
@@ -218,9 +221,15 @@ export class ClassService {
 
       classEntity.time_start = newStart;
       classEntity.time_end = newEnd;
+
+      // Tạo thông báo cho student khi thời gian thay đổi
+      const notification = await this.notificationService.createNotification(
+        classEntity.student.id,
+        `Thời gian lớp học "${classEntity.lecture.name}" đã được cập nhật thành ${newStart.toLocaleString()} - ${newEnd.toLocaleString()}`
+      );
+      this.notificationGateway.sendNotificationToUser(classEntity.student.id, notification.content);
     }
 
-    console.log(updateClassDto.teacherIds);
     // Add new bookings if teacherIds are provided
     if (updateClassDto.teacherIds && updateClassDto.teacherIds.length > 0) {
       // Get all teachers
@@ -253,7 +262,15 @@ export class ClassService {
       );
 
       const savedBookings = await this.bookingRepository.save(bookings);
-      console.log(savedBookings);
+
+      // Tạo thông báo cho mỗi giáo viên mới
+      for (const booking of savedBookings) {
+        const notification = await this.notificationService.createNotification(
+          booking.teacher.id,
+          `Bạn vừa được thêm vào lớp học: ${classEntity.lecture.name}`
+        );
+        this.notificationGateway.sendNotificationToUser(booking.teacher.id, notification.content);
+      }
 
       // Add the new bookings to the class's bookings array
       classEntity.bookings = [...classEntity.bookings, ...savedBookings];
@@ -261,11 +278,46 @@ export class ClassService {
 
     // Save the updated class with its new bookings
     const updatedClass = await this.classRepository.save(classEntity);
-    console.log(updatedClass);
+
     // Return the class with all its relations
     return this.classRepository.findOne({
       where: { id: updatedClass.id },
       relations: ['student', 'bookings', 'bookings.teacher', 'lecture', 'lecture.course'],
     });
+  }
+
+  async updateClassRating(classId: number, teacherId: number, updateDto: UpdateClassRatingDto): Promise<Class> {
+    // Find the class with its relations
+    const classEntity = await this.classRepository.findOne({
+      where: { id: classId },
+      relations: ['bookings', 'bookings.teacher'],
+    });
+
+    if (!classEntity) {
+      throw new NotFoundException('Class not found');
+    }
+
+    // Check if the teacher is assigned to this class
+    const teacherBooking = classEntity.bookings.find(booking =>
+      booking.teacher.id === teacherId && booking.status === 1
+    );
+
+    if (!teacherBooking) {
+      throw new ForbiddenException('You are not authorized to rate this class');
+    }
+
+    // Check if the class has ended
+    const classEndTime = new Date(classEntity.time_end);
+    const currentTime = new Date();
+
+    if (classEndTime > currentTime) {
+      throw new BadRequestException('Cannot rate a class that has not ended yet');
+    }
+
+    // Update rating and comment
+    classEntity.rating = updateDto.rating;
+    classEntity.comment = updateDto.comment;
+
+    return this.classRepository.save(classEntity);
   }
 }

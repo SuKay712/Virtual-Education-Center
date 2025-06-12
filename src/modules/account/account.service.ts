@@ -189,7 +189,7 @@ export class AccountService {
   async getBookingsByAccountId(accountId: number): Promise<Booking[]> {
     const bookings = await this.bookingRepo.find({
       where: { teacher: { id: accountId } },
-      relations: ['teacher' ,'classEntity', 'classEntity.lecture', 'classEntity.bookings', 'classEntity.bookings.teacher', 'classEntity.lecture.course', 'classEntity.student'],
+      relations: ['teacher' ,'classEntity', 'classEntity.lecture.theories', 'classEntity.bookings', 'classEntity.bookings.teacher', 'classEntity.lecture.course', 'classEntity.student'],
       order: {
         created_at: 'DESC'
       }

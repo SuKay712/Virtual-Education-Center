@@ -3,6 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Chatbox, Chat, ChatGroup, Account } from '../../entities';
 import { Role } from '../../common/enums';
+import { ChatGateway } from './chat.gateway';
 
 @Injectable()
 export class ChatService {
@@ -15,6 +16,7 @@ export class ChatService {
     private chatGroupRepository: Repository<ChatGroup>,
     @InjectRepository(Account)
     private accountRepository: Repository<Account>,
+    private readonly chatGateway: ChatGateway,
   ) {}
 
   async createChatbox(user: Account) {
@@ -169,9 +171,11 @@ export class ChatService {
   }
 
   async sendMessage(chatboxId: number, senderId: number, content: string) {
+    console.log('Sending message:', { chatboxId, senderId, content });
+
     const chatbox = await this.chatboxRepository.findOne({
       where: { id: chatboxId },
-      relations: ['student', 'admin'],
+      relations: ['student', 'admin', 'chatGroup'],
     });
 
     if (!chatbox) {
@@ -192,6 +196,34 @@ export class ChatService {
       chatbox,
     });
 
-    return this.chatRepository.save(chat);
+    const savedChat = await this.chatRepository.save(chat);
+    console.log('Message saved:', savedChat);
+
+    // Gửi tin nhắn realtime qua WebSocket
+    if (sender.role === Role.Admin) {
+      // Nếu người gửi là admin, gửi cho student
+      this.chatGateway.sendMessageToUser(chatbox.student.id, savedChat);
+    } else if (sender.role === Role.Teacher) {
+      // Nếu người gửi là teacher, gửi cho tất cả admin
+      const admins = await this.accountRepository.find({
+        where: { role: Role.Admin }
+      });
+      for (const admin of admins) {
+        this.chatGateway.sendMessageToUser(admin.id, savedChat);
+      }
+    } else {
+      // Nếu người gửi là student, gửi cho tất cả admin
+      const admins = await this.accountRepository.find({
+        where: { role: Role.Admin }
+      });
+      for (const admin of admins) {
+        this.chatGateway.sendMessageToUser(admin.id, savedChat);
+      }
+    }
+
+    // Gửi tin nhắn cho người gửi để confirm
+    this.chatGateway.sendMessageToUser(senderId, savedChat);
+
+    return savedChat;
   }
 }
