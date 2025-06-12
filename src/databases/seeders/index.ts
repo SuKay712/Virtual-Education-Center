@@ -3,9 +3,8 @@ import { DataSource } from 'typeorm';
 import CourseSeeder from './course.seeder';
 import * as entities from '../../entities';
 import * as dotenv from 'dotenv';
-import LectureSeeder from './lecture.seeder';
-import ClassSeeder from './class.seeder';
 import BookingSeeder from './booking.seeder';
+import RoadmapSeeder from './roadmap.seeder';
 
 dotenv.config();
 
@@ -23,10 +22,11 @@ async function runSeeders() {
   await dataSource.initialize();
 
   const seeders = [
+    new RoadmapSeeder(dataSource),
     // new CourseSeeder(dataSource),
     // new LectureSeeder(dataSource),
     // new ClassSeeder(dataSource),
-    new BookingSeeder(dataSource),
+    // new BookingSeeder(dataSource),
   ];
 
   for (const seeder of seeders) {

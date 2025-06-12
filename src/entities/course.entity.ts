@@ -1,7 +1,8 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany, AfterLoad } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany, AfterLoad, CreateDateColumn, UpdateDateColumn, ManyToOne, JoinColumn } from 'typeorm';
 import { Lecture } from './lecture.entity';
 import { Bill } from './bill.entity';
 import { format } from 'date-fns';
+import { Roadmap } from './roadmap.entity';
 
 @Entity('course')
 export class Course {
@@ -20,10 +21,16 @@ export class Course {
   @Column({ nullable: true })
   description: string;
 
-  @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
+  @Column({ nullable: true })
+  roadmap_id: number;
+
+  @ManyToOne(() => Roadmap, roadmap => roadmap.courses)
+  roadmap: Roadmap;
+
+  @CreateDateColumn()
   created_at: Date;
 
-  @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP', onUpdate: 'CURRENT_TIMESTAMP' })
+  @UpdateDateColumn()
   updated_at: Date;
 
   @OneToMany(() => Lecture, (lecture) => lecture.course)

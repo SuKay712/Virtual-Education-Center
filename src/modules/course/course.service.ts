@@ -73,4 +73,10 @@ export class CourseService {
     const course = await this.findOne(id);
     await this.courseRepo.remove(course);
   }
+
+  async getPublicCourses() {
+    return this.courseRepo.find({
+      select: ['id', 'name', 'description'],
+    });
+  }
 }

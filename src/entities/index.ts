@@ -11,3 +11,5 @@ export * from './theory.entity';
 export * from './chatbox.entity';
 export * from './free_time.entity';
 export * from './chat-group.entity';
+export * from './roadmap.entity';
+export * from './contact.entity';

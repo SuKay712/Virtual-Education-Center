@@ -1,123 +1,752 @@
 [
-  {"id": 1, "name": "Lesson 1: Greetings and Introductions", "courseId": 1, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 2, "name": "Lesson 2: Asking for Information", "courseId": 1, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 3, "name": "Lesson 3: Ordering Food and Drinks", "courseId": 1, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 4, "name": "Lesson 4: Shopping Conversations", "courseId": 1, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 5, "name": "Lesson 5: Making Plans", "courseId": 1, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 6, "name": "Lesson 6: Talking About Hobbies", "courseId": 1, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 7, "name": "Lesson 7: Describing Daily Routines", "courseId": 1, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 8, "name": "Lesson 8: Handling Emergencies", "courseId": 1, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-
-  {"id": 9, "name": "Lesson 1: Writing Professional Emails", "courseId": 2, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 10, "name": "Lesson 2: Conducting Meetings", "courseId": 2, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 11, "name": "Lesson 3: Giving Presentations", "courseId": 2, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 12, "name": "Lesson 4: Negotiation Skills", "courseId": 2, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 13, "name": "Lesson 5: Telephone Etiquette", "courseId": 2, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 14, "name": "Lesson 6: Business Vocabulary", "courseId": 2, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 15, "name": "Lesson 7: Writing Reports", "courseId": 2, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 16, "name": "Lesson 8: Cross-Cultural Communication", "courseId": 2, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 17, "name": "Lesson 9: Job Interviews", "courseId": 2, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 18, "name": "Lesson 10: Networking Skills", "courseId": 2, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 19, "name": "Lesson 11: Proposal Writing", "courseId": 2, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 20, "name": "Lesson 12: Business Case Studies", "courseId": 2, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-
-  {"id": 21, "name": "Lesson 1: Introduction to IELTS", "courseId": 3, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 22, "name": "Lesson 2: Listening Strategies", "courseId": 3, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 23, "name": "Lesson 3: Reading Comprehension", "courseId": 3, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 24, "name": "Lesson 4: Writing Task 1 - Graphs", "courseId": 3, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 25, "name": "Lesson 5: Writing Task 2 - Essays", "courseId": 3, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 26, "name": "Lesson 6: Speaking Part 1", "courseId": 3, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 27, "name": "Lesson 7: Speaking Part 2", "courseId": 3, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 28, "name": "Lesson 8: Speaking Part 3", "courseId": 3, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 29, "name": "Lesson 9: Mock Test - Listening", "courseId": 3, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 30, "name": "Lesson 10: Mock Test - Reading", "courseId": 3, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 31, "name": "Lesson 11: Mock Test - Writing", "courseId": 3, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 32, "name": "Lesson 12: Mock Test - Speaking", "courseId": 3, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 33, "name": "Lesson 13: Time Management Tips", "courseId": 3, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 34, "name": "Lesson 14: Common Mistakes", "courseId": 3, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 35, "name": "Lesson 15: Final Practice Test", "courseId": 3, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-
-  {"id": 36, "name": "Lesson 1: Parts of Speech", "courseId": 4, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 37, "name": "Lesson 2: Present Tenses", "courseId": 4, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 38, "name": "Lesson 3: Past Tenses", "courseId": 4, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 39, "name": "Lesson 4: Future Tenses", "courseId": 4, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 40, "name": "Lesson 5: Sentence Structure", "courseId": 4, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 41, "name": "Lesson 6: Articles and Nouns", "courseId": 4, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 42, "name": "Lesson 7: Prepositions", "courseId": 4, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 43, "name": "Lesson 8: Conditionals", "courseId": 4, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 44, "name": "Lesson 9: Passive Voice", "courseId": 4, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 45, "name": "Lesson 10: Grammar Practice", "courseId": 4, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-
-  {"id": 46, "name": "Lesson 1: Idiomatic Expressions", "courseId": 5, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 47, "name": "Lesson 2: Phrasal Verbs", "courseId": 5, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 48, "name": "Lesson 3: Academic Vocabulary", "courseId": 5, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 49, "name": "Lesson 4: Business Terms", "courseId": 5, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 50, "name": "Lesson 5: Synonyms and Antonyms", "courseId": 5, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 51, "name": "Lesson 6: Collocations", "courseId": 5, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 52, "name": "Lesson 7: Word Formation", "courseId": 5, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 53, "name": "Lesson 8: Contextual Usage", "courseId": 5, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 54, "name": "Lesson 9: Slang and Informal Language", "courseId": 5, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 55, "name": "Lesson 10: Vocabulary Practice", "courseId": 5, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-
-  {"id": 56, "name": "Lesson 1: Booking Accommodations", "courseId": 6, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 57, "name": "Lesson 2: Airport and Immigration", "courseId": 6, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 58, "name": "Lesson 3: Asking for Directions", "courseId": 6, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 59, "name": "Lesson 4: Dining Out", "courseId": 6, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 60, "name": "Lesson 5: Shopping Abroad", "courseId": 6, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 61, "name": "Lesson 6: Tour and Excursion Booking", "courseId": 6, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 62, "name": "Lesson 7: Handling Travel Issues", "courseId": 6, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 63, "name": "Lesson 8: Cultural Etiquette", "courseId": 6, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-
-  {"id": 64, "name": "Lesson 1: TOEFL Overview", "courseId": 7, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 65, "name": "Lesson 2: Reading Section Strategies", "courseId": 7, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 66, "name": "Lesson 3: Listening Section Strategies", "courseId": 7, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 67, "name": "Lesson 4: Speaking Section Overview", "courseId": 7, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 68, "name": "Lesson 5: Writing Section Overview", "courseId": 7, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 69, "name": "Lesson 6: Integrated Writing Task", "courseId": 7, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 70, "name": "Lesson 7: Independent Writing Task", "courseId": 7, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 71, "name": "Lesson 8: Speaking Task 1-2", "courseId": 7, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 72, "name": "Lesson 9: Speaking Task 3-4", "courseId": 7, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-
-  {"id": 73, "name": "Lesson 10: Mock Test - Reading", "courseId": 7, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 74, "name": "Lesson 11: Mock Test - Listening", "courseId": 7, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 75, "name": "Lesson 12: Mock Test - Speaking", "courseId": 7, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 76, "name": "Lesson 13: Mock Test - Writing", "courseId": 7, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 77, "name": "Lesson 14: Final TOEFL Practice", "courseId": 7, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-
-  {"id": 78, "name": "Lesson 1: Vowel Sounds", "courseId": 8, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 79, "name": "Lesson 2: Consonant Sounds", "courseId": 8, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 80, "name": "Lesson 3: Word Stress", "courseId": 8, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 81, "name": "Lesson 4: Sentence Stress", "courseId": 8, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 82, "name": "Lesson 5: Intonation Patterns", "courseId": 8, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 83, "name": "Lesson 6: Linking Words", "courseId": 8, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 84, "name": "Lesson 7: Reductions in Speech", "courseId": 8, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 85, "name": "Lesson 8: Common Pronunciation Errors", "courseId": 8, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 86, "name": "Lesson 9: Practice with Dialogues", "courseId": 8, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 87, "name": "Lesson 10: Pronunciation Assessment", "courseId": 8, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-
-  {"id": 88, "name": "Lesson 1: Academic Writing Basics", "courseId": 9, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 89, "name": "Lesson 2: Essay Structure", "courseId": 9, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 90, "name": "Lesson 3: Thesis Statements", "courseId": 9, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 91, "name": "Lesson 4: Paragraph Development", "courseId": 9, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 92, "name": "Lesson 5: Citations and Referencing", "courseId": 9, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 93, "name": "Lesson 6: Avoiding Plagiarism", "courseId": 9, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 94, "name": "Lesson 7: Research Paper Writing", "courseId": 9, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 95, "name": "Lesson 8: Critical Analysis", "courseId": 9, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 96, "name": "Lesson 9: Editing and Proofreading", "courseId": 9, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 97, "name": "Lesson 10: Argumentative Essays", "courseId": 9, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 98, "name": "Lesson 11: Literature Reviews", "courseId": 9, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 99, "name": "Lesson 12: Academic Writing Practice", "courseId": 9, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-
-  {"id": 100, "name": "Lesson 1: Everyday Conversations", "courseId": 10, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 101, "name": "Lesson 2: Discussing Hobbies", "courseId": 10, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 102, "name": "Lesson 3: Talking About Work", "courseId": 10, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 103, "name": "Lesson 4: Current Events", "courseId": 10, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 104, "name": "Lesson 5: Cultural Discussions", "courseId": 10, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 105, "name": "Lesson 6: Expressing Opinions", "courseId": 10, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 106, "name": "Lesson 7: Agreeing and Disagreeing", "courseId": 10, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 107, "name": "Lesson 8: Storytelling", "courseId": 10, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 108, "name": "Lesson 9: Role-Playing Scenarios", "courseId": 10, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 109, "name": "Lesson 10: Group Discussions", "courseId": 10, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 110, "name": "Lesson 11: Fluency Drills", "courseId": 10, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"},
-  {"id": 111, "name": "Lesson 12: Conversational Practice", "courseId": 10, "created_at": "2025-05-04T00:00:00.000Z", "updated_at": "2025-05-04T00:00:00.000Z"}
+  {
+    "name": "Lesson 1: Chữ cái A, B, C",
+    "description": "Nhận biết và phát âm chuẩn các chữ cái A, B, C với từ vựng minh họa như Apple, Ball, Cat. Học qua hát ABC song, flashcard, trò chơi ngón tay và đóng vai giúp trẻ hứng thú tiếp thu.",
+    "courseId": 1
+  },
+  {
+    "name": "Lesson 2: Chữ cái D, E, F",
+    "description": "Phát âm chuẩn các chữ D, E, F và học từ vựng liên quan như Dog, Elephant, Fish. Sử dụng flashcard, kể chuyện và bài hát chủ đề động vật để phát triển kỹ năng nghe nói.",
+    "courseId": 1
+  },
+  {
+    "name": "Lesson 3: Chữ cái G, H, I",
+    "description": "Phát âm các chữ G, H, I và từ vựng minh họa Goat, Hat, Ice cream. Thực hành qua trò chơi ghép chữ, flashcard và đóng vai để tăng cường nhận biết và phát âm.",
+    "courseId": 1
+  },
+  {
+    "name": "Lesson 4: Chữ cái J, K, L",
+    "description": "Học phát âm chữ J, K, L cùng từ vựng Juice, Kite, Lion. Áp dụng hát bài hát, flashcard và trò chơi tương tác giúp trẻ ghi nhớ hiệu quả.",
+    "courseId": 1
+  },
+  {
+    "name": "Lesson 5: Chữ cái M, N, O",
+    "description": "Phát âm chuẩn các chữ M, N, O và từ vựng Monkey, Nest, Orange. Sử dụng flashcard, kể chuyện và trò chơi nhóm để củng cố kiến thức.",
+    "courseId": 1
+  },
+  {
+    "name": "Lesson 6: Chữ cái P, Q, R",
+    "description": "Học phát âm chữ P, Q, R và từ vựng Penguin, Queen, Rabbit qua bài hát, flashcard và hoạt động đóng vai sinh động.",
+    "courseId": 1
+  },
+  {
+    "name": "Lesson 7: Chữ cái S, T, U",
+    "description": "Phát âm chữ S, T, U và từ vựng Sun, Tiger, Umbrella. Thực hành qua trò chơi nhận diện chữ, flashcard và kể chuyện giúp phát triển kỹ năng ngôn ngữ.",
+    "courseId": 1
+  },
+  {
+    "name": "Lesson 8: Chữ cái V, W, X",
+    "description": "Học phát âm chữ V, W, X cùng từ vựng Violin, Watermelon, Xylophone qua flashcard, bài hát và trò chơi tương tác.",
+    "courseId": 1
+  },
+  {
+    "name": "Lesson 9: Chữ cái Y, Z",
+    "description": "Phát âm chữ Y, Z và từ vựng Yo-yo, Zebra. Học qua hát bài hát, flashcard và đóng vai giúp trẻ ghi nhớ hiệu quả.",
+    "courseId": 1
+  },
+  {
+    "name": "Lesson 10: Ôn tập nhóm chữ cái A-J",
+    "description": "Củng cố nhận biết, phát âm và từ vựng các chữ cái A đến J qua trò chơi flashcard, hát ABC song và hoạt động nhóm vui nhộn.",
+    "courseId": 1
+  },
+  {
+    "name": "Lesson 11: Ôn tập nhóm chữ cái K-T",
+    "description": "Ôn tập phát âm, nhận biết và từ vựng nhóm chữ cái K đến T qua trò chơi, kể chuyện và đóng vai tương tác.",
+    "courseId": 1
+  },
+  {
+    "name": "Lesson 12: Ôn tập nhóm chữ cái U-Z",
+    "description": "Củng cố nhận biết, phát âm và từ vựng nhóm chữ cái U đến Z qua flashcard và trò chơi tương tác giúp trẻ ghi nhớ sâu sắc.",
+    "courseId": 1
+  },
+  {
+    "name": "Lesson 13: Học từ vựng mở rộng theo chữ cái A-J",
+    "description": "Mở rộng từ vựng theo chủ đề đồ vật, động vật và màu sắc liên quan đến chữ cái A-J qua trò chơi ghép từ, flashcard và kể chuyện.",
+    "courseId": 1
+  },
+  {
+    "name": "Lesson 14: Học từ vựng mở rộng theo chữ cái K-T",
+    "description": "Mở rộng từ vựng chủ đề thực phẩm và đồ chơi theo chữ cái K-T qua hoạt động đóng vai và trò chơi hỏi đáp sinh động.",
+    "courseId": 1
+  },
+  {
+    "name": "Lesson 15: Học từ vựng mở rộng theo chữ cái U-Z",
+    "description": "Mở rộng từ vựng chủ đề nghề nghiệp và đồ dùng học tập theo chữ cái U-Z qua trò chơi tương tác và kể chuyện hấp dẫn.",
+    "courseId": 1
+  },
+  {
+    "name": "Lesson 16: Luyện phát âm và ghép vần đơn giản",
+    "description": "Luyện ghép vần với các chữ cái đã học (ví dụ: cat, bat, hat) qua thực hành ghép vần, flashcard và trò chơi phát âm giúp trẻ phát triển kỹ năng đọc.",
+    "courseId": 1
+  },
+  {
+    "name": "Lesson 17: Luyện nói câu đơn giản",
+    "description": "Thực hành câu hỏi 'What is this?' và trả lời 'It’s a/an …' qua đóng vai, hỏi đáp và trò chơi tương tác nhằm phát triển kỹ năng giao tiếp cơ bản.",
+    "courseId": 1
+  },
+  {
+    "name": "Lesson 18: Nghe hiểu qua bài hát và truyện kể",
+    "description": "Phát triển kỹ năng nghe và làm quen ngữ cảnh qua nghe nhạc, xem tranh minh họa và hỏi đáp tương tác.",
+    "courseId": 1
+  },
+  {
+    "name": "Lesson 19: Ôn tập toàn bộ bảng chữ cái và từ vựng",
+    "description": "Củng cố toàn bộ kiến thức đã học qua trò chơi nhóm, hát bài hát và flashcard nhằm giúp trẻ nhớ lâu và tự tin hơn.",
+    "courseId": 1
+  },
+  {
+    "name": "Lesson 20: Kiểm tra nhỏ cuối khóa",
+    "description": "Đánh giá khả năng nhận biết chữ cái, phát âm và từ vựng cơ bản qua trò chơi kiểm tra, hỏi đáp và luyện phát âm.",
+    "courseId": 1
+  },
+  {
+    "name": "Lesson 1: Động vật - Phần 1",
+    "description": "Mở rộng vốn từ vựng về động vật như cat, dog, lion, bee, chicken. Phát âm chuẩn và học qua bài hát, flashcard, kể chuyện giúp phát triển kỹ năng nghe và nói.",
+    "courseId": 2
+  },
+  {
+    "name": "Lesson 2: Động vật - Phần 2",
+    "description": "Tiếp tục học từ vựng động vật mới như elephant, monkey, tiger, zebra. Thực hành qua trò chơi tương tác và đóng vai để ghi nhớ từ vựng.",
+    "courseId": 2
+  },
+  {
+    "name": "Lesson 3: Thực phẩm - Phần 1",
+    "description": "Học từ vựng về thực phẩm cơ bản như banana, bread, apple, milk. Luyện phát âm và giao tiếp câu hỏi 'Do you like…?' qua hoạt động hỏi đáp và trò chơi.",
+    "courseId": 2
+  },
+  {
+    "name": "Lesson 4: Thực phẩm - Phần 2",
+    "description": "Mở rộng từ vựng thực phẩm với các từ như rice, juice, egg, fish. Thực hành giao tiếp và đóng vai trong các tình huống ăn uống.",
+    "courseId": 2
+  },
+  {
+    "name": "Lesson 5: Đồ chơi và đồ dùng học tập",
+    "description": "Học từ vựng về đồ chơi và đồ dùng học tập như ball, doll, pencil, book. Kết hợp flashcard và trò chơi hỏi đáp để củng cố từ vựng.",
+    "courseId": 2
+  },
+  {
+    "name": "Lesson 6: Thời tiết và mùa",
+    "description": "Học từ vựng về thời tiết như sunny, rainy, cold, hot và các mùa trong năm. Luyện câu hỏi 'What’s the weather like?' qua bài hát và trò chơi tương tác.",
+    "courseId": 2
+  },
+  {
+    "name": "Lesson 7: Hoạt động hàng ngày",
+    "description": "Học từ vựng mô tả các hoạt động hàng ngày như get up, eat breakfast, go to school, play. Thực hành nói câu đơn giản và đóng vai tình huống thực tế.",
+    "courseId": 2
+  },
+  {
+    "name": "Lesson 8: Câu hỏi Yes/No đơn giản",
+    "description": "Luyện kỹ năng hỏi và trả lời câu hỏi Yes/No như 'Do you want…?', 'Is it your…?' qua trò chơi đóng vai và hỏi đáp nhóm.",
+    "courseId": 2
+  },
+  {
+    "name": "Lesson 9: Màu sắc nâng cao",
+    "description": "Mở rộng từ vựng màu sắc với các từ như purple, pink, orange, brown. Học qua bài hát, flashcard và trò chơi nhận diện màu sắc.",
+    "courseId": 2
+  },
+  {
+    "name": "Lesson 10: Số đếm 11-20",
+    "description": "Học số đếm từ 11 đến 20, luyện phát âm và đếm đồ vật qua các trò chơi tương tác và bài hát số đếm.",
+    "courseId": 2
+  },
+  {
+    "name": "Lesson 11: Đồ vật trong nhà",
+    "description": "Học từ vựng về các đồ vật trong nhà như chair, table, bed, door. Thực hành hỏi đáp và đóng vai trong ngữ cảnh gia đình.",
+    "courseId": 2
+  },
+  {
+    "name": "Lesson 12: Gia đình và bạn bè",
+    "description": "Học từ vựng về các thành viên trong gia đình và bạn bè như mother, father, sister, friend. Luyện nói câu giới thiệu và hỏi về gia đình.",
+    "courseId": 2
+  },
+  {
+    "name": "Lesson 13: Thể thao và hoạt động ngoài trời",
+    "description": "Học từ vựng về các môn thể thao và hoạt động ngoài trời như football, swimming, running. Thực hành nói về sở thích qua trò chơi và đóng vai.",
+    "courseId": 2
+  },
+  {
+    "name": "Lesson 14: Động vật biển",
+    "description": "Mở rộng từ vựng về động vật biển như fish, crab, dolphin, whale. Học qua flashcard, bài hát và kể chuyện tương tác.",
+    "courseId": 2
+  },
+  {
+    "name": "Lesson 15: Ôn tập từ vựng chủ đề động vật và thực phẩm",
+    "description": "Ôn tập các từ vựng về động vật và thực phẩm đã học qua trò chơi ghép từ, flashcard và kể chuyện nhóm.",
+    "courseId": 2
+  },
+  {
+    "name": "Lesson 16: Luyện ghép vần và đọc từ đơn giản",
+    "description": "Luyện ghép vần với các từ đơn giản như cat, bat, hat, sun, run. Thực hành đọc, phát âm và trò chơi phát âm.",
+    "courseId": 2
+  },
+  {
+    "name": "Lesson 17: Luyện nói câu hỏi và trả lời đơn giản",
+    "description": "Thực hành nói câu hỏi 'What do you like?' và trả lời 'I like…' qua đóng vai và trò chơi hỏi đáp tương tác.",
+    "courseId": 2
+  },
+  {
+    "name": "Lesson 18: Nghe hiểu qua bài hát và truyện kể",
+    "description": "Phát triển kỹ năng nghe và làm quen ngữ cảnh qua nghe nhạc, xem tranh minh họa và hỏi đáp tương tác.",
+    "courseId": 2
+  },
+  {
+    "name": "Lesson 19: Ôn tập toàn bộ từ vựng và câu giao tiếp",
+    "description": "Củng cố toàn bộ từ vựng và câu giao tiếp đã học qua trò chơi nhóm, hát bài hát và flashcard giúp trẻ nhớ lâu và tự tin hơn.",
+    "courseId": 2
+  },
+  {
+    "name": "Lesson 20: Kiểm tra nhỏ cuối khóa",
+    "description": "Đánh giá khả năng nhận biết từ vựng, phát âm và giao tiếp cơ bản qua trò chơi kiểm tra, hỏi đáp và luyện phát âm.",
+    "courseId": 2
+  },
+  {
+    "name": "Lesson 1: Nghề nghiệp - Phần 1",
+    "description": "Mở rộng từ vựng về nghề nghiệp như teacher, doctor, farmer. Học phát âm chuẩn và luyện mô tả công việc đơn giản qua flashcard, đóng vai và trò chơi tương tác.",
+    "courseId": 3
+  },
+  {
+    "name": "Lesson 2: Nghề nghiệp - Phần 2",
+    "description": "Tiếp tục học từ vựng nghề nghiệp như policeman, firefighter, nurse. Thực hành giao tiếp câu hỏi và trả lời về nghề nghiệp qua đóng vai và kể chuyện.",
+    "courseId": 3
+  },
+  {
+    "name": "Lesson 3: Lớp học - Phần 1",
+    "description": "Học từ vựng về đồ dùng học tập như pencil, book, desk, chair. Luyện đọc câu đơn giản và thực hành hỏi đáp trong lớp học.",
+    "courseId": 3
+  },
+  {
+    "name": "Lesson 4: Lớp học - Phần 2",
+    "description": "Mở rộng từ vựng lớp học với các vật dụng như eraser, ruler, backpack. Thực hành đọc hiểu câu và đoạn văn ngắn qua hoạt động nhóm và trò chơi.",
+    "courseId": 3
+  },
+  {
+    "name": "Lesson 5: Câu hỏi mở rộng",
+    "description": "Luyện các mẫu câu hỏi như 'Who’s he/she?', 'What do you do every day?'. Thực hành giao tiếp tự nhiên qua đóng vai và hỏi đáp nhóm.",
+    "courseId": 3
+  },
+  {
+    "name": "Lesson 6: Đọc hiểu đoạn văn ngắn - Phần 1",
+    "description": "Nghe và đọc hiểu các đoạn văn ngắn về chủ đề gia đình và trường học. Trả lời câu hỏi đơn giản để phát triển kỹ năng đọc hiểu.",
+    "courseId": 3
+  },
+  {
+    "name": "Lesson 7: Đọc hiểu đoạn văn ngắn - Phần 2",
+    "description": "Tiếp tục luyện đọc hiểu với các đoạn văn về hoạt động hàng ngày và sở thích. Thảo luận nhóm và trả lời câu hỏi mở rộng.",
+    "courseId": 3
+  },
+  {
+    "name": "Lesson 8: Viết câu đơn giản",
+    "description": "Làm quen với kỹ năng viết câu đơn giản, sử dụng từ vựng và cấu trúc câu đã học. Thực hành viết câu mô tả người và hoạt động.",
+    "courseId": 3
+  },
+  {
+    "name": "Lesson 9: Thì hiện tại tiếp diễn - Phần 1",
+    "description": "Giới thiệu thì hiện tại tiếp diễn (He/She is + verb + -ing). Luyện nói và viết câu sử dụng thì này qua các hoạt động tương tác.",
+    "courseId": 3
+  },
+  {
+    "name": "Lesson 10: Thì hiện tại tiếp diễn - Phần 2",
+    "description": "Tiếp tục luyện tập thì hiện tại tiếp diễn qua trò chơi đóng vai và bài tập nhóm, giúp trẻ sử dụng thành thạo trong giao tiếp.",
+    "courseId": 3
+  },
+  {
+    "name": "Lesson 11: Giao tiếp tự nhiên - Phần 1",
+    "description": "Phát triển kỹ năng giao tiếp tự nhiên qua các đoạn hội thoại, câu hỏi và trả lời trong tình huống thực tế. Thực hành đóng vai và thảo luận nhóm.",
+    "courseId": 3
+  },
+  {
+    "name": "Lesson 12: Giao tiếp tự nhiên - Phần 2",
+    "description": "Tiếp tục luyện giao tiếp qua các trò chơi ngôn ngữ, kể chuyện và hoạt động nhóm nhằm tăng sự tự tin khi nói tiếng Anh.",
+    "courseId": 3
+  },
+  {
+    "name": "Lesson 13: Ôn tập từ vựng và câu giao tiếp",
+    "description": "Ôn tập tổng hợp từ vựng và các mẫu câu giao tiếp đã học qua trò chơi, flashcard và hoạt động nhóm vui nhộn.",
+    "courseId": 3
+  },
+  {
+    "name": "Lesson 14: Nghe hiểu và phản xạ nhanh",
+    "description": "Phát triển kỹ năng nghe hiểu và phản xạ nhanh qua các bài nghe, trò chơi hỏi đáp và hoạt động tương tác.",
+    "courseId": 3
+  },
+  {
+    "name": "Lesson 15: Kiểm tra nhỏ cuối khóa",
+    "description": "Đánh giá toàn diện kỹ năng nghe, nói, đọc, viết qua các bài kiểm tra nhỏ và trò chơi tương tác nhằm chuẩn bị cho khóa học tiếp theo.",
+    "courseId": 3
+  },
+  {
+    "name": "Lesson 1: Ôn tập bảng chữ cái và từ vựng cơ bản",
+    "description": "Củng cố nhận biết và phát âm bảng chữ cái cùng các từ vựng cơ bản đã học qua trò chơi flashcard và hát bài hát ABC.",
+    "courseId": 4
+  },
+  {
+    "name": "Lesson 2: Mẫu câu ngữ pháp đơn giản - Phần 1",
+    "description": "Học các mẫu câu đơn giản như 'I can…', 'Do you like…?' qua hoạt động đóng vai và trò chơi hỏi đáp.",
+    "courseId": 4
+  },
+  {
+    "name": "Lesson 3: Mẫu câu ngữ pháp đơn giản - Phần 2",
+    "description": "Tiếp tục luyện tập các mẫu câu ngữ pháp cơ bản qua bài tập nhóm và thực hành giao tiếp.",
+    "courseId": 4
+  },
+  {
+    "name": "Lesson 4: Luyện viết câu hoàn chỉnh - Phần 1",
+    "description": "Làm quen với kỹ năng viết câu hoàn chỉnh, sử dụng từ vựng và cấu trúc đã học qua bài tập viết và trò chơi.",
+    "courseId": 4
+  },
+  {
+    "name": "Lesson 5: Luyện viết câu hoàn chỉnh - Phần 2",
+    "description": "Tiếp tục luyện viết câu và làm quen với đoạn văn ngắn qua hoạt động nhóm và bài tập sáng tạo.",
+    "courseId": 4
+  },
+  {
+    "name": "Lesson 6: Kỹ năng nghe và nói qua bài hát",
+    "description": "Phát triển kỹ năng nghe và nói qua các bài hát tiếng Anh phù hợp độ tuổi, kết hợp vận động và hát theo.",
+    "courseId": 4
+  },
+  {
+    "name": "Lesson 7: Kể chuyện và thảo luận nhóm",
+    "description": "Luyện kỹ năng kể chuyện đơn giản và thảo luận nhóm để phát triển tư duy và ngôn ngữ tự nhiên.",
+    "courseId": 4
+  },
+  {
+    "name": "Lesson 8: Ôn tập ngữ pháp và từ vựng",
+    "description": "Củng cố kiến thức ngữ pháp và từ vựng đã học qua trò chơi, bài tập tương tác và hỏi đáp.",
+    "courseId": 4
+  },
+  {
+    "name": "Lesson 9: Thì hiện tại đơn giản",
+    "description": "Giới thiệu và luyện tập thì hiện tại đơn giản qua các câu nói về thói quen và hoạt động hàng ngày.",
+    "courseId": 4
+  },
+  {
+    "name": "Lesson 10: Hỏi và trả lời về thời gian",
+    "description": "Học cách hỏi và trả lời về thời gian như 'What time is it?' qua trò chơi và hoạt động thực tế.",
+    "courseId": 4
+  },
+  {
+    "name": "Lesson 11: Mô tả người và vật",
+    "description": "Luyện kỹ năng mô tả người và vật bằng các tính từ đơn giản qua bài tập viết và giao tiếp nhóm.",
+    "courseId": 4
+  },
+  {
+    "name": "Lesson 12: Giao tiếp tự nhiên - Phần 1",
+    "description": "Phát triển kỹ năng giao tiếp tự nhiên qua các đoạn hội thoại và tình huống thực tế, thực hành đóng vai.",
+    "courseId": 4
+  },
+  {
+    "name": "Lesson 13: Giao tiếp tự nhiên - Phần 2",
+    "description": "Tiếp tục luyện tập giao tiếp qua trò chơi ngôn ngữ và hoạt động nhóm nhằm tăng sự tự tin khi nói tiếng Anh.",
+    "courseId": 4
+  },
+  {
+    "name": "Lesson 14: Ôn tập tổng hợp",
+    "description": "Ôn tập toàn bộ kiến thức ngữ pháp, từ vựng và kỹ năng đã học qua trò chơi, bài hát và hoạt động nhóm.",
+    "courseId": 4
+  },
+  {
+    "name": "Lesson 15: Kiểm tra cuối khóa",
+    "description": "Đánh giá toàn diện kỹ năng nghe, nói, đọc, viết qua bài kiểm tra nhỏ và trò chơi tương tác chuẩn bị cho lớp 1.",
+    "courseId": 4
+  },
+  {
+    "name": "Lesson 1: Giới thiệu và làm quen với tiếng Anh Starters",
+    "description": "Làm quen với môi trường học tiếng Anh, giới thiệu các kỹ năng nghe, nói, đọc, viết qua các trò chơi và bài hát vui nhộn.",
+    "courseId": 5
+  },
+  {
+    "name": "Lesson 2: Nghe nối tranh và nhận biết từ vựng cơ bản",
+    "description": "Luyện nghe đoạn hội thoại ngắn, nối tranh với từ vựng quen thuộc như đồ vật, động vật, màu sắc, giúp phát triển kỹ năng nghe hiểu.",
+    "courseId": 5
+  },
+  {
+    "name": "Lesson 3: Đọc hiểu và tô màu theo chỉ dẫn",
+    "description": "Luyện đọc hiểu đơn giản qua các bài tập tô màu theo chỉ dẫn, học cách nhận biết màu sắc, vị trí và từ vựng liên quan.",
+    "courseId": 5
+  },
+  {
+    "name": "Lesson 4: Học từ vựng theo chủ đề gia đình và bạn bè",
+    "description": "Mở rộng từ vựng về các thành viên gia đình, bạn bè qua flashcard, trò chơi và bài hát, luyện phát âm chuẩn và nhớ từ vựng.",
+    "courseId": 5
+  },
+  {
+    "name": "Lesson 5: Luyện nói câu hỏi và trả lời đơn giản",
+    "description": "Thực hành hỏi và trả lời các câu hỏi đơn giản như 'What is this?', 'Do you like…?' qua đóng vai và trò chơi tương tác.",
+    "courseId": 5
+  },
+  {
+    "name": "Lesson 6: Nghe và điền từ vào chỗ trống",
+    "description": "Luyện nghe đoạn hội thoại ngắn và điền từ còn thiếu, giúp phát triển kỹ năng nghe chi tiết và chính xác.",
+    "courseId": 5
+  },
+  {
+    "name": "Lesson 7: Đọc và viết từ đơn giản",
+    "description": "Luyện đọc từ đơn giản và viết lại từ, tập đánh vần, làm quen với các mẫu chữ cái viết thường và viết hoa.",
+    "courseId": 5
+  },
+  {
+    "name": "Lesson 8: Học từ vựng về đồ vật trong lớp học và nhà cửa",
+    "description": "Mở rộng từ vựng về đồ vật quen thuộc trong lớp học và nhà cửa, luyện phát âm và sử dụng từ trong câu đơn giản.",
+    "courseId": 5
+  },
+  {
+    "name": "Lesson 9: Luyện nói về sở thích và hoạt động hàng ngày",
+    "description": "Học cách nói về sở thích, các hoạt động hàng ngày qua câu hỏi và trả lời đơn giản, thực hành qua đóng vai và trò chơi.",
+    "courseId": 5
+  },
+  {
+    "name": "Lesson 10: Nghe và chọn đáp án đúng",
+    "description": "Luyện nghe đoạn hội thoại và chọn đáp án đúng trong các tình huống quen thuộc, phát triển kỹ năng nghe hiểu tổng thể.",
+    "courseId": 5
+  },
+  {
+    "name": "Lesson 11: Đọc hiểu đoạn văn ngắn",
+    "description": "Luyện đọc và hiểu các đoạn văn ngắn về chủ đề quen thuộc, trả lời câu hỏi đơn giản liên quan đến nội dung đọc.",
+    "courseId": 5
+  },
+  {
+    "name": "Lesson 12: Viết câu đơn giản",
+    "description": "Luyện viết câu đơn giản sử dụng từ vựng và cấu trúc câu đã học, tập viết câu mô tả người, đồ vật và hoạt động.",
+    "courseId": 5
+  },
+  {
+    "name": "Lesson 13: Học ngữ pháp cơ bản - Động từ to be và thì hiện tại đơn",
+    "description": "Giới thiệu và luyện tập động từ to be và thì hiện tại đơn qua các câu khẳng định, phủ định và câu hỏi đơn giản.",
+    "courseId": 5
+  },
+  {
+    "name": "Lesson 14: Nghe và làm bài tập nối từ",
+    "description": "Luyện nghe và nối từ với hình ảnh hoặc định nghĩa, giúp củng cố từ vựng và khả năng nhận biết âm thanh.",
+    "courseId": 5
+  },
+  {
+    "name": "Lesson 15: Học từ vựng về thời tiết và các mùa",
+    "description": "Mở rộng từ vựng về thời tiết và các mùa trong năm, luyện nói và viết câu mô tả thời tiết đơn giản.",
+    "courseId": 5
+  },
+  {
+    "name": "Lesson 16: Luyện nói và trả lời câu hỏi về thời gian",
+    "description": "Học cách hỏi và trả lời các câu hỏi về thời gian như 'What time is it?' qua hoạt động đóng vai và trò chơi.",
+    "courseId": 5
+  },
+  {
+    "name": "Lesson 17: Nghe và tô màu theo hướng dẫn",
+    "description": "Luyện nghe và thực hiện các bài tập tô màu theo hướng dẫn, phát triển kỹ năng nghe chi tiết và hiểu chỉ dẫn.",
+    "courseId": 5
+  },
+  {
+    "name": "Lesson 18: Ôn tập từ vựng và cấu trúc câu đã học",
+    "description": "Ôn tập từ vựng và các cấu trúc câu đã học qua trò chơi, bài hát và hoạt động nhóm giúp trẻ ghi nhớ lâu và tự tin hơn.",
+    "courseId": 5
+  },
+  {
+    "name": "Lesson 19: Thực hành nói và viết qua tình huống thực tế",
+    "description": "Thực hành nói và viết trong các tình huống giao tiếp hàng ngày, luyện tập phản xạ ngôn ngữ và sử dụng từ vựng linh hoạt.",
+    "courseId": 5
+  },
+  {
+    "name": "Lesson 20: Kiểm tra tổng kết cuối khóa",
+    "description": "Đánh giá toàn diện kỹ năng nghe, nói, đọc, viết qua các bài kiểm tra nhỏ và trò chơi tương tác, chuẩn bị cho khóa học tiếp theo.",
+    "courseId": 5
+  },
+  {
+    "name": "Lesson 1: Nghe chọn tranh đúng theo mô tả",
+    "description": "Luyện nghe đoạn mô tả người hoặc vật, chọn tranh phù hợp giúp phát triển kỹ năng nghe chi tiết và phản xạ nhanh.",
+    "courseId": 6
+  },
+  {
+    "name": "Lesson 2: Nghe điền tên và số vào chỗ trống",
+    "description": "Luyện nghe đoạn hội thoại ngắn, điền tên riêng hoặc số còn thiếu, phát triển kỹ năng nghe hiểu chi tiết.",
+    "courseId": 6
+  },
+  {
+    "name": "Lesson 3: Nghe chọn đáp án đúng trong đoạn hội thoại",
+    "description": "Luyện nghe đoạn hội thoại và chọn đáp án phù hợp trong các tình huống thực tế giúp nâng cao kỹ năng nghe hiểu tổng thể.",
+    "courseId": 6
+  },
+  {
+    "name": "Lesson 4: Nghe tô màu theo chỉ dẫn và giới từ vị trí",
+    "description": "Luyện nghe đoạn mô tả vị trí đồ vật, tô màu đúng theo hướng dẫn, tăng cường hiểu biết về giới từ chỉ vị trí và màu sắc.",
+    "courseId": 6
+  },
+  {
+    "name": "Lesson 5: Đọc hiểu câu đúng sai về tranh ảnh",
+    "description": "Luyện đọc các câu mô tả tranh ảnh, xác định câu đúng hoặc sai, phát triển kỹ năng đọc hiểu và phân tích thông tin.",
+    "courseId": 6
+  },
+  {
+    "name": "Lesson 6: Đọc hiểu và nối câu với tranh phù hợp",
+    "description": "Luyện đọc câu đơn giản và nối với tranh minh họa phù hợp, tăng cường kỹ năng đọc hiểu và nhận diện từ vựng.",
+    "courseId": 6
+  },
+  {
+    "name": "Lesson 7: Sắp xếp từ thành câu có nghĩa",
+    "description": "Luyện tập sắp xếp các từ rời rạc thành câu hoàn chỉnh, giúp phát triển kỹ năng viết và hiểu cấu trúc câu đơn giản.",
+    "courseId": 6
+  },
+  {
+    "name": "Lesson 8: Điền từ vào chỗ trống trong đoạn văn ngắn",
+    "description": "Thực hành điền từ phù hợp vào đoạn văn ngắn, củng cố từ vựng và kỹ năng viết câu, đoạn văn cơ bản.",
+    "courseId": 6
+  },
+  {
+    "name": "Lesson 9: Trả lời câu hỏi về tranh ảnh",
+    "description": "Luyện trả lời các câu hỏi đơn giản liên quan đến tranh ảnh, phát triển kỹ năng nói và phản xạ ngôn ngữ tự nhiên.",
+    "courseId": 6
+  },
+  {
+    "name": "Lesson 10: Mô tả tranh và nói về sở thích",
+    "description": "Luyện mô tả tranh và nói về sở thích cá nhân qua các câu hỏi và bài tập thực hành giao tiếp.",
+    "courseId": 6
+  },
+  {
+    "name": "Lesson 11: Ngữ pháp thì hiện tại đơn và tiếp diễn",
+    "description": "Học và luyện tập thì hiện tại đơn và hiện tại tiếp diễn qua các câu khẳng định, phủ định và câu hỏi đơn giản.",
+    "courseId": 6
+  },
+  {
+    "name": "Lesson 12: Giới từ chỉ vị trí và trạng từ tần suất",
+    "description": "Luyện sử dụng giới từ chỉ vị trí (on, in, under, next to) và trạng từ tần suất (always, usually, sometimes) trong câu đơn giản.",
+    "courseId": 6
+  },
+  {
+    "name": "Lesson 13: Từ vựng chủ đề trường học và gia đình",
+    "description": "Mở rộng từ vựng về trường học, gia đình và các hoạt động thường ngày, luyện phát âm và sử dụng từ trong câu.",
+    "courseId": 6
+  },
+  {
+    "name": "Lesson 14: Từ vựng chủ đề động vật và thiên nhiên",
+    "description": "Học từ vựng về động vật, cây cối và thiên nhiên, thực hành nói và viết câu mô tả đơn giản.",
+    "courseId": 6
+  },
+  {
+    "name": "Lesson 15: Luyện nghe và đọc hiểu đoạn văn ngắn",
+    "description": "Luyện nghe và đọc hiểu các đoạn văn ngắn về chủ đề quen thuộc, trả lời câu hỏi chi tiết và tổng quát.",
+    "courseId": 6
+  },
+  {
+    "name": "Lesson 16: Viết đoạn văn ngắn mô tả người và vật",
+    "description": "Luyện viết đoạn văn ngắn mô tả người, vật và hoạt động hàng ngày, sử dụng từ vựng và cấu trúc câu đã học.",
+    "courseId": 6
+  },
+  {
+    "name": "Lesson 17: Thực hành nói tự nhiên qua các tình huống giao tiếp",
+    "description": "Thực hành nói tự nhiên, trả lời câu hỏi và mô tả tranh trong các tình huống giao tiếp thực tế.",
+    "courseId": 6
+  },
+  {
+    "name": "Lesson 18: Ôn tập kỹ năng nghe, đọc, viết và nói",
+    "description": "Ôn tập tổng hợp các kỹ năng nghe, đọc, viết và nói qua các bài tập và trò chơi tương tác.",
+    "courseId": 6
+  },
+  {
+    "name": "Lesson 19: Thực hành làm bài thi Starters mẫu",
+    "description": "Luyện tập làm các phần thi nghe, đọc, viết và nói theo cấu trúc đề thi Starters Cambridge, nâng cao kỹ năng làm bài thi.",
+    "courseId": 6
+  },
+  {
+    "name": "Lesson 20: Kiểm tra tổng kết và đánh giá cuối khóa",
+    "description": "Đánh giá toàn diện kỹ năng nghe, nói, đọc, viết qua bài kiểm tra nhỏ và trò chơi tương tác, chuẩn bị cho các cấp độ tiếp theo.",
+    "courseId": 6
+  },
+  {
+    "name": "Lesson 1: Giới thiệu bản thân và trả lời câu hỏi cơ bản",
+    "description": "Luyện nói giới thiệu tên, tuổi, sở thích qua các câu hỏi đơn giản như 'What’s your name?', 'How old are you?'. Thực hành qua trò chơi hỏi đáp và đóng vai.",
+    "courseId": 7
+  },
+  {
+    "name": "Lesson 2: Miêu tả đồ vật quen thuộc",
+    "description": "Học cách miêu tả đồ vật đơn giản như màu sắc, kích thước qua câu hỏi 'What colour is it?', 'Is it big or small?'. Thực hành mô tả tranh và trả lời câu hỏi.",
+    "courseId": 7
+  },
+  {
+    "name": "Lesson 3: Trả lời câu hỏi về gia đình",
+    "description": "Luyện trả lời các câu hỏi về thành viên trong gia đình như 'How many people are there in your family?', 'Who cooks dinner?'. Thực hành qua đóng vai và kể chuyện ngắn.",
+    "courseId": 7
+  },
+  {
+    "name": "Lesson 4: Miêu tả con vật và trả lời câu hỏi",
+    "description": "Học từ vựng về các con vật và luyện trả lời câu hỏi đơn giản như 'What animal is this?', 'Can it fly?'. Thực hành qua trò chơi nhận diện và mô tả.",
+    "courseId": 7
+  },
+  {
+    "name": "Lesson 5: Nói về quần áo và màu sắc",
+    "description": "Luyện nói về quần áo đang mặc và màu sắc qua câu hỏi 'What are you wearing?', 'What colour is your shirt?'. Thực hành đóng vai và mô tả tranh.",
+    "courseId": 7
+  },
+  {
+    "name": "Lesson 6: Trả lời câu hỏi về trường học",
+    "description": "Học cách trả lời câu hỏi về trường học như 'What’s your school’s name?', 'Do you like your school?'. Thực hành qua đóng vai và hỏi đáp nhóm.",
+    "courseId": 7
+  },
+  {
+    "name": "Lesson 7: Miêu tả hoạt động hàng ngày",
+    "description": "Luyện nói về các hoạt động hàng ngày như 'I get up at 7 o’clock.', 'I go to school by bus.'. Thực hành qua kể chuyện và đóng vai.",
+    "courseId": 7
+  },
+  {
+    "name": "Lesson 8: Trả lời câu hỏi về sở thích",
+    "description": "Học cách nói về sở thích qua câu hỏi 'What do you like?', 'Do you like football?'. Thực hành qua trò chơi hỏi đáp và mô tả tranh.",
+    "courseId": 7
+  },
+  {
+    "name": "Lesson 9: Miêu tả đồ ăn và đồ uống yêu thích",
+    "description": "Luyện nói về đồ ăn, đồ uống yêu thích qua câu hỏi 'What’s your favourite food?', 'Do you like juice?'. Thực hành qua đóng vai và kể chuyện.",
+    "courseId": 7
+  },
+  {
+    "name": "Lesson 10: Trả lời câu hỏi về thời tiết",
+    "description": "Học cách trả lời câu hỏi về thời tiết như 'What’s the weather like today?', 'Is it sunny or rainy?'. Thực hành qua mô tả tranh và đóng vai.",
+    "courseId": 7
+  },
+  {
+    "name": "Lesson 11: Nói về các môn thể thao và hoạt động ngoài trời",
+    "description": "Luyện nói về các môn thể thao yêu thích và hoạt động ngoài trời qua câu hỏi 'Do you like swimming?', 'What do you do on weekends?'.",
+    "courseId": 7
+  },
+  {
+    "name": "Lesson 12: Trả lời câu hỏi về đồ chơi và vật nuôi",
+    "description": "Học cách trả lời câu hỏi về đồ chơi và vật nuôi như 'Have you got a pet?', 'What’s your favourite toy?'. Thực hành qua trò chơi và đóng vai.",
+    "courseId": 7
+  },
+  {
+    "name": "Lesson 13: Miêu tả phòng ngủ và đồ dùng cá nhân",
+    "description": "Luyện nói về phòng ngủ và đồ dùng cá nhân qua câu hỏi 'What’s in your bedroom?', 'What colour is your bed?'. Thực hành mô tả tranh và kể chuyện.",
+    "courseId": 7
+  },
+  {
+    "name": "Lesson 14: Trả lời câu hỏi về ngày trong tuần và thời gian",
+    "description": "Học cách trả lời câu hỏi về ngày trong tuần và thời gian như 'What day is it today?', 'What time do you get up?'. Thực hành qua đóng vai và hỏi đáp.",
+    "courseId": 7
+  },
+  {
+    "name": "Lesson 15: Nói về các món ăn trong bữa sáng, trưa, tối",
+    "description": "Luyện nói về các món ăn trong các bữa ăn qua câu hỏi 'What do you have for breakfast?', 'Do you like rice?'. Thực hành kể chuyện và đóng vai.",
+    "courseId": 7
+  },
+  {
+    "name": "Lesson 16: Miêu tả các đồ vật trong nhà bếp",
+    "description": "Luyện nói về các đồ vật trong nhà bếp qua câu hỏi 'What’s this?', 'Where is the fridge?'. Thực hành qua trò chơi hỏi đáp và mô tả tranh.",
+    "courseId": 7
+  },
+  {
+    "name": "Lesson 17: Trả lời câu hỏi về các phương tiện giao thông",
+    "description": "Học cách trả lời câu hỏi về phương tiện giao thông như 'How do you go to school?', 'Do you like buses?'. Thực hành qua đóng vai và hỏi đáp.",
+    "courseId": 7
+  },
+  {
+    "name": "Lesson 18: Nói về các đồ vật trong lớp học",
+    "description": "Luyện nói về các đồ vật trong lớp học qua câu hỏi 'What’s this?', 'Do you have a pencil?'. Thực hành mô tả và đóng vai.",
+    "courseId": 7
+  },
+  {
+    "name": "Lesson 19: Thực hành trả lời câu hỏi mở rộng",
+    "description": "Luyện trả lời các câu hỏi mở rộng, phát triển kỹ năng nói tự nhiên và phản xạ nhanh trong giao tiếp hàng ngày.",
+    "courseId": 7
+  },
+  {
+    "name": "Lesson 20: Kiểm tra tổng kết kỹ năng nói và giao tiếp",
+    "description": "Đánh giá kỹ năng nói và giao tiếp qua các bài thi mô phỏng, trò chơi tương tác, chuẩn bị cho kỳ thi Cambridge Starters Speaking.",
+    "courseId": 7
+  },
+  {
+    "name": "Lesson 1: Ôn tập kỹ năng nghe - Nghe nối tranh",
+    "description": "Luyện nghe đoạn mô tả và nối tên nhân vật với tranh phù hợp, phát triển kỹ năng nghe chi tiết và phản xạ nhanh.",
+    "courseId": 8
+  },
+  {
+    "name": "Lesson 2: Ôn tập kỹ năng nghe - Điền tên và số",
+    "description": "Luyện nghe đoạn hội thoại ngắn và điền tên riêng, số còn thiếu, nâng cao khả năng nghe hiểu chi tiết.",
+    "courseId": 8
+  },
+  {
+    "name": "Lesson 3: Ôn tập kỹ năng nghe - Chọn đáp án đúng",
+    "description": "Luyện nghe đoạn hội thoại và chọn đáp án đúng trong các tình huống quen thuộc, phát triển kỹ năng nghe hiểu tổng thể.",
+    "courseId": 8
+  },
+  {
+    "name": "Lesson 4: Ôn tập kỹ năng nghe - Tô màu theo chỉ dẫn",
+    "description": "Luyện nghe đoạn mô tả vị trí và màu sắc đồ vật, tô màu đúng theo hướng dẫn, củng cố giới từ chỉ vị trí và từ vựng màu sắc.",
+    "courseId": 8
+  },
+  {
+    "name": "Lesson 5: Ôn tập kỹ năng đọc - Đọc hiểu câu đúng sai",
+    "description": "Luyện đọc các câu mô tả tranh ảnh và xác định câu đúng hoặc sai, phát triển kỹ năng đọc hiểu và phân tích thông tin.",
+    "courseId": 8
+  },
+  {
+    "name": "Lesson 6: Ôn tập kỹ năng đọc - Nối câu với tranh",
+    "description": "Luyện đọc câu đơn giản và nối với tranh minh họa phù hợp, tăng cường kỹ năng đọc hiểu và nhận diện từ vựng.",
+    "courseId": 8
+  },
+  {
+    "name": "Lesson 7: Ôn tập kỹ năng viết - Sắp xếp từ thành câu",
+    "description": "Luyện sắp xếp các từ rời rạc thành câu hoàn chỉnh, giúp phát triển kỹ năng viết và hiểu cấu trúc câu đơn giản.",
+    "courseId": 8
+  },
+  {
+    "name": "Lesson 8: Ôn tập kỹ năng viết - Điền từ vào đoạn văn",
+    "description": "Thực hành điền từ phù hợp vào đoạn văn ngắn, củng cố từ vựng và kỹ năng viết câu, đoạn văn cơ bản.",
+    "courseId": 8
+  },
+  {
+    "name": "Lesson 9: Ôn tập kỹ năng nói - Trả lời câu hỏi về tranh",
+    "description": "Luyện trả lời các câu hỏi đơn giản liên quan đến tranh ảnh, phát triển kỹ năng nói và phản xạ ngôn ngữ tự nhiên.",
+    "courseId": 8
+  },
+  {
+    "name": "Lesson 10: Ôn tập kỹ năng nói - Mô tả tranh và sở thích",
+    "description": "Luyện mô tả tranh và nói về sở thích cá nhân qua các câu hỏi và bài tập thực hành giao tiếp.",
+    "courseId": 8
+  },
+  {
+    "name": "Lesson 11: Ôn tập ngữ pháp - Động từ to be và thì hiện tại đơn",
+    "description": "Ôn tập và luyện tập động từ to be và thì hiện tại đơn qua các câu khẳng định, phủ định và câu hỏi đơn giản.",
+    "courseId": 8
+  },
+  {
+    "name": "Lesson 12: Ôn tập ngữ pháp - Giới từ vị trí và trạng từ tần suất",
+    "description": "Ôn luyện sử dụng giới từ chỉ vị trí (on, in, under, next to) và trạng từ tần suất (always, usually, sometimes) trong câu đơn giản.",
+    "courseId": 8
+  },
+  {
+    "name": "Lesson 13: Ôn tập từ vựng chủ đề trường học và gia đình",
+    "description": "Ôn tập từ vựng về trường học, gia đình và các hoạt động thường ngày, luyện phát âm và sử dụng từ trong câu.",
+    "courseId": 8
+  },
+  {
+    "name": "Lesson 14: Ôn tập từ vựng chủ đề động vật và thiên nhiên",
+    "description": "Ôn tập từ vựng về động vật, cây cối và thiên nhiên, thực hành nói và viết câu mô tả đơn giản.",
+    "courseId": 8
+  },
+  {
+    "name": "Lesson 15: Luyện nghe và đọc hiểu đoạn văn ngắn",
+    "description": "Luyện nghe và đọc hiểu các đoạn văn ngắn về chủ đề quen thuộc, trả lời câu hỏi chi tiết và tổng quát.",
+    "courseId": 8
+  },
+  {
+    "name": "Lesson 16: Viết đoạn văn ngắn mô tả người và vật",
+    "description": "Luyện viết đoạn văn ngắn mô tả người, vật và hoạt động hàng ngày, sử dụng từ vựng và cấu trúc câu đã học.",
+    "courseId": 8
+  },
+  {
+    "name": "Lesson 17: Thực hành nói tự nhiên qua các tình huống giao tiếp",
+    "description": "Thực hành nói tự nhiên, trả lời câu hỏi và mô tả tranh trong các tình huống giao tiếp thực tế.",
+    "courseId": 8
+  },
+  {
+    "name": "Lesson 18: Ôn tập tổng hợp kỹ năng nghe, đọc, viết và nói",
+    "description": "Ôn tập tổng hợp các kỹ năng nghe, đọc, viết và nói qua các bài tập và trò chơi tương tác.",
+    "courseId": 8
+  },
+  {
+    "name": "Lesson 19: Thực hành làm bài thi Starters mẫu",
+    "description": "Luyện tập làm các phần thi nghe, đọc, viết và nói theo cấu trúc đề thi Starters Cambridge, nâng cao kỹ năng làm bài thi.",
+    "courseId": 8
+  },
+  {
+    "name": "Lesson 20: Kiểm tra tổng kết và đánh giá cuối khóa",
+    "description": "Đánh giá toàn diện kỹ năng nghe, nói, đọc, viết qua bài kiểm tra nhỏ và trò chơi tương tác, chuẩn bị cho các cấp độ tiếp theo.",
+    "courseId": 8
+  }
 ]

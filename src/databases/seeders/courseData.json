@@ -1,82 +1,59 @@
 [
   {
-    "name": "Beginner English Conversation",
-    "price": 79.99,
-    "num_classes": 8,
-    "description": "Master everyday English conversations with this beginner-friendly course. Designed for non-native speakers, it covers greetings, introductions, and common phrases used in daily interactions, with interactive role-plays to build confidence.",
-    "created_at": "2025-05-04T00:00:00.000Z",
-    "updated_at": "2025-05-04T00:00:00.000Z"
+    "name": "Khám phá bảng chữ cái",
+    "price": 800000,
+    "num_classes": 20,
+    "description": "Khóa học này tập trung giúp trẻ làm quen và học thuộc toàn bộ bảng chữ cái tiếng Anh (26 chữ cái) cùng với phát âm chuẩn của từng chữ. Trẻ sẽ được học qua các bài hát, trò chơi vận động, hoạt động đa giác quan và các câu chuyện minh họa sinh động. Khóa học không chỉ dạy chữ cái mà còn phát triển kỹ năng nghe, nói, và khả năng nhận biết âm thanh (phonemic awareness) – nền tảng quan trọng cho việc học đọc và viết sau này.",
+    "roadmap_id": 1
   },
   {
-    "name": "Business English Mastery",
-    "price": 129.99,
-    "num_classes": 12,
-    "description": "Elevate your professional communication skills with this Business English course. Learn to write emails, conduct meetings, and negotiate effectively in English, tailored for corporate environments and career advancement.",
-    "created_at": "2025-05-04T00:00:00.000Z",
-    "updated_at": "2025-05-04T00:00:00.000Z"
+    "name": "Xây dựng từ vựng cơ bản",
+    "price": 800000,
+    "num_classes": 20,
+    "description": "Sau khi đã thành thạo bảng chữ cái, trẻ sẽ bước vào khóa học mở rộng vốn từ vựng theo các chủ đề quen thuộc như động vật, thực phẩm, đồ chơi, nghề nghiệp… Khóa học kết hợp luyện ghép vần đơn giản (phonics) giúp trẻ đọc được các từ cơ bản, đồng thời luyện tập giao tiếp qua các câu hỏi và câu trả lời đơn giản. Các hoạt động đa dạng như trò chơi, kể chuyện, đóng vai giúp trẻ phát triển toàn diện kỹ năng ngôn ngữ.",
+    "roadmap_id": 1
   },
   {
-    "name": "IELTS Preparation Intensive",
-    "price": 159.99,
+    "name": "Khởi đầu giao tiếp",
+    "price": 600000,
     "num_classes": 15,
-    "description": "Prepare for the IELTS exam with this comprehensive course covering all four sections: listening, reading, writing, and speaking. Includes practice tests, strategies for high scores, and personalized feedback to help you achieve your target band.",
-    "created_at": "2025-05-04T00:00:00.000Z",
-    "updated_at": "2025-05-04T00:00:00.000Z"
+    "description": "Khóa học này tập trung phát triển kỹ năng nghe, nói và đọc hiểu câu đơn giản và đoạn văn ngắn. Trẻ sẽ làm quen với các mẫu câu hỏi mở rộng, luyện tập giao tiếp tự nhiên qua các hoạt động đóng vai, kể chuyện, và đọc hiểu. Khóa học cũng chuẩn bị nền tảng cho các chứng chỉ tiếng Anh trẻ em như Cambridge Starters, giúp trẻ tự tin hơn khi bước vào môi trường học tập tiếng Anh chính thức.",
+    "roadmap_id": 1
   },
   {
-    "name": "English Grammar Fundamentals",
-    "price": 89.99,
-    "num_classes": 10,
-    "description": "Strengthen your English grammar skills with this in-depth course. From verb tenses to sentence structure, this course provides clear explanations and practical exercises to help learners of all levels write and speak accurately.",
-    "created_at": "2025-05-04T00:00:00.000Z",
-    "updated_at": "2025-05-04T00:00:00.000Z"
+    "name": "Chuẩn bị vào tiểu học",
+    "price": 600000,
+    "num_classes": 15,
+    "description": "Khóa học cuối cùng trong lộ trình giúp trẻ củng cố toàn diện kỹ năng nghe, nói, đọc, viết và ngữ pháp cơ bản. Trẻ sẽ luyện viết câu hoàn chỉnh, làm quen với đoạn văn ngắn và các bài tập ngữ pháp đơn giản. Các hoạt động tương tác, trò chơi và bài hát tiếp tục được sử dụng để giữ sự hứng thú học tập. Khóa học giúp trẻ tự tin, sẵn sàng bước vào lớp 1 với nền tảng tiếng Anh vững chắc.",
+    "roadmap_id": 1
   },
   {
-    "name": "Advanced English Vocabulary",
-    "price": 99.99,
-    "num_classes": 10,
-    "description": "Expand your English vocabulary with this advanced course focusing on idiomatic expressions, phrasal verbs, and academic words. Perfect for students and professionals aiming to sound more fluent and natural in English.",
-    "created_at": "2025-05-04T00:00:00.000Z",
-    "updated_at": "2025-05-04T00:00:00.000Z"
+    "name": "Nền tảng Starter",
+    "price": 800000,
+    "num_classes": 20,
+    "description": "Khóa học giúp học viên làm quen với tiếng Anh A1, tập trung vào bảng chữ cái, âm thanh cơ bản, từ vựng số đếm, màu sắc, ngày tháng, gia đình, đồ vật quen thuộc. Học viên học ngữ pháp cơ bản như động từ to be, cấu trúc câu đơn giản và phát triển kỹ năng nghe nhận diện từ và cụm từ đơn giản. Khóa này tạo nền tảng vững chắc để học tiếp các kỹ năng nâng cao.",
+    "roadmap_id": 2
   },
   {
-    "name": "English for Travel and Tourism",
-    "price": 69.99,
-    "num_classes": 8,
-    "description": "Learn essential English phrases for traveling with this practical course. Covers booking hotels, ordering food, asking for directions, and handling emergencies, making it ideal for globetrotters and tourism professionals.",
-    "created_at": "2025-05-04T00:00:00.000Z",
-    "updated_at": "2025-05-04T00:00:00.000Z"
+    "name": " Xây dựng Starter",
+    "price": 800000,
+    "num_classes": 20,
+    "description": "Khóa học mở rộng vốn từ vựng và ngữ pháp cơ bản, bao gồm chủ đề nghề nghiệp, thời tiết, giao thông, mua sắm và thức ăn. Học viên học các thì hiện tại đơn, hiện tại tiếp diễn, câu hỏi và câu phủ định, mạo từ và giới từ phổ biến. Kỹ năng đọc hiểu đoạn văn ngắn và viết câu đơn giản cũng được phát triển.",
+    "roadmap_id": 2
   },
   {
-    "name": "TOEFL Success Strategies",
-    "price": 149.99,
-    "num_classes": 14,
-    "description": "Ace the TOEFL exam with this strategic course designed for non-native English speakers. Learn time-management techniques, essay-writing skills, and practice with real TOEFL-style questions to boost your score.",
-    "created_at": "2025-05-04T00:00:00.000Z",
-    "updated_at": "2025-05-04T00:00:00.000Z"
+    "name": "Giao tiếp Starter",
+    "price": 800000,
+    "num_classes": 20,
+    "description": "Khóa học tập trung cải thiện kỹ năng giao tiếp cơ bản qua các đoạn hội thoại về chào hỏi, giới thiệu, hỏi đáp. Học viên luyện nghe hiểu đoạn hội thoại đơn giản, học ngữ pháp câu điều kiện cơ bản, quá khứ đơn, từ nối và trạng từ chỉ tần suất. Từ vựng về sức khỏe, giáo dục, hoạt động ngoài trời được giới thiệu.",
+    "roadmap_id": 2
   },
   {
-    "name": "English Pronunciation Workshop",
-    "price": 109.99,
-    "num_classes": 10,
-    "description": "Improve your English pronunciation and clarity with this interactive workshop. Focuses on vowel and consonant sounds, stress patterns, and intonation, helping you speak confidently and be understood clearly.",
-    "created_at": "2025-05-04T00:00:00.000Z",
-    "updated_at": "2025-05-04T00:00:00.000Z"
-  },
-  {
-    "name": "English for Academic Writing",
-    "price": 139.99,
-    "num_classes": 12,
-    "description": "Develop skills for writing essays, research papers, and reports in English. This course teaches academic writing conventions, citation styles, and critical thinking, ideal for university students and researchers.",
-    "created_at": "2025-05-04T00:00:00.000Z",
-    "updated_at": "2025-05-04T00:00:00.000Z"
-  },
-  {
-    "name": "Conversational English for Fluency",
-    "price": 119.99,
-    "num_classes": 12,
-    "description": "Achieve fluency in English with this engaging course focused on real-world conversations. Practice discussing topics like culture, hobbies, and current events while improving listening and speaking skills in a supportive environment.",
-    "created_at": "2025-05-04T00:00:00.000Z",
-    "updated_at": "2025-05-04T00:00:00.000Z"
+    "name": " Ôn tập và thực hành Starter",
+    "price": 800000,
+    "num_classes": 20,
+    "description": "Khóa học củng cố toàn bộ kiến thức đã học, luyện tập làm bài thi thử tiếng Anh A1. Học viên viết đoạn văn ngắn theo chủ đề, thực hành hội thoại mô phỏng, tham gia câu lạc bộ tiếng Anh và tăng cường kỹ năng nghe và đọc. Đây là bước chuẩn bị quan trọng để học viên tự tin bước vào các cấp độ tiếng Anh cao hơn.",
+    "roadmap_id": 2
   }
+
 ]

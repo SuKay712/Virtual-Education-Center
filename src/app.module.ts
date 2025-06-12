@@ -15,6 +15,7 @@ import { CourseModule } from './modules/course/course.module';
 import { LectureModule } from './modules/lecture/lecture.module';
 import { TheoryModule } from './modules/theory/theory.module';
 import { ChatModule } from './modules/chat/chat.module';
+import { ContactModule } from './modules/contact/contact.module';
 
 @Module({
   imports: [
@@ -30,6 +31,7 @@ import { ChatModule } from './modules/chat/chat.module';
     LectureModule,
     TheoryModule,
     ChatModule,
+    ContactModule,
     ConfigModule.forRoot({ isGlobal: true }),
   ],
   controllers: [AppController],

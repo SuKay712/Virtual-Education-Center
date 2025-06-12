@@ -30,7 +30,6 @@ export class BookingController {
   }
 
   @Put(':id/update-status')
-  @UseGuards(AuthGuard)
   async updateBookingStatus(
     @Param('id') id: number,
     @Body() updateDto: UpdateBookingStatusDto,
