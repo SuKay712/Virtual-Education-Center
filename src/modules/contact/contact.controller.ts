@@ -3,7 +3,7 @@ import { ContactService } from './contact.service';
 import { CreateContactDto } from './dto/create-contact.dto';
 import { RoleGuard } from '../../common/guards/role.guard';
 import { Role } from '../../common/enums';
-import { AuthGuard } from 'src/common/guards/auth.guard';
+import { AuthGuard } from '../../common/guards/auth.guard';
 
 @Controller('contacts')
 export class ContactController {

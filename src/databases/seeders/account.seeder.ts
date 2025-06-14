@@ -1,8 +1,8 @@
 import { Seeder } from 'typeorm-extension';
 import { DataSource } from 'typeorm';
 import { Account } from 'src/entities';
-import { Role, Gender } from 'src/common/enums';
-import { PasswordUtils } from 'src/common/utils';
+import { Role, Gender } from '../../common/enums';
+import { PasswordUtils } from '../../common/utils';
 
 export default class AccountSeeder implements Seeder {
   private dataSource: DataSource;

@@ -1,7 +1,7 @@
 import { Controller, Get, Param, ParseIntPipe, UseGuards } from '@nestjs/common';
 import { RoadmapService } from './roadmap.service';
 import { Roadmap } from '../../entities';
-import { AuthGuard } from 'src/common/guards/auth.guard';
+import { AuthGuard } from '../../common/guards/auth.guard';
 
 @Controller('roadmap')
 @UseGuards(AuthGuard)

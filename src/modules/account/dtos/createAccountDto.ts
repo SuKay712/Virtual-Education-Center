@@ -1,5 +1,5 @@
 import { IsEmail, IsString, IsBoolean, MinLength, Matches, IsEnum } from 'class-validator';
-import { Role } from 'src/common/enums';
+import { Role } from '../../../common/enums';
 
 export class CreateAccountDto {
   @IsEmail()

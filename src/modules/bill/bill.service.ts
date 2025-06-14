@@ -12,8 +12,8 @@ import {
 import { BillRequestDto } from './dtos/billRequestDtos';
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
-import { BillStatusEnum } from 'src/common/enums/bill-status.enum';
-import { BillPaymentMethodEnum } from 'src/common/enums/bill-payment-method.enum';
+import { BillStatusEnum } from '../../common/enums/bill-status.enum';
+import { BillPaymentMethodEnum } from '../../common/enums/bill-payment-method.enum';
 
 @Injectable()
 export class BillService {

@@ -1,6 +1,6 @@
 import { IsDate, IsEmail, isNotEmpty, IsNotEmpty, IsPhoneNumber } from 'class-validator';
-import { Gender, Role } from 'src/common';
-import { Match } from 'src/common/decorator';
+import { Gender, Role } from '../../../common';
+import { Match } from '../../../common/decorator';
 
 export class RegisterDto {
   @IsNotEmpty()

@@ -12,8 +12,8 @@ import { BookingService } from './booking.service';
 import { UpdateBookingStatusDto } from './dtos/update-booking-status.dto';
 import { CreateBookingDto } from './dtos/create-booking.dto';
 import { AuthGuard } from '../../common/guards/auth.guard';
-import { Role } from 'src/common/enums';
-import { RoleGuard } from 'src/common/guards/role.guard';
+import { Role } from '../../common/enums';
+import { RoleGuard } from '../../common/guards/role.guard';
 
 @Controller('booking')
 @UseGuards(AuthGuard)

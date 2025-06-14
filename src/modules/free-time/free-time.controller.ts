@@ -1,9 +1,9 @@
 import { Controller, Post, Body, Get, Param, UseGuards, Request, Req, Put } from '@nestjs/common';
 import { FreeTimeService } from './free-time.service';
 import { CreateFreeTimeDto } from './dto/create-free-time.dto';
-import { AuthGuard } from 'src/common/guards/auth.guard';
-import { RoleGuard } from 'src/common/guards/role.guard';
-import { Role } from 'src/common/enums';
+import { AuthGuard } from '../../common/guards/auth.guard';
+import { RoleGuard } from '../../common/guards/role.guard';
+import { Role } from '../../common/enums';
 
 @Controller('free-times')
 @UseGuards(AuthGuard)

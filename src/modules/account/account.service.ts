@@ -17,7 +17,7 @@ import { v2 as cloudinary } from 'cloudinary';
 import { format, addDays, startOfWeek, endOfWeek, nextMonday, parse, isSameDay } from 'date-fns';
 import { CreateAccountDto } from './dtos/createAccountDto';
 import { AdminUpdateAccountDto } from './dtos/adminUpdateAccountDto';
-import { Role } from 'src/common/enums';
+import { Role } from '../../common/enums';
 import { UpdateProfileDto } from './dtos/updateProfileDto';
 
 @Injectable()
