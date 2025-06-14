@@ -1,6 +1,6 @@
 import { MigrationInterface, QueryRunner } from 'typeorm';
 
-export class AddRoadmapAndContact1710000000000 implements MigrationInterface {
+export class AddRoadmapAndContact17496000000000 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     // Tạo bảng roadmaps
     await queryRunner.query(`
@@ -14,6 +14,7 @@ export class AddRoadmapAndContact1710000000000 implements MigrationInterface {
         PRIMARY KEY (id)
       )
     `);
+    await queryRunner.query(`ALTER TABLE \`roadmaps\` DROP COLUMN \`is_active\``);
 
     // Tạo bảng contacts
     await queryRunner.query(`

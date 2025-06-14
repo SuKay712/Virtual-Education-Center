@@ -34,6 +34,7 @@ export class CourseController {
   @Get('/admin')
   @UseGuards(AuthGuard, new RoleGuard([Role.Admin]))
   findAll() {
+    console.log('findAll');
     return this.courseService.findAll();
   }
 

@@ -18,6 +18,7 @@ import { format, addDays, startOfWeek, endOfWeek, nextMonday, parse, isSameDay }
 import { CreateAccountDto } from './dtos/createAccountDto';
 import { AdminUpdateAccountDto } from './dtos/adminUpdateAccountDto';
 import { Role } from 'src/common/enums';
+import { UpdateProfileDto } from './dtos/updateProfileDto';
 
 @Injectable()
 export class AccountService {
@@ -274,5 +275,42 @@ export class AccountService {
 
     await this.accountRepo.remove(account);
     return 'Account deleted successfully';
+  }
+
+  async updateProfile(accountId: number, updateProfileDto: UpdateProfileDto): Promise<Account> {
+    const account = await this.accountRepo.findOne({ where: { id: accountId } });
+
+    if (!account) {
+      throw new NotFoundException('Account not found');
+    }
+
+    // Check if email is being updated and is unique
+    if (updateProfileDto.email && updateProfileDto.email !== account.email) {
+      const existingAccount = await this.findByEmail(updateProfileDto.email);
+      if (existingAccount) {
+        throw new BadRequestException('Email already exists');
+      }
+    }
+
+    // Check if phone is being updated and is unique
+    if (updateProfileDto.phone && updateProfileDto.phone !== account.phone) {
+      const existingAccount = await this.accountRepo.findOne({
+        where: { phone: updateProfileDto.phone }
+      });
+      if (existingAccount) {
+        throw new BadRequestException('Phone number already exists');
+      }
+    }
+
+    // Update account with new information
+    Object.assign(account, updateProfileDto);
+
+    // Save and return updated account
+    const updatedAccount = await this.accountRepo.save(account);
+
+    // Remove sensitive information before returning
+    delete updatedAccount.password;
+
+    return updatedAccount;
   }
 }

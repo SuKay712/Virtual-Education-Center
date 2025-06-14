@@ -5,6 +5,9 @@ import * as entities from '../../entities';
 import * as dotenv from 'dotenv';
 import BookingSeeder from './booking.seeder';
 import RoadmapSeeder from './roadmap.seeder';
+import AccountSeeder from './account.seeder';
+import LectureSeeder from './lecture.seeder';
+import ClassSeeder from './class.seeder';
 
 dotenv.config();
 
@@ -22,10 +25,11 @@ async function runSeeders() {
   await dataSource.initialize();
 
   const seeders = [
-    new RoadmapSeeder(dataSource),
+    // new AccountSeeder(dataSource),
+    // new RoadmapSeeder(dataSource),
     // new CourseSeeder(dataSource),
     // new LectureSeeder(dataSource),
-    // new ClassSeeder(dataSource),
+    new ClassSeeder(dataSource),
     // new BookingSeeder(dataSource),
   ];
 

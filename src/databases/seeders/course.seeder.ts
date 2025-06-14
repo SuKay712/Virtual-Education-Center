@@ -1,6 +1,6 @@
 import { Seeder } from 'typeorm-extension';
 import { DataSource } from 'typeorm';
-import { Course, Lecture } from 'src/entities';
+import { Course } from 'src/entities';
 import { Roadmap } from '../../entities/roadmap.entity';
 
 const courseData = require('./courseData.json');
@@ -17,7 +17,7 @@ export default class CourseSeeder implements Seeder {
     const roadmapRepo = this.dataSource.getRepository(Roadmap);
 
     const courses = await Promise.all(
-      courseData.courses.map(async (courseObj: any) => {
+      courseData.map(async (courseObj: any) => {
         let roadmap = null;
         if (courseObj.roadmap_id) {
           roadmap = await roadmapRepo.findOne({ where: { id: courseObj.roadmap_id } });

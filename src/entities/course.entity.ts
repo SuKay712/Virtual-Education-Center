@@ -18,13 +18,11 @@ export class Course {
   @Column()
   num_classes: number;
 
-  @Column({ nullable: true })
+  @Column({ type: 'text', nullable: true })
   description: string;
 
-  @Column({ nullable: true })
-  roadmap_id: number;
-
   @ManyToOne(() => Roadmap, roadmap => roadmap.courses)
+  @JoinColumn({ name: 'roadmap_id' })
   roadmap: Roadmap;
 
   @CreateDateColumn()

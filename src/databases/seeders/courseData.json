@@ -54,6 +54,89 @@
     "num_classes": 20,
     "description": "Khóa học củng cố toàn bộ kiến thức đã học, luyện tập làm bài thi thử tiếng Anh A1. Học viên viết đoạn văn ngắn theo chủ đề, thực hành hội thoại mô phỏng, tham gia câu lạc bộ tiếng Anh và tăng cường kỹ năng nghe và đọc. Đây là bước chuẩn bị quan trọng để học viên tự tin bước vào các cấp độ tiếng Anh cao hơn.",
     "roadmap_id": 2
+  },
+  {
+    "name": "Nền tảng ngữ pháp và từ vựng Movers",
+    "price": 600000,
+    "num_classes": 15,
+    "description": "Củng cố và mở rộng ngữ pháp cơ bản như thì hiện tại đơn, hiện tại tiếp diễn, quá khứ đơn. Mở rộng từ vựng theo các chủ đề quen thuộc như gia đình, trường học, sở thích. Phát triển kỹ năng đọc hiểu qua các đoạn văn ngắn và bài tập từ vựng.",
+    "roadmap_id": 3
+  },
+  {
+    "name": "Giao tiếp tự tin và kỹ năng nghe chủ động",
+    "price": 600000,
+    "num_classes": 15,
+    "description": "Rèn luyện kỹ năng nghe hiểu qua các dạng bài thi Listening của Movers như nghe đoạn hội thoại, điền từ, nối tranh. Thực hành nói theo chủ đề, mô phỏng các tình huống giao tiếp hàng ngày, tập trung phát âm và ngữ điệu chuẩn.",
+    "roadmap_id": 3
+  },
+  {
+    "name": " Phát triển kỹ năng đọc và viết cơ bản",
+    "price": 600000,
+    "num_classes": 15,
+    "description": "Phát triển kỹ năng đọc hiểu các đoạn văn ngắn và trả lời câu hỏi trắc nghiệm. Thực hành viết câu, đoạn văn ngắn, thư từ, email đơn giản theo chủ đề. Chuẩn bị kỹ năng làm bài thi Reading & Writing.",
+    "roadmap_id": 3
+  },
+  {
+    "name": "Ôn tập tổng hợp và luyện thi Cambridge Movers",
+    "price": 600000,
+    "num_classes": 15,
+    "description": "Ôn tập toàn bộ kiến thức và kỹ năng đã học. Thực hành làm đề thi mẫu theo định dạng chính thức của Cambridge Movers. Rèn luyện kỹ năng làm bài thi trong thời gian quy định, giúp học viên tự tin khi thi thật.",
+    "roadmap_id": 3
+  },
+  {
+    "name": "Nâng cao ngữ pháp và từ vựng chuyên sâu - Flyers",
+    "price": 900000,
+    "num_classes": 15,
+    "description": "Củng cố và mở rộng các cấu trúc ngữ pháp phức tạp hơn, từ vựng chuyên sâu theo nhiều chủ đề đa dạng. Phát triển kỹ năng đọc hiểu qua các đoạn văn dài và bài tập từ vựng nâng cao.",
+    "roadmap_id": 4
+  },
+  {
+    "name": "Rèn luyện kỹ năng nghe và nói nâng cao - Flyers",
+    "price": 900000,
+    "num_classes": 15,
+    "description": "Phát triển kỹ năng nghe hiểu các đoạn hội thoại dài, bài nói chuyện, luyện nói theo chủ đề, mô phỏng tình huống giao tiếp thực tế với ngữ điệu và phát âm chuẩn.",
+    "roadmap_id": 4
+  },
+  {
+    "name": "Kỹ năng đọc và viết chuyên sâu - Flyers",
+    "price": 900000,
+    "num_classes": 15,
+    "description": "Phát triển kỹ năng đọc hiểu các bài đọc dài, trả lời câu hỏi chi tiết, luyện viết đoạn văn, thư từ, bài luận ngắn theo chủ đề đa dạng.",
+    "roadmap_id": 4
+  },
+  {
+    "name": "Ôn tập và luyện thi Flyers",
+    "price": 900000,
+    "num_classes": 15,
+    "description": "Ôn tập toàn bộ kiến thức và kỹ năng đã học, luyện làm đề thi mẫu Flyers, rèn luyện kỹ năng làm bài thi trong thời gian quy định, giúp học viên tự tin khi thi thật.",
+    "roadmap_id": 4
+  },
+  {
+    "name": "Giao tiếp chuyên nghiệp và kỹ năng tương tác xã hội",
+    "price": 1300000,
+    "num_classes": 15,
+    "description": "Phát triển kỹ năng giao tiếp trong môi trường công sở và xã hội, bao gồm kỹ năng thuyết phục, đàm phán, xử lý tình huống phức tạp và xây dựng mối quan hệ chuyên nghiệp.",
+    "roadmap_id": 5
+  },
+  {
+    "name": "Kỹ năng thuyết trình, tranh luận và phản biện nâng cao",
+    "price": 1400000,
+    "num_classes": 15,
+    "description": "Luyện tập thuyết trình chuyên nghiệp, tranh luận logic và phản biện các quan điểm đa chiều, sử dụng ngôn ngữ học thuật và kỹ thuật diễn đạt thuyết phục.",
+    "roadmap_id": 5
+  },
+  {
+    "name": "Tiếng Anh học thuật và viết chuyên sâu cho học tập và nghiên cứu",
+    "price": 1400000,
+    "num_classes": 15,
+    "description": "Phát triển kỹ năng đọc hiểu các bài viết học thuật, viết luận văn, báo cáo nghiên cứu và email chuyên nghiệp với phong cách chuẩn mực và logic chặt chẽ.",
+    "roadmap_id": 5
+  },
+  {
+    "name": "Luyện thi chứng chỉ quốc tế và kỹ năng nghề nghiệp nâng cao",
+    "price": 1500000,
+    "num_classes": 15,
+    "description": "Ôn luyện toàn diện kỹ năng nghe, nói, đọc, viết theo chuẩn các chứng chỉ quốc tế như PET, FCE, TOEIC, đồng thời phát triển kỹ năng nghề nghiệp như phỏng vấn, viết CV và đàm phán.",
+    "roadmap_id": 5
   }
-
 ]

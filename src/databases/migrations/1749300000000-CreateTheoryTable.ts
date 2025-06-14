@@ -16,6 +16,7 @@ export class CreateTheoryTable1749300000000 implements MigrationInterface {
                 PRIMARY KEY (\`id\`)
             ) ENGINE=InnoDB
         `);
+
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {

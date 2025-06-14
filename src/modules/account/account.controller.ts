@@ -22,6 +22,7 @@ import { Role } from 'src/common';
 import { RoleGuard } from 'src/common/guards/role.guard';
 import { CreateAccountDto } from './dtos/createAccountDto';
 import { AdminUpdateAccountDto } from './dtos/adminUpdateAccountDto';
+import { UpdateProfileDto } from './dtos/updateProfileDto';
 
 @Controller('account')
 @UseGuards(AuthGuard)
@@ -121,5 +122,14 @@ export class AccountController {
   @UseGuards(new RoleGuard([Role.Admin]))
   async deleteAdminAccount(@Param('id') id: string): Promise<string> {
     return this.accountService.deleteAccount(id);
+  }
+
+  @Put('/profile')
+  async updateProfile(
+    @Req() request: any,
+    @Body() updateProfileDto: UpdateProfileDto
+  ): Promise<Account> {
+    const currentAccount = request.currentAccount;
+    return this.accountService.updateProfile(currentAccount.id, updateProfileDto);
   }
 }

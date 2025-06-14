@@ -748,5 +748,900 @@
     "name": "Lesson 20: Kiểm tra tổng kết và đánh giá cuối khóa",
     "description": "Đánh giá toàn diện kỹ năng nghe, nói, đọc, viết qua bài kiểm tra nhỏ và trò chơi tương tác, chuẩn bị cho các cấp độ tiếp theo.",
     "courseId": 8
+  },
+  {
+    "name": "Lesson 1: Giới thiệu và ôn tập từ vựng chủ đề gia đình, bạn bè",
+    "description": "Học và ôn tập từ vựng liên quan đến gia đình, bạn bè, các mối quan hệ và cách sử dụng trong câu đơn giản.",
+    "courseId": 9
+  },
+  {
+    "name": "Lesson 2: Thì hiện tại đơn – cấu trúc và cách dùng",
+    "description": "Tìm hiểu cấu trúc thì hiện tại đơn, cách sử dụng trong câu khẳng định, phủ định và câu hỏi.",
+    "courseId": 9
+  },
+  {
+    "name": "Lesson 3: Thì hiện tại tiếp diễn – cấu trúc và cách dùng",
+    "description": "Học cách sử dụng thì hiện tại tiếp diễn để diễn tả hành động đang xảy ra tại thời điểm nói.",
+    "courseId": 9
+  },
+  {
+    "name": "Lesson 4: Quá khứ đơn đơn giản – giới thiệu và thực hành",
+    "description": "Tìm hiểu cấu trúc và cách dùng thì quá khứ đơn trong các câu kể và câu hỏi.",
+    "courseId": 9
+  },
+  {
+    "name": "Lesson 5: Từ vựng về trường học và các hoạt động học tập",
+    "description": "Mở rộng vốn từ vựng liên quan đến trường học, các môn học và hoạt động học tập thường ngày.",
+    "courseId": 9
+  },
+  {
+    "name": "Lesson 6: Từ vựng về sở thích, thể thao và giải trí",
+    "description": "Học từ vựng về các loại sở thích, môn thể thao và hoạt động giải trí phổ biến.",
+    "courseId": 9
+  },
+  {
+    "name": "Lesson 7: Các loại từ (danh từ, động từ, tính từ) và cách sử dụng cơ bản",
+    "description": "Tìm hiểu phân loại từ cơ bản và cách sử dụng chúng trong câu đơn giản.",
+    "courseId": 9
+  },
+  {
+    "name": "Lesson 8: Câu hỏi và câu trả lời đơn giản trong giao tiếp hàng ngày",
+    "description": "Luyện tập đặt câu hỏi và trả lời trong các tình huống giao tiếp thường gặp.",
+    "courseId": 9
+  },
+  {
+    "name": "Lesson 9: Luyện tập đọc hiểu các đoạn văn ngắn theo chủ đề",
+    "description": "Phát triển kỹ năng đọc hiểu qua các đoạn văn ngắn, trả lời câu hỏi chi tiết và tổng quát.",
+    "courseId": 9
+  },
+  {
+    "name": "Lesson 10: Từ vựng về đồ dùng học tập, màu sắc",
+    "description": "Học từ vựng liên quan đến đồ dùng học tập và màu sắc, áp dụng trong câu mô tả.",
+    "courseId": 9
+  },
+  {
+    "name": "Lesson 11: Cách viết câu đơn giản, đúng ngữ pháp",
+    "description": "Thực hành viết câu đơn giản, đảm bảo đúng cấu trúc ngữ pháp và chính tả.",
+    "courseId": 9
+  },
+  {
+    "name": "Lesson 12: Từ vựng về động vật và thiên nhiên",
+    "description": "Mở rộng vốn từ vựng về các loại động vật và hiện tượng thiên nhiên thường gặp.",
+    "courseId": 9
+  },
+  {
+    "name": "Lesson 13: Thực hành nghe và nhận diện từ vựng trong đoạn hội thoại ngắn",
+    "description": "Rèn luyện kỹ năng nghe qua các đoạn hội thoại ngắn, nhận diện và hiểu từ vựng đã học.",
+    "courseId": 9
+  },
+  {
+    "name": "Lesson 14: Ôn tập các cấu trúc ngữ pháp đã học qua bài tập thực hành",
+    "description": "Ôn tập và củng cố các cấu trúc ngữ pháp đã học qua các bài tập đa dạng.",
+    "courseId": 9
+  },
+  {
+    "name": "Lesson 15: Tổng kết và kiểm tra đánh giá kiến thức nền tảng",
+    "description": "Kiểm tra tổng hợp kiến thức ngữ pháp và từ vựng đã học, đánh giá kết quả học tập.",
+    "courseId": 9
+  },
+  {
+    "name": "Lesson 1: Làm quen với các âm và từ vựng cơ bản trong giao tiếp",
+    "description": "Giới thiệu các âm cơ bản, từ vựng quen thuộc trong các tình huống giao tiếp hàng ngày, luyện phát âm chuẩn.",
+    "courseId": 10
+  },
+  {
+    "name": "Lesson 2: Nghe hiểu đoạn hội thoại đơn giản về gia đình và bạn bè",
+    "description": "Luyện nghe các đoạn hội thoại ngắn, trả lời câu hỏi về thông tin cá nhân, mối quan hệ trong gia đình và bạn bè.",
+    "courseId": 10
+  },
+  {
+    "name": "Lesson 3: Thực hành mô tả người và vật trong giao tiếp",
+    "description": "Luyện nói mô tả ngoại hình, tính cách người và đặc điểm các vật dụng thông qua các bài tập nói và trò chơi tương tác.",
+    "courseId": 10
+  },
+  {
+    "name": "Lesson 4: Nghe hiểu và nhận diện từ vựng về trường học và các hoạt động",
+    "description": "Phát triển kỹ năng nghe qua các đoạn hội thoại về trường học, môn học và hoạt động ngoại khóa.",
+    "courseId": 10
+  },
+  {
+    "name": "Lesson 5: Thực hành hỏi và trả lời về sở thích và thói quen hàng ngày",
+    "description": "Luyện tập đặt câu hỏi và trả lời về sở thích, thói quen, giúp học viên tự tin giao tiếp về chủ đề quen thuộc.",
+    "courseId": 10
+  },
+  {
+    "name": "Lesson 6: Nghe và phản xạ nhanh với các câu hỏi thông tin chi tiết",
+    "description": "Rèn luyện kỹ năng nghe chi tiết và phản xạ nhanh qua các bài tập nghe chọn đáp án đúng và điền từ.",
+    "courseId": 10
+  },
+  {
+    "name": "Lesson 7: Thực hành hội thoại tình huống mua sắm và hỏi đường",
+    "description": "Mô phỏng các tình huống giao tiếp thực tế như mua sắm, hỏi đường, giúp học viên áp dụng từ vựng và câu hỏi phù hợp.",
+    "courseId": 10
+  },
+  {
+    "name": "Lesson 8: Nghe hiểu đoạn hội thoại về thời tiết và các hoạt động ngoài trời",
+    "description": "Luyện nghe các đoạn hội thoại ngắn về thời tiết, kế hoạch và hoạt động ngoài trời, trả lời câu hỏi chi tiết.",
+    "courseId": 10
+  },
+  {
+    "name": "Lesson 9: Thực hành phát âm và ngữ điệu trong câu hỏi và câu trả lời",
+    "description": "Tập trung cải thiện phát âm, ngữ điệu khi đặt câu hỏi và trả lời để giao tiếp tự nhiên và rõ ràng hơn.",
+    "courseId": 10
+  },
+  {
+    "name": "Lesson 10: Nghe và nhận biết các từ khóa trong đoạn hội thoại dài hơn",
+    "description": "Phát triển kỹ năng nghe nhận biết từ khóa và ý chính trong các đoạn hội thoại dài hơn, chuẩn bị cho bài thi nghe.",
+    "courseId": 10
+  },
+  {
+    "name": "Lesson 11: Thực hành nói về các chủ đề gia đình, trường học và sở thích",
+    "description": "Luyện tập nói tự nhiên, mạch lạc về các chủ đề quen thuộc, sử dụng từ vựng và cấu trúc câu đã học.",
+    "courseId": 10
+  },
+  {
+    "name": "Lesson 12: Nghe hiểu và trả lời câu hỏi về các sự kiện và hoạt động hàng ngày",
+    "description": "Luyện nghe các đoạn hội thoại mô tả sự kiện, hoạt động hàng ngày và trả lời câu hỏi chi tiết.",
+    "courseId": 10
+  },
+  {
+    "name": "Lesson 13: Thực hành hội thoại qua trò chơi và hoạt động nhóm",
+    "description": "Tăng cường kỹ năng nói qua các trò chơi, hoạt động nhóm giúp học viên tự tin giao tiếp và phản xạ nhanh.",
+    "courseId": 10
+  },
+  {
+    "name": "Lesson 14: Nghe và mô tả sự khác biệt trong hình ảnh và tình huống",
+    "description": "Rèn luyện kỹ năng nghe và nói mô tả sự khác biệt trong các bức tranh và tình huống thực tế, chuẩn bị cho phần thi nói.",
+    "courseId": 10
+  },
+  {
+    "name": "Lesson 15: Ôn tập và kiểm tra kỹ năng nghe và nói",
+    "description": "Ôn tập toàn bộ kỹ năng nghe và nói đã học, thực hành làm bài kiểm tra mẫu để đánh giá và củng cố kiến thức.",
+    "courseId": 10
+  },
+  {
+    "name": "Lesson 1: Làm quen với từ vựng chủ đề bản thân và gia đình",
+    "description": "Học từ vựng cơ bản về bản thân, gia đình và các mối quan hệ thân thiết thông qua hình ảnh và trò chơi.",
+    "courseId": 11
+  },
+  {
+    "name": "Lesson 2: Nhận biết và sử dụng màu sắc, số đếm",
+    "description": "Ôn tập các màu sắc phổ biến và số đếm từ 1 đến 20, áp dụng trong các câu đơn giản.",
+    "courseId": 11
+  },
+  {
+    "name": "Lesson 3: Từ vựng về đồ dùng học tập và trường học",
+    "description": "Học tên các đồ dùng học tập và các hoạt động thường gặp ở trường học qua hình ảnh và bài tập nghe.",
+    "courseId": 11
+  },
+  {
+    "name": "Lesson 4: Mô tả quần áo và đồ vật cá nhân",
+    "description": "Luyện tập mô tả quần áo, màu sắc và các đồ vật cá nhân bằng câu đơn giản.",
+    "courseId": 11
+  },
+  {
+    "name": "Lesson 5: Từ vựng về động vật và môi trường xung quanh",
+    "description": "Học tên các con vật và từ vựng liên quan đến môi trường tự nhiên qua các đoạn nghe và trò chơi tương tác.",
+    "courseId": 11
+  },
+  {
+    "name": "Lesson 6: Câu hỏi đơn giản và trả lời về sở thích",
+    "description": "Luyện tập đặt câu hỏi và trả lời về sở thích cá nhân như thể thao, đồ chơi, hoạt động yêu thích.",
+    "courseId": 11
+  },
+  {
+    "name": "Lesson 7: Nghe và nhận biết các đồ vật trong phòng và nhà",
+    "description": "Phát triển kỹ năng nghe qua các đoạn hội thoại ngắn về đồ vật trong phòng và nhà, trả lời câu hỏi đúng/sai.",
+    "courseId": 11
+  },
+  {
+    "name": "Lesson 8: Viết từ và câu đơn giản về chủ đề hàng ngày",
+    "description": "Thực hành viết từ và câu đơn giản, hoàn thành câu và điền từ vào chỗ trống theo chủ đề đã học.",
+    "courseId": 11
+  },
+  {
+    "name": "Lesson 9: Đọc hiểu đoạn văn ngắn và trả lời câu hỏi",
+    "description": "Luyện đọc các đoạn văn ngắn, trả lời câu hỏi trắc nghiệm và điền từ đúng vào chỗ trống.",
+    "courseId": 11
+  },
+  {
+    "name": "Lesson 10: Luyện phát âm và ngữ điệu cơ bản",
+    "description": "Thực hành phát âm các từ và câu đơn giản, chú trọng ngữ điệu khi hỏi và trả lời.",
+    "courseId": 11
+  },
+  {
+    "name": "Lesson 11: Từ vựng về thực phẩm và đồ uống",
+    "description": "Học tên các loại thực phẩm, đồ uống và cách nói về sở thích ăn uống qua các hoạt động tương tác.",
+    "courseId": 11
+  },
+  {
+    "name": "Lesson 12: Nghe và làm bài tập điền từ, nối tranh",
+    "description": "Phát triển kỹ năng nghe qua các bài tập điền từ, nối tranh với từ vựng đã học.",
+    "courseId": 11
+  },
+  {
+    "name": "Lesson 13: Mô tả hoạt động hàng ngày và thời gian",
+    "description": "Luyện nói và viết về các hoạt động hàng ngày, cách nói giờ và thời gian đơn giản.",
+    "courseId": 11
+  },
+  {
+    "name": "Lesson 14: Ôn tập từ vựng và ngữ pháp qua trò chơi",
+    "description": "Ôn tập từ vựng và cấu trúc ngữ pháp đã học qua các trò chơi vui nhộn và bài tập tương tác.",
+    "courseId": 11
+  },
+  {
+    "name": "Lesson 15: Kiểm tra tổng kết và luyện thi Starters",
+    "description": "Thực hành làm bài kiểm tra mẫu Starters, đánh giá kỹ năng nghe, nói, đọc, viết và củng cố kiến thức.",
+    "courseId": 11
+  },
+  {
+    "name": "Lesson 1: Ôn tập từ vựng và ngữ pháp chủ đề gia đình và bạn bè",
+    "description": "Ôn lại từ vựng và các cấu trúc ngữ pháp liên quan đến gia đình, bạn bè và các mối quan hệ thân thiết.",
+    "courseId": 12
+  },
+  {
+    "name": "Lesson 2: Ôn tập thì hiện tại đơn và hiện tại tiếp diễn",
+    "description": "Củng cố kiến thức về thì hiện tại đơn và hiện tại tiếp diễn qua các bài tập thực hành đa dạng.",
+    "courseId": 12
+  },
+  {
+    "name": "Lesson 3: Ôn tập thì quá khứ đơn đơn giản",
+    "description": "Ôn luyện cách sử dụng thì quá khứ đơn trong câu kể và câu hỏi, áp dụng trong các bài tập nghe và viết.",
+    "courseId": 12
+  },
+  {
+    "name": "Lesson 4: Ôn tập từ vựng về trường học và sở thích",
+    "description": "Ôn luyện từ vựng liên quan đến trường học, môn học và các hoạt động giải trí, sở thích cá nhân.",
+    "courseId": 12
+  },
+  {
+    "name": "Lesson 5: Ôn tập kỹ năng nghe qua các dạng bài thi Movers",
+    "description": "Rèn luyện kỹ năng nghe qua các dạng bài thi như nghe điền từ, chọn tranh đúng, nối tranh, tô màu theo hướng dẫn nghe.",
+    "courseId": 12
+  },
+  {
+    "name": "Lesson 6: Ôn tập kỹ năng nói – mô tả tranh và trả lời câu hỏi",
+    "description": "Thực hành mô tả tranh, trả lời câu hỏi và tham gia hội thoại ngắn theo chủ đề quen thuộc.",
+    "courseId": 12
+  },
+  {
+    "name": "Lesson 7: Ôn tập kỹ năng đọc hiểu đoạn văn ngắn",
+    "description": "Ôn luyện đọc hiểu các đoạn văn ngắn, trả lời câu hỏi trắc nghiệm và điền từ vào chỗ trống.",
+    "courseId": 12
+  },
+  {
+    "name": "Lesson 8: Ôn tập kỹ năng viết câu và đoạn văn ngắn",
+    "description": "Thực hành viết câu, đoạn văn ngắn về các chủ đề đã học, chú trọng ngữ pháp và chính tả.",
+    "courseId": 12
+  },
+  {
+    "name": "Lesson 9: Thực hành làm đề thi nghe mẫu Movers",
+    "description": "Làm quen với cấu trúc và dạng câu hỏi của phần thi nghe trong đề thi Movers qua các đề mẫu.",
+    "courseId": 12
+  },
+  {
+    "name": "Lesson 10: Thực hành làm đề thi nói mẫu Movers",
+    "description": "Luyện tập phần thi nói với các câu hỏi và bài tập mô phỏng theo đề thi chính thức.",
+    "courseId": 12
+  },
+  {
+    "name": "Lesson 11: Thực hành làm đề thi đọc hiểu mẫu Movers",
+    "description": "Thực hành làm bài đọc hiểu mẫu, luyện kỹ năng trả lời nhanh và chính xác các câu hỏi trắc nghiệm.",
+    "courseId": 12
+  },
+  {
+    "name": "Lesson 12: Thực hành làm đề thi viết mẫu Movers",
+    "description": "Luyện viết các bài tập trong đề thi mẫu, rèn luyện kỹ năng viết câu và đoạn văn ngắn đúng chuẩn.",
+    "courseId": 12
+  },
+  {
+    "name": "Lesson 13: Ôn tập tổng hợp qua trò chơi và hoạt động nhóm",
+    "description": "Ôn luyện kiến thức và kỹ năng qua các trò chơi và hoạt động nhóm giúp ghi nhớ lâu dài và tăng sự hứng thú.",
+    "courseId": 12
+  },
+  {
+    "name": "Lesson 14: Kiểm tra thử tổng hợp Movers",
+    "description": "Thực hiện bài kiểm tra thử tổng hợp các kỹ năng nghe, nói, đọc, viết theo chuẩn đề thi Movers.",
+    "courseId": 12
+  },
+  {
+    "name": "Lesson 15: Đánh giá kết quả và định hướng học tiếp",
+    "description": "Đánh giá kết quả học tập, nhận xét và định hướng lộ trình học tiếp theo phù hợp với năng lực học viên.",
+    "courseId": 12
+  },
+  {
+    "name": "Lesson 1: Từ vựng chuyên sâu về xã hội và các mối quan hệ",
+    "description": "Mở rộng từ vựng về các chủ đề xã hội, mối quan hệ xã hội, các loại hình gia đình và bạn bè đa dạng.",
+    "courseId": 13
+  },
+  {
+    "name": "Lesson 2: Câu điều kiện loại 3 – cấu trúc và ứng dụng",
+    "description": "Tìm hiểu cấu trúc câu điều kiện loại 3 và cách sử dụng để nói về những điều không có thật trong quá khứ.",
+    "courseId": 13
+  },
+  {
+    "name": "Lesson 3: Kỹ năng đọc hiểu bài báo và đoạn văn dài",
+    "description": "Phát triển kỹ năng đọc hiểu các bài báo, đoạn văn dài, xác định ý chính và chi tiết quan trọng.",
+    "courseId": 13
+  },
+  {
+    "name": "Lesson 4: Từ vựng về khoa học và công nghệ hiện đại",
+    "description": "Học từ vựng chuyên ngành liên quan đến khoa học, công nghệ, thiết bị điện tử và xu hướng công nghệ mới.",
+    "courseId": 13
+  },
+  {
+    "name": "Lesson 5: Câu bị động nâng cao trong các thì khác nhau",
+    "description": "Ôn luyện và thực hành câu bị động ở các thì phức tạp hơn như hiện tại hoàn thành, tương lai đơn.",
+    "courseId": 13
+  },
+  {
+    "name": "Lesson 6: Kỹ năng nghe hiểu bài nói chuyện và thuyết trình ngắn",
+    "description": "Luyện nghe các bài nói chuyện, thuyết trình ngắn, ghi chú ý chính và trả lời câu hỏi chi tiết.",
+    "courseId": 13
+  },
+  {
+    "name": "Lesson 7: Từ vựng về môi trường và bảo vệ thiên nhiên",
+    "description": "Mở rộng vốn từ về môi trường, các vấn đề bảo vệ thiên nhiên và các hoạt động xanh.",
+    "courseId": 13
+  },
+  {
+    "name": "Lesson 8: Câu gián tiếp – cấu trúc và cách dùng trong giao tiếp",
+    "description": "Tìm hiểu và luyện tập sử dụng câu gián tiếp trong giao tiếp và viết văn bản.",
+    "courseId": 13
+  },
+  {
+    "name": "Lesson 9: Kỹ năng nói – thuyết trình và tranh luận đơn giản",
+    "description": "Phát triển kỹ năng nói qua các bài thuyết trình ngắn và tranh luận các chủ đề quen thuộc.",
+    "courseId": 13
+  },
+  {
+    "name": "Lesson 10: Từ vựng về sức khỏe, dinh dưỡng và lối sống lành mạnh",
+    "description": "Học từ vựng chuyên sâu về sức khỏe, dinh dưỡng và các thói quen sống lành mạnh.",
+    "courseId": 13
+  },
+  {
+    "name": "Lesson 11: Kỹ năng viết bài luận ngắn và thư từ nâng cao",
+    "description": "Luyện viết bài luận ngắn, thư từ chính thức và không chính thức với cấu trúc rõ ràng, mạch lạc.",
+    "courseId": 13
+  },
+  {
+    "name": "Lesson 12: Luyện tập nối câu và sử dụng liên từ phức tạp",
+    "description": "Thực hành nối câu đơn thành câu phức sử dụng các liên từ nâng cao và trạng từ nối.",
+    "courseId": 13
+  },
+  {
+    "name": "Lesson 13: Kỹ năng nghe – hội thoại và đoạn hội thoại phức tạp",
+    "description": "Luyện nghe các đoạn hội thoại dài, phức tạp, nắm bắt ý chính và chi tiết quan trọng.",
+    "courseId": 13
+  },
+  {
+    "name": "Lesson 14: Đọc hiểu và phân tích ý chính trong bài viết học thuật",
+    "description": "Phát triển kỹ năng đọc hiểu các bài viết học thuật đơn giản, phân tích ý chính và lập luận.",
+    "courseId": 13
+  },
+  {
+    "name": "Lesson 15: Ôn tập tổng hợp và kiểm tra đánh giá năng lực",
+    "description": "Ôn tập toàn bộ kiến thức và kỹ năng đã học, làm bài kiểm tra đánh giá năng lực tổng hợp.",
+    "courseId": 13
+  },
+  {
+    "name": "Lesson 1: Làm quen với âm và từ vựng nâng cao trong giao tiếp",
+    "description": "Ôn luyện phát âm chuẩn các âm khó, mở rộng từ vựng theo chủ đề xã hội và trường học.",
+    "courseId": 14
+  },
+  {
+    "name": "Lesson 2: Nghe hiểu đoạn hội thoại về các hoạt động hàng ngày",
+    "description": "Luyện nghe các đoạn hội thoại mô tả hoạt động thường ngày và trả lời câu hỏi chi tiết.",
+    "courseId": 14
+  },
+  {
+    "name": "Lesson 3: Thực hành mô tả tranh và kể chuyện ngắn",
+    "description": "Phát triển kỹ năng nói qua mô tả tranh và kể chuyện dựa trên hình ảnh.",
+    "courseId": 14
+  },
+  {
+    "name": "Lesson 4: Nghe và nhận biết từ khóa trong hội thoại dài",
+    "description": "Rèn luyện kỹ năng nghe nhận biết từ khóa, ý chính trong các đoạn hội thoại dài hơn.",
+    "courseId": 14
+  },
+  {
+    "name": "Lesson 5: Thực hành hỏi đáp về sở thích và kế hoạch tương lai",
+    "description": "Luyện tập đặt câu hỏi và trả lời về sở thích cá nhân và kế hoạch tương lai gần (using 'going to').",
+    "courseId": 14
+  },
+  {
+    "name": "Lesson 6: Nghe và phân biệt các âm tương tự trong tiếng Anh",
+    "description": "Phát triển khả năng nghe phân biệt các âm dễ nhầm lẫn và luyện phát âm chính xác.",
+    "courseId": 14
+  },
+  {
+    "name": "Lesson 7: Thực hành hội thoại tình huống mua sắm và hỏi đường",
+    "description": "Mô phỏng các tình huống giao tiếp thực tế như mua sắm, hỏi đường với từ vựng và mẫu câu phù hợp.",
+    "courseId": 14
+  },
+  {
+    "name": "Lesson 8: Nghe hiểu đoạn hội thoại về thời tiết và các sự kiện",
+    "description": "Luyện nghe các đoạn hội thoại mô tả thời tiết, sự kiện và trả lời câu hỏi chi tiết.",
+    "courseId": 14
+  },
+  {
+    "name": "Lesson 9: Thực hành phát âm và ngữ điệu trong câu hỏi và câu trả lời",
+    "description": "Tập trung cải thiện phát âm, ngữ điệu khi đặt câu hỏi và trả lời để giao tiếp tự nhiên, rõ ràng.",
+    "courseId": 14
+  },
+  {
+    "name": "Lesson 10: Nghe và nhận biết các thông tin chi tiết trong đoạn hội thoại",
+    "description": "Phát triển kỹ năng nghe chi tiết, nhận biết thông tin cụ thể trong các đoạn hội thoại đa dạng.",
+    "courseId": 14
+  },
+  {
+    "name": "Lesson 11: Thực hành nói về các chủ đề gia đình, trường học và sở thích",
+    "description": "Luyện nói tự nhiên, mạch lạc về các chủ đề quen thuộc, sử dụng từ vựng và cấu trúc câu nâng cao.",
+    "courseId": 14
+  },
+  {
+    "name": "Lesson 12: Nghe hiểu và trả lời câu hỏi về các hoạt động hàng ngày",
+    "description": "Luyện nghe các đoạn hội thoại mô tả hoạt động hàng ngày và trả lời câu hỏi chi tiết, chính xác.",
+    "courseId": 14
+  },
+  {
+    "name": "Lesson 13: Thực hành hội thoại qua trò chơi và hoạt động nhóm",
+    "description": "Tăng cường kỹ năng nói qua các trò chơi, hoạt động nhóm giúp học viên tự tin giao tiếp và phản xạ nhanh.",
+    "courseId": 14
+  },
+  {
+    "name": "Lesson 14: Nghe và mô tả sự khác biệt trong hình ảnh và tình huống",
+    "description": "Rèn luyện kỹ năng nghe và nói mô tả sự khác biệt trong các bức tranh và tình huống thực tế, chuẩn bị cho phần thi nói.",
+    "courseId": 14
+  },
+  {
+    "name": "Lesson 1: Đọc hiểu đoạn văn dài về chủ đề xã hội",
+    "description": "Phát triển kỹ năng đọc hiểu các đoạn văn dài về các chủ đề xã hội, xác định ý chính và chi tiết quan trọng.",
+    "courseId": 15
+  },
+  {
+    "name": "Lesson 2: Viết đoạn văn mô tả và kể chuyện",
+    "description": "Luyện viết đoạn văn mô tả sự vật, con người và kể lại một câu chuyện ngắn theo trình tự thời gian.",
+    "courseId": 15
+  },
+  {
+    "name": "Lesson 3: Đọc hiểu bài báo và bài viết học thuật đơn giản",
+    "description": "Phân tích và hiểu nội dung các bài báo, bài viết học thuật đơn giản, trả lời câu hỏi chi tiết.",
+    "courseId": 15
+  },
+  {
+    "name": "Lesson 4: Viết thư không chính thức và thư chính thức",
+    "description": "Luyện viết thư không chính thức cho bạn bè và thư chính thức cho nhà trường hoặc tổ chức.",
+    "courseId": 15
+  },
+  {
+    "name": "Lesson 5: Kỹ năng tóm tắt đoạn văn và bài viết",
+    "description": "Phát triển kỹ năng tóm tắt ý chính và nội dung quan trọng trong đoạn văn và bài viết dài.",
+    "courseId": 15
+  },
+  {
+    "name": "Lesson 6: Viết bài luận ngắn theo chủ đề quen thuộc",
+    "description": "Luyện viết bài luận ngắn, trình bày ý kiến cá nhân và lập luận rõ ràng, mạch lạc.",
+    "courseId": 15
+  },
+  {
+    "name": "Lesson 7: Đọc hiểu và phân tích các thể loại văn bản khác nhau",
+    "description": "Phân tích các thể loại văn bản như truyện ngắn, bài báo, đoạn văn miêu tả và nghị luận.",
+    "courseId": 15
+  },
+  {
+    "name": "Lesson 8: Viết câu phức và đoạn văn sử dụng liên từ nâng cao",
+    "description": "Thực hành viết câu phức và đoạn văn sử dụng các liên từ nâng cao để tăng tính mạch lạc.",
+    "courseId": 15
+  },
+  {
+    "name": "Lesson 9: Đọc hiểu các bài viết về khoa học và công nghệ",
+    "description": "Phân tích và hiểu nội dung các bài viết về khoa học, công nghệ và ứng dụng thực tế.",
+    "courseId": 15
+  },
+  {
+    "name": "Lesson 10: Viết báo cáo ngắn và bài tường thuật",
+    "description": "Luyện viết báo cáo ngắn và bài tường thuật sự kiện theo cấu trúc chuẩn và ngôn ngữ phù hợp.",
+    "courseId": 15
+  },
+  {
+    "name": "Lesson 11: Đọc hiểu và phân tích bài viết về môi trường và xã hội",
+    "description": "Phân tích các bài viết về môi trường, xã hội và các vấn đề toàn cầu hiện nay.",
+    "courseId": 15
+  },
+  {
+    "name": "Lesson 12: Viết bài luận thuyết phục và tranh luận đơn giản",
+    "description": "Luyện viết bài luận thuyết phục, trình bày quan điểm và lập luận có sức thuyết phục.",
+    "courseId": 15
+  },
+  {
+    "name": "Lesson 13: Đọc hiểu bài thơ và văn học đơn giản",
+    "description": "Phân tích và cảm nhận các bài thơ và tác phẩm văn học đơn giản phù hợp trình độ Flyers.",
+    "courseId": 15
+  },
+  {
+    "name": "Lesson 14: Viết sáng tạo – truyện ngắn và bài viết tưởng tượng",
+    "description": "Phát triển kỹ năng viết sáng tạo qua truyện ngắn và bài viết tưởng tượng theo chủ đề tự chọn.",
+    "courseId": 15
+  },
+  {
+    "name": "Lesson 15: Ôn tập và kiểm tra kỹ năng đọc và viết",
+    "description": "Ôn tập toàn bộ kỹ năng đọc và viết đã học, làm bài kiểm tra đánh giá tổng hợp.",
+    "courseId": 15
+  },
+  {
+    "name": "Lesson 1: Ôn tập từ vựng chủ đề gia đình, bạn bè và xã hội",
+    "description": "Ôn lại và củng cố từ vựng về các mối quan hệ, gia đình, bạn bè và các chủ đề xã hội đã học.",
+    "courseId": 16
+  },
+  {
+    "name": "Lesson 2: Ôn tập các thì cơ bản và nâng cao trong tiếng Anh",
+    "description": "Củng cố kiến thức về các thì hiện tại, quá khứ, tương lai và câu điều kiện đã học.",
+    "courseId": 16
+  },
+  {
+    "name": "Lesson 3: Ôn tập kỹ năng nghe qua các dạng bài thi Flyers",
+    "description": "Rèn luyện kỹ năng nghe hiểu qua các dạng bài thi như nghe điền từ, nối tranh, chọn đáp án đúng.",
+    "courseId": 16
+  },
+  {
+    "name": "Lesson 4: Ôn tập kỹ năng nói – mô tả tranh và trả lời câu hỏi",
+    "description": "Thực hành mô tả tranh, trả lời câu hỏi và tham gia hội thoại ngắn theo chủ đề quen thuộc.",
+    "courseId": 16
+  },
+  {
+    "name": "Lesson 5: Ôn tập kỹ năng đọc hiểu đoạn văn dài và bài báo",
+    "description": "Ôn luyện đọc hiểu các đoạn văn dài, bài báo và trả lời câu hỏi chi tiết, phân tích ý chính.",
+    "courseId": 16
+  },
+  {
+    "name": "Lesson 6: Ôn tập kỹ năng viết câu, đoạn văn và bài luận ngắn",
+    "description": "Thực hành viết câu, đoạn văn và bài luận ngắn theo chủ đề, đảm bảo ngữ pháp và chính tả đúng.",
+    "courseId": 16
+  },
+  {
+    "name": "Lesson 7: Ôn tập phát âm và ngữ điệu nâng cao",
+    "description": "Ôn luyện phát âm các âm khó, ngữ điệu trong câu hỏi và câu trả lời để giao tiếp tự nhiên, rõ ràng.",
+    "courseId": 16
+  },
+  {
+    "name": "Lesson 8: Thực hành làm đề thi nghe mẫu Flyers",
+    "description": "Làm quen với cấu trúc và dạng câu hỏi của phần thi nghe trong đề thi Flyers qua các đề mẫu.",
+    "courseId": 16
+  },
+  {
+    "name": "Lesson 9: Thực hành làm đề thi nói mẫu Flyers",
+    "description": "Luyện tập phần thi nói với các câu hỏi và bài tập mô phỏng theo đề thi chính thức.",
+    "courseId": 16
+  },
+  {
+    "name": "Lesson 10: Thực hành làm đề thi đọc hiểu mẫu Flyers",
+    "description": "Thực hành làm bài đọc hiểu mẫu, luyện kỹ năng trả lời nhanh và chính xác các câu hỏi trắc nghiệm.",
+    "courseId": 16
+  },
+  {
+    "name": "Lesson 11: Thực hành làm đề thi viết mẫu Flyers",
+    "description": "Luyện viết các bài tập trong đề thi mẫu, rèn luyện kỹ năng viết câu và đoạn văn ngắn đúng chuẩn.",
+    "courseId": 16
+  },
+  {
+    "name": "Lesson 12: Ôn tập tổng hợp qua trò chơi và hoạt động nhóm",
+    "description": "Ôn luyện kiến thức và kỹ năng qua các trò chơi và hoạt động nhóm giúp ghi nhớ lâu dài và tăng sự hứng thú.",
+    "courseId": 16
+  },
+  {
+    "name": "Lesson 13: Kiểm tra thử tổng hợp Flyers",
+    "description": "Thực hiện bài kiểm tra thử tổng hợp các kỹ năng nghe, nói, đọc, viết theo chuẩn đề thi Flyers.",
+    "courseId": 16
+  },
+  {
+    "name": "Lesson 14: Đánh giá kết quả học tập và phản hồi cá nhân",
+    "description": "Đánh giá kết quả học tập từng học viên, nhận xét và tư vấn cải thiện kỹ năng cá nhân.",
+    "courseId": 16
+  },
+  {
+    "name": "Lesson 15: Định hướng lộ trình học tiếp và phát triển kỹ năng",
+    "description": "Tư vấn lộ trình học tiếp theo phù hợp với năng lực và mục tiêu của học viên, phát triển kỹ năng nâng cao.",
+    "courseId": 16
+  },
+  {
+    "name": "Lesson 1: Giao tiếp trong môi trường công sở chuyên nghiệp",
+    "description": "Phát triển kỹ năng giao tiếp hiệu quả trong các tình huống công sở như họp, thuyết trình và đàm phán.",
+    "courseId": 17
+  },
+  {
+    "name": "Lesson 2: Kỹ năng xây dựng mối quan hệ và làm việc nhóm",
+    "description": "Học cách tương tác, hợp tác và giải quyết xung đột trong môi trường làm việc.",
+    "courseId": 17
+  },
+  {
+    "name": "Lesson 3: Mẫu câu thuyết phục và đàm phán trong kinh doanh",
+    "description": "Thực hành sử dụng ngôn ngữ thuyết phục và kỹ thuật đàm phán hiệu quả.",
+    "courseId": 17
+  },
+  {
+    "name": "Lesson 4: Giao tiếp qua email và văn bản chuyên nghiệp",
+    "description": "Viết email, báo cáo và các văn bản công sở với phong cách chuẩn và lịch sự.",
+    "courseId": 17
+  },
+  {
+    "name": "Lesson 5: Kỹ năng lắng nghe chủ động và phản hồi xây dựng",
+    "description": "Phát triển kỹ năng lắng nghe hiệu quả và đưa ra phản hồi tích cực.",
+    "courseId": 17
+  },
+  {
+    "name": "Lesson 6: Xử lý tình huống giao tiếp phức tạp và khủng hoảng",
+    "description": "Học cách ứng xử và giao tiếp trong các tình huống khó khăn và khẩn cấp.",
+    "courseId": 17
+  },
+  {
+    "name": "Lesson 7: Giao tiếp đa văn hóa và kỹ năng thích nghi",
+    "description": "Hiểu và áp dụng kỹ năng giao tiếp trong môi trường đa văn hóa.",
+    "courseId": 17
+  },
+  {
+    "name": "Lesson 8: Phát triển kỹ năng thuyết trình chuyên nghiệp",
+    "description": "Luyện tập kỹ năng chuẩn bị và trình bày thuyết trình hiệu quả.",
+    "courseId": 17
+  },
+  {
+    "name": "Lesson 9: Kỹ năng đàm phán và giải quyết xung đột trong môi trường làm việc",
+    "description": "Học cách đàm phán hiệu quả, xử lý xung đột và duy trì mối quan hệ chuyên nghiệp qua giao tiếp bằng tiếng Anh.",
+    "courseId": 17
+  },
+  {
+    "name": "Lesson 10: Luyện nghe các bài phỏng vấn và hội thoại chuyên sâu",
+    "description": "Phát triển kỹ năng nghe hiểu các bài phỏng vấn, hội thoại chuyên sâu với ngôn ngữ tự nhiên và tốc độ nhanh.",
+    "courseId": 17
+  },
+  {
+    "name": "Lesson 11: Kỹ năng sử dụng ngôn ngữ cơ thể trong giao tiếp",
+    "description": "Tăng cường hiệu quả giao tiếp bằng cách sử dụng ngôn ngữ cơ thể phù hợp và chuyên nghiệp.",
+    "courseId": 17
+  },
+  {
+    "name": "Lesson 12: Kỹ thuật đặt câu hỏi và phản hồi trong giao tiếp công sở",
+    "description": "Thực hành kỹ năng đặt câu hỏi mở, câu hỏi đóng và phản hồi xây dựng trong môi trường làm việc.",
+    "courseId": 17
+  },
+  {
+    "name": "Lesson 13: Giao tiếp qua điện thoại và hội nghị trực tuyến",
+    "description": "Phát triển kỹ năng giao tiếp hiệu quả qua điện thoại và các nền tảng hội nghị trực tuyến.",
+    "courseId": 17
+  },
+  {
+    "name": "Lesson 14: Kỹ năng quản lý thời gian và giao tiếp hiệu quả",
+    "description": "Học cách giao tiếp để quản lý thời gian và công việc hiệu quả trong môi trường chuyên nghiệp.",
+    "courseId": 17
+  },
+  {
+    "name": "Lesson 15: Ôn tập và đánh giá kỹ năng giao tiếp chuyên nghiệp",
+    "description": "Ôn tập toàn bộ kỹ năng đã học và thực hành đánh giá năng lực giao tiếp trong môi trường công sở.",
+    "courseId": 17
+  },
+  {
+    "name": "Lesson 1: Giới thiệu về kỹ năng thuyết trình và tranh luận",
+    "description": "Tổng quan về kỹ năng thuyết trình, tranh luận và tầm quan trọng trong học tập và công việc.",
+    "courseId": 18
+  },
+  {
+    "name": "Lesson 2: Kỹ thuật lập dàn ý và xây dựng luận điểm thuyết phục",
+    "description": "Học cách lập dàn ý chi tiết và xây dựng luận điểm logic, thuyết phục cho bài thuyết trình và tranh luận.",
+    "courseId": 18
+  },
+  {
+    "name": "Lesson 3: Sử dụng ngôn ngữ học thuật và từ vựng chuyên sâu",
+    "description": "Mở rộng vốn từ và cách sử dụng ngôn ngữ học thuật trong thuyết trình và tranh luận.",
+    "courseId": 18
+  },
+  {
+    "name": "Lesson 4: Kỹ năng trình bày mạch lạc và thu hút người nghe",
+    "description": "Luyện tập cách trình bày rõ ràng, mạch lạc và sử dụng ngôn ngữ cơ thể hiệu quả.",
+    "courseId": 18
+  },
+  {
+    "name": "Lesson 5: Kỹ thuật xử lý câu hỏi và phản biện trong tranh luận",
+    "description": "Phát triển kỹ năng trả lời câu hỏi và phản biện các quan điểm trái chiều một cách chuyên nghiệp.",
+    "courseId": 18
+  },
+  {
+    "name": "Lesson 6: Thực hành thuyết trình theo chủ đề học thuật và xã hội",
+    "description": "Luyện tập thuyết trình về các chủ đề học thuật và xã hội đa dạng, sử dụng ngôn ngữ chuẩn xác.",
+    "courseId": 18
+  },
+  {
+    "name": "Lesson 7: Phân tích các bài tranh luận mẫu và kỹ thuật thuyết phục",
+    "description": "Nghiên cứu các bài tranh luận mẫu để hiểu và áp dụng các kỹ thuật thuyết phục hiệu quả.",
+    "courseId": 18
+  },
+  {
+    "name": "Lesson 8: Kỹ năng làm việc nhóm trong thuyết trình và tranh luận",
+    "description": "Phát triển kỹ năng phối hợp nhóm, phân công vai trò và hỗ trợ trong các hoạt động thuyết trình và tranh luận.",
+    "courseId": 18
+  },
+  {
+    "name": "Lesson 9: Sử dụng công nghệ hỗ trợ thuyết trình hiệu quả",
+    "description": "Học cách sử dụng các công cụ trình chiếu, video và phần mềm hỗ trợ để tăng sức hấp dẫn bài thuyết trình.",
+    "courseId": 18
+  },
+  {
+    "name": "Lesson 10: Kỹ năng kiểm soát căng thẳng và tự tin khi thuyết trình",
+    "description": "Phương pháp giảm căng thẳng và tăng sự tự tin khi đứng trước đám đông.",
+    "courseId": 18
+  },
+  {
+    "name": "Lesson 11: Thực hành tranh luận trực tiếp và phản biện nhanh",
+    "description": "Luyện tập tranh luận trực tiếp, phản biện nhanh và xử lý tình huống bất ngờ trong tranh luận.",
+    "courseId": 18
+  },
+  {
+    "name": "Lesson 12: Phân tích và đánh giá các bài thuyết trình và tranh luận",
+    "description": "Học cách phân tích, đánh giá và rút kinh nghiệm từ các bài thuyết trình và tranh luận thực tế.",
+    "courseId": 18
+  },
+  {
+    "name": "Lesson 13: Kỹ năng viết bài luận tranh luận và báo cáo phân tích",
+    "description": "Phát triển kỹ năng viết bài luận tranh luận và báo cáo phân tích với lập luận chặt chẽ và bằng chứng thuyết phục.",
+    "courseId": 18
+  },
+  {
+    "name": "Lesson 14: Thực hành tổng hợp kỹ năng thuyết trình và tranh luận",
+    "description": "Tổng hợp và luyện tập toàn diện các kỹ năng đã học qua các bài tập thực hành đa dạng.",
+    "courseId": 18
+  },
+  {
+    "name": "Lesson 15: Đánh giá năng lực và phản hồi cá nhân",
+    "description": "Đánh giá kết quả học tập, nhận xét và tư vấn cải thiện kỹ năng thuyết trình và tranh luận cá nhân.",
+    "courseId": 18
+  },
+  {
+    "name": "Lesson 1: Giới thiệu kỹ năng đọc hiểu học thuật",
+    "description": "Tổng quan về kỹ năng đọc hiểu các bài viết học thuật và phương pháp tiếp cận hiệu quả.",
+    "courseId": 19
+  },
+  {
+    "name": "Lesson 2: Phân tích cấu trúc bài viết học thuật",
+    "description": "Hiểu và nhận diện các phần chính trong bài viết học thuật như mở bài, thân bài, kết luận.",
+    "courseId": 19
+  },
+  {
+    "name": "Lesson 3: Từ vựng chuyên ngành và thuật ngữ học thuật",
+    "description": "Mở rộng vốn từ chuyên ngành và học cách sử dụng thuật ngữ chính xác trong bài viết học thuật.",
+    "courseId": 19
+  },
+  {
+    "name": "Lesson 4: Kỹ năng tóm tắt và diễn giải thông tin học thuật",
+    "description": "Luyện tập tóm tắt nội dung và diễn giải lại thông tin một cách chính xác và ngắn gọn.",
+    "courseId": 19
+  },
+  {
+    "name": "Lesson 5: Phân tích và đánh giá nguồn tài liệu học thuật",
+    "description": "Học cách phân tích, đánh giá và lựa chọn nguồn tài liệu phù hợp cho nghiên cứu và viết bài.",
+    "courseId": 19
+  },
+  {
+    "name": "Lesson 6: Kỹ năng viết luận văn và bài luận học thuật",
+    "description": "Hướng dẫn cách xây dựng luận văn, bài luận với cấu trúc rõ ràng và lập luận logic.",
+    "courseId": 19
+  },
+  {
+    "name": "Lesson 7: Viết báo cáo nghiên cứu và kết quả phân tích",
+    "description": "Luyện viết báo cáo nghiên cứu khoa học với các phần quan trọng và ngôn ngữ chuyên nghiệp.",
+    "courseId": 19
+  },
+  {
+    "name": "Lesson 8: Cách trích dẫn và tham khảo tài liệu đúng chuẩn",
+    "description": "Học các quy tắc trích dẫn và tham khảo tài liệu theo các chuẩn quốc tế phổ biến.",
+    "courseId": 19
+  },
+  {
+    "name": "Lesson 9: Kỹ năng viết email và thư từ học thuật chuyên nghiệp",
+    "description": "Phát triển kỹ năng viết email, thư từ giao tiếp trong môi trường học thuật và nghiên cứu.",
+    "courseId": 19
+  },
+  {
+    "name": "Lesson 10: Phân tích và chỉnh sửa bài viết học thuật",
+    "description": "Luyện tập kỹ năng phân tích, chỉnh sửa và cải thiện bài viết học thuật về ngữ pháp và nội dung.",
+    "courseId": 19
+  },
+  {
+    "name": "Lesson 11: Kỹ năng trình bày kết quả nghiên cứu bằng văn bản",
+    "description": "Học cách trình bày kết quả nghiên cứu một cách rõ ràng, logic và thuyết phục qua văn bản.",
+    "courseId": 19
+  },
+  {
+    "name": "Lesson 12: Thực hành viết bài luận phản biện và phân tích sâu",
+    "description": "Luyện viết bài luận phản biện với lập luận chặt chẽ và dẫn chứng thuyết phục.",
+    "courseId": 19
+  },
+  {
+    "name": "Lesson 13: Kỹ năng đọc hiểu các bài báo khoa học và báo cáo chuyên ngành",
+    "description": "Phát triển kỹ năng đọc hiểu sâu các bài báo khoa học và báo cáo chuyên ngành đa lĩnh vực.",
+    "courseId": 19
+  },
+  {
+    "name": "Lesson 14: Viết bài nghiên cứu sáng tạo và đề xuất dự án",
+    "description": "Hướng dẫn viết bài nghiên cứu sáng tạo và đề xuất dự án khoa học với phong cách chuyên nghiệp.",
+    "courseId": 19
+  },
+  {
+    "name": "Lesson 15: Ôn tập và đánh giá kỹ năng đọc và viết học thuật",
+    "description": "Ôn tập toàn bộ kỹ năng đọc hiểu và viết học thuật, thực hành bài kiểm tra đánh giá tổng hợp.",
+    "courseId": 19
+  },
+  {
+    "name": "Lesson 1: Tổng quan về các chứng chỉ tiếng Anh quốc tế và yêu cầu bài thi",
+    "description": "Giới thiệu cấu trúc, kỹ năng và tiêu chí đánh giá của các chứng chỉ PET, FCE, TOEIC.",
+    "courseId": 20
+  },
+  {
+    "name": "Lesson 2: Chiến lược làm bài thi nghe – kỹ thuật nghe chọn lọc thông tin",
+    "description": "Phân tích dạng câu hỏi và luyện tập kỹ thuật nghe hiệu quả trong đề thi.",
+    "courseId": 20
+  },
+  {
+    "name": "Lesson 3: Luyện nghe các đoạn hội thoại và bài nói chuyên sâu",
+    "description": "Thực hành nghe các đoạn hội thoại, bài nói chuyện với tốc độ nhanh và ngôn ngữ tự nhiên.",
+    "courseId": 20
+  },
+  {
+    "name": "Lesson 4: Kỹ năng nói – trả lời câu hỏi phỏng vấn và thuyết trình ngắn",
+    "description": "Luyện tập trả lời câu hỏi phỏng vấn, thuyết trình ngắn và xử lý tình huống giao tiếp khó khăn.",
+    "courseId": 20
+  },
+  {
+    "name": "Lesson 5: Phân tích và luyện tập các dạng bài đọc hiểu nâng cao",
+    "description": "Luyện đọc hiểu các bài báo, bài luận và bài viết học thuật, kỹ năng tìm ý chính và suy luận thông tin.",
+    "courseId": 20
+  },
+  {
+    "name": "Lesson 6: Kỹ năng viết bài luận học thuật và báo cáo chuyên nghiệp",
+    "description": "Luyện viết bài luận, báo cáo với cấu trúc rõ ràng, lập luận chặt chẽ và ngôn ngữ học thuật.",
+    "courseId": 20
+  },
+  {
+    "name": "Lesson 7: Từ vựng chuyên ngành và thành ngữ thông dụng trong giao tiếp nghề nghiệp",
+    "description": "Mở rộng vốn từ chuyên ngành và thành ngữ thường dùng trong môi trường làm việc và thi cử.",
+    "courseId": 20
+  },
+  {
+    "name": "Lesson 8: Kỹ năng đàm phán và thương lượng trong công việc",
+    "description": "Phát triển kỹ năng đàm phán, thương lượng và xử lý tình huống phức tạp trong môi trường làm việc.",
+    "courseId": 20
+  },
+  {
+    "name": "Lesson 9: Chuẩn bị phỏng vấn xin việc – kỹ năng trả lời và giao tiếp hiệu quả",
+    "description": "Luyện kỹ năng trả lời phỏng vấn, giao tiếp tự tin và xây dựng hình ảnh chuyên nghiệp.",
+    "courseId": 20
+  },
+  {
+    "name": "Lesson 10: Viết CV và thư xin việc theo chuẩn quốc tế",
+    "description": "Hướng dẫn cách viết CV và thư xin việc chuyên nghiệp, phù hợp với các tiêu chuẩn tuyển dụng quốc tế.",
+    "courseId": 20
+  },
+  {
+    "name": "Lesson 11: Kỹ năng xử lý tình huống giao tiếp khẩn cấp và phức tạp",
+    "description": "Thực hành các mẫu câu và kỹ năng giao tiếp khi đối mặt với các tình huống khẩn cấp, tranh cãi.",
+    "courseId": 20
+  },
+  {
+    "name": "Lesson 12: Luyện nghe và nói qua các bài thuyết trình chuyên sâu",
+    "description": "Nghe và phân tích các bài thuyết trình chuyên sâu, luyện nói theo phong cách chuyên nghiệp.",
+    "courseId": 20
+  },
+  {
+    "name": "Lesson 13: Viết báo cáo nghiên cứu và đề xuất dự án",
+    "description": "Luyện kỹ năng viết báo cáo nghiên cứu, đề xuất dự án với ngôn ngữ chuẩn và cấu trúc logic.",
+    "courseId": 20
+  },
+  {
+    "name": "Lesson 14: Đọc hiểu các tài liệu pháp lý và hợp đồng đơn giản",
+    "description": "Phát triển kỹ năng đọc hiểu các văn bản pháp lý, hợp đồng trong môi trường làm việc quốc tế.",
+    "courseId": 20
+  },
+  {
+    "name": "Lesson 15: Ôn tập tổng hợp và kiểm tra đánh giá năng lực toàn diện",
+    "description": "Ôn tập toàn bộ kiến thức và kỹ năng đã học, làm bài kiểm tra tổng hợp đánh giá năng lực chuẩn bị thi.",
+    "courseId": 20
   }
 ]

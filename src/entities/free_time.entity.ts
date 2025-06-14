@@ -2,7 +2,7 @@ import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, AfterLoad } from 'ty
 import { Account } from './account.entity';
 import { format } from 'date-fns';
 
-@Entity('freeTimes')
+@Entity('free_time')
 export class FreeTime {
   @PrimaryGeneratedColumn()
   id: number;
