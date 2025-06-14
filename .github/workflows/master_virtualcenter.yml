@@ -25,12 +25,8 @@ jobs:
           npm ci
           npm run build
 
-      - name: Zip build output (only dist, package.json, etc.)
-        run: |
-          mkdir deploy
-          cp -r dist deploy/dist
-          cp package*.json deploy/
-          cd deploy && zip -r ../release.zip . && cd ..
+      - name: Zip artifact for deploymentAdd commentMore actions
+        run: zip release.zip ./* -r
 
       - name: Upload artifact for deployment
         uses: actions/upload-artifact@v4
