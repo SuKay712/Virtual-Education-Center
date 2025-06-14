@@ -30,7 +30,6 @@ jobs:
           mkdir deploy
           cp -r dist deploy/dist
           cp package*.json deploy/
-          cp -r node_modules deploy/node_modules || true
           cd deploy && zip -r ../release.zip . && cd ..
 
       - name: Upload artifact for deployment
