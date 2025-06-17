@@ -14,7 +14,7 @@ import { AuthService } from './auth.service';
 import { RegisterDto } from './dtos/registerDto';
 import { LoggingInterceptor } from '../../common/interceptors';
 
-@Controller('/auth')
+@Controller('auth')
 @UseInterceptors(LoggingInterceptor)
 export class AuthController {
   constructor(
@@ -22,12 +22,12 @@ export class AuthController {
     // private customMailerService: CustomMailerService
   ) {}
 
-  @Post('/login')
+  @Post('login')
   async loginUser(@Body() requestBody: LoginDto) {
     return this.authService.login(requestBody);
   }
 
-  @Post('/register')
+  @Post('register')
   async registerUser(@Body() registerDto: RegisterDto) {
     const result = await this.authService.registerAccount(registerDto);
 
@@ -43,7 +43,7 @@ export class AuthController {
     };
   }
 
-  @Post('/reset-password')
+  @Post('reset-password')
   async resetPassword(@Body('email') email: string) {
     // const result = await this.authService.sendPasswordReset(email);
 
@@ -74,7 +74,7 @@ export class AuthController {
     // }
   }
 
-  @Get('/get-reset-password')
+  @Get('get-reset-password')
   @Redirect()
   async getResetPassword(@Query('token') token: string) {
     // const result = await this.authService.resetPassword(token);

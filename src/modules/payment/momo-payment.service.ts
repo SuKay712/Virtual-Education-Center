@@ -124,13 +124,13 @@ export class MomoPaymentService {
     // Tạo chuỗi raw signature theo đúng thứ tự của MoMo
     const rawSignature = [
       'accessKey=' + accessKey,
-      'amount=' + (bill.course.price * 1000),
+      'amount=' + (bill.course.price),
       'extraData=' + extraData,
       'ipnUrl=' + `${deployedLink}/momo-payment/callback`,
       'orderId=' + billId,
       'orderInfo=' + `Course Payment - Bill #${bill.course.name}`,
       'partnerCode=' + this.partnerCode,
-      'redirectUrl=' + `http://localhost:3000/student/course`,
+      'redirectUrl=' + `${this.configService.get<string>('FRONTEND_URL')}/student/course`,
       'requestId=' + requestId,
       'requestType=' + requestType
     ].join('&');
@@ -141,10 +141,10 @@ export class MomoPaymentService {
     const requestBody = {
       partnerCode: partnerCode,
       requestId: requestId,
-      amount: bill.course.price * 1000,
+      amount: bill.course.price,
       orderId: billId,
       orderInfo: `Course Payment - Bill #${bill.course.name}`,
-      redirectUrl: `http://localhost:3000/student/course`,
+      redirectUrl: `${this.configService.get<string>('FRONTEND_URL')}/student/course`,
       ipnUrl: `${deployedLink}/momo-payment/callback`,
       extraData: extraData,
       requestType: requestType,

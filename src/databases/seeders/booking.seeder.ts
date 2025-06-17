@@ -18,9 +18,9 @@ export default class BookingSeeder implements Seeder {
 
     // Process bookingData to map class_id and teacher_id to their respective instances
     const bookings = await Promise.all(
-      bookingData.map(async (bookingObj: any) => {
-        const classInstance = await classRepo.findOne({ where: { id: bookingObj.class_id } });
-        const teacher = await teacherRepo.findOne({ where: { id: bookingObj.teacher_id } });
+      bookingData.bookings.map(async (bookingObj: any) => {
+        const classInstance = await classRepo.findOne({ where: { id: bookingObj.classId } });
+        const teacher = await teacherRepo.findOne({ where: { id: bookingObj.teacherId } });
 
         if (!classInstance) {
           throw new Error(`Class with id ${bookingObj.class_id} not found`);

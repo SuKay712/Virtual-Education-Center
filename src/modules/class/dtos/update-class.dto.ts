@@ -15,4 +15,8 @@ export class UpdateClassDto {
   @ArrayMinSize(1)
   @Type(() => Number)
   teacherIds?: number[];
+
+  @IsOptional()
+  @IsString()
+  meeting_url?: string;
 }

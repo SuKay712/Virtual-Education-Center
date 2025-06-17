@@ -8,6 +8,7 @@ import RoadmapSeeder from './roadmap.seeder';
 import AccountSeeder from './account.seeder';
 import LectureSeeder from './lecture.seeder';
 import ClassSeeder from './class.seeder';
+import BillSeeder from './bill.seeder';
 
 dotenv.config();
 
@@ -29,8 +30,9 @@ async function runSeeders() {
     // new RoadmapSeeder(dataSource),
     // new CourseSeeder(dataSource),
     // new LectureSeeder(dataSource),
-    new ClassSeeder(dataSource),
-    // new BookingSeeder(dataSource),
+    // new BillSeeder(dataSource),
+    // new ClassSeeder(dataSource),
+    new BookingSeeder(dataSource),
   ];
 
   for (const seeder of seeders) {

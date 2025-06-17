@@ -6,7 +6,6 @@ export * from './chat.entity';
 export * from './bill.entity';
 export * from './notification.entity';
 export * from './booking.entity';
-export * from './meeting.entity';
 export * from './theory.entity';
 export * from './chatbox.entity';
 export * from './free_time.entity';

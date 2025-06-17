@@ -4,6 +4,8 @@ import { Account } from 'src/entities';
 import { Role, Gender } from '../../common/enums';
 import { PasswordUtils } from '../../common/utils';
 
+const accountData = require('./accountData.json');
+
 export default class AccountSeeder implements Seeder {
   private dataSource: DataSource;
 
@@ -13,48 +15,25 @@ export default class AccountSeeder implements Seeder {
 
   public async run(): Promise<void> {
     const accountRepo = this.dataSource.getRepository(Account);
+    const hashedPassword = PasswordUtils.hashPassword('password123');
 
-    const accounts = [
-      {
-        email: 'admin@example.com',
-        password: PasswordUtils.hashPassword('admin123'),
-        name: 'Admin User',
-        gender: Gender.Male,
-        birthday: new Date('1990-01-01'),
-        phone: '0123456789',
-        avatar: '',
-        address: 'Hanoi',
-        isActived: true,
-        role: Role.Admin,
-      },
-      {
-        email: 'teacher@example.com',
-        password: PasswordUtils.hashPassword('teacher123'),
-        name: 'Teacher User',
-        gender: Gender.Female,
-        birthday: new Date('1985-05-15'),
-        phone: '0987654321',
-        avatar: '',
-        address: 'HCM',
-        isActived: true,
-        role: Role.Teacher,
-      },
-      {
-        email: 'student@example.com',
-        password: PasswordUtils.hashPassword('student123'),
-        name: 'Student User',
-        gender: Gender.Other,
-        birthday: new Date('2000-09-09'),
-        phone: '0111222333',
-        avatar: '',
-        address: 'Danang',
-        isActived: true,
-        role: Role.Student,
-      },
+    // Kết hợp tất cả accounts từ JSON
+    const allAccounts = [
+      ...accountData.accounts,
+      ...accountData.studentAccounts
     ];
 
+    // Xử lý dữ liệu để chuyển đổi enum và hash password
+    const processedAccounts = allAccounts.map(account => ({
+      ...account,
+      password: hashedPassword,
+      gender: account.gender as Gender,
+      role: account.role as Role,
+      birthday: new Date(account.birthday),
+    }));
+
     console.log('Seeding Accounts...');
-    await accountRepo.save(accounts);
-    console.log('Seed data for accounts created');
+    await accountRepo.save(processedAccounts);
+    console.log(`Seed data for ${processedAccounts.length} accounts created`);
   }
 }

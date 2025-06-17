@@ -23,7 +23,7 @@ export class Bill {
   @Column({
     type: 'enum',
     enum: BillPaymentMethodEnum,
-    default: BillPaymentMethodEnum.CASH,
+    default: BillPaymentMethodEnum.MOMO,
   })
   paymentMethod: BillPaymentMethodEnum;
 

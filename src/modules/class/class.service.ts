@@ -67,7 +67,7 @@ export class ClassService {
         isWithinInterval(cleanStartTime, { start: cleanExistingStart, end: cleanExistingEnd }) ||
         isWithinInterval(cleanEndTime, { start: cleanExistingStart, end: cleanExistingEnd }) ||
         isWithinInterval(cleanExistingStart, { start: cleanStartTime, end: cleanEndTime })
-      );
+      )
     });
   }
 
@@ -177,7 +177,6 @@ export class ClassService {
         'student',
         'bookings',
         'bookings.teacher',
-        'meeting'
       ],
       order: {
         time_start: 'DESC'
@@ -275,7 +274,7 @@ export class ClassService {
       // Add the new bookings to the class's bookings array
       classEntity.bookings = [...classEntity.bookings, ...savedBookings];
     }
-
+    classEntity.meeting_url = updateClassDto.meeting_url;
     // Save the updated class with its new bookings
     const updatedClass = await this.classRepository.save(classEntity);
 

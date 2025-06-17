@@ -1,7 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany, AfterLoad } from 'typeorm';
 import { Lecture } from './lecture.entity';
 import { Booking } from './booking.entity';
-import { Meeting } from './meeting.entity';
 import { Account } from './account.entity';
 import { format } from 'date-fns';
 
@@ -28,8 +27,8 @@ export class Class {
   @Column({ nullable: true })
   comment: string;
 
-  @ManyToOne(() => Meeting, (meeting) => meeting.classes)
-  meeting: Meeting;
+  @Column({ nullable: true })
+  meeting_url: string;
 
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   created_at: Date;
