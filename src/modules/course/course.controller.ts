@@ -8,6 +8,9 @@ import {
   Delete,
   UseGuards,
   Query,
+  HttpStatus,
+  HttpCode,
+  Put,
 } from '@nestjs/common';
 import { CourseService } from './course.service';
 import { CreateCourseDto } from './dtos/create-course.dto';
@@ -27,8 +30,12 @@ export class CourseController {
 
   @Post('/admin')
   @UseGuards(AuthGuard, new RoleGuard([Role.Admin]))
-  create(@Body() createCourseDto: CreateCourseDto) {
-    return this.courseService.createCourse(createCourseDto);
+  async create(@Body() createCourseDto: CreateCourseDto) {
+    const course = await this.courseService.createCourse(createCourseDto);
+    return {
+      message: 'Course created successfully',
+      data: course
+    };
   }
 
   @Get('/admin')
@@ -44,7 +51,7 @@ export class CourseController {
     return this.courseService.findOne(+id);
   }
 
-  @Patch('/admin/:id')
+  @Put('/admin/:id')
   @UseGuards(AuthGuard, new RoleGuard([Role.Admin]))
   update(@Param('id') id: string, @Body() updateCourseDto: UpdateCourseDto) {
     return this.courseService.update(+id, updateCourseDto);

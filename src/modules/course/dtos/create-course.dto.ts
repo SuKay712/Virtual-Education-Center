@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsNumber, IsString, IsOptional } from 'class-validator';
+import { IsNotEmpty, IsNumber, IsString, IsOptional, Min, IsPositive } from 'class-validator';
 
 export class CreateCourseDto {
   @IsNotEmpty()
@@ -7,13 +7,22 @@ export class CreateCourseDto {
 
   @IsNotEmpty()
   @IsNumber()
+  @IsPositive()
+  @Min(0)
   price: number;
 
   @IsNotEmpty()
   @IsNumber()
+  @IsPositive()
+  @Min(1)
   num_classes: number;
 
   @IsOptional()
   @IsString()
   description?: string;
+
+  @IsOptional()
+  @IsNumber()
+  @IsPositive()
+  roadmap_id?: number;
 }

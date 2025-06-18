@@ -1,4 +1,4 @@
-import { IsString, IsOptional, IsBoolean, IsDate } from 'class-validator';
+import { IsString, IsOptional, IsBoolean, IsDateString } from 'class-validator';
 
 export class AdminUpdateAccountDto {
   @IsString()
@@ -13,9 +13,9 @@ export class AdminUpdateAccountDto {
   @IsOptional()
   gender?: string;
 
-  @IsDate()
+  @IsDateString()
   @IsOptional()
-  birthday?: Date;
+  birthday?: string;
 
   @IsBoolean()
   @IsOptional()

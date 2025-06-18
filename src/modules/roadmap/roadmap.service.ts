@@ -1,7 +1,9 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Roadmap } from '../../entities';
+import { CreateRoadmapDto } from './dtos/create-roadmap.dto';
+import { UpdateRoadmapDto } from './dtos/update-roadmap.dto';
 
 @Injectable()
 export class RoadmapService {
@@ -21,7 +23,7 @@ export class RoadmapService {
   }
 
   async findOne(id: number): Promise<Roadmap> {
-    return this.roadmapRepo.findOne({
+    const roadmap = await this.roadmapRepo.findOne({
       where: { id },
       relations: {
         courses: {
@@ -29,5 +31,28 @@ export class RoadmapService {
         }
       }
     });
+
+    if (!roadmap) {
+      throw new NotFoundException(`Roadmap with ID ${id} not found`);
+    }
+
+    return roadmap;
+  }
+
+  async create(createRoadmapDto: CreateRoadmapDto): Promise<Roadmap> {
+    const roadmap = this.roadmapRepo.create(createRoadmapDto);
+    return this.roadmapRepo.save(roadmap);
+  }
+
+  async update(id: number, updateRoadmapDto: UpdateRoadmapDto): Promise<Roadmap> {
+    const roadmap = await this.findOne(id);
+
+    Object.assign(roadmap, updateRoadmapDto);
+    return this.roadmapRepo.save(roadmap);
+  }
+
+  async remove(id: number): Promise<void> {
+    const roadmap = await this.findOne(id);
+    await this.roadmapRepo.remove(roadmap);
   }
 }

@@ -252,6 +252,11 @@ export class AccountService {
       throw new NotFoundException('Account not found');
     }
 
+    // Convert birthday string to Date if provided
+    if (adminUpdateAccountDto.birthday) {
+      adminUpdateAccountDto.birthday = new Date(adminUpdateAccountDto.birthday) as any;
+    }
+
     // Update only the fields that are provided
     Object.assign(account, adminUpdateAccountDto);
     return this.accountRepo.save(account);
@@ -300,6 +305,11 @@ export class AccountService {
       if (existingAccount) {
         throw new BadRequestException('Phone number already exists');
       }
+    }
+
+    // Convert birthday string to Date if provided
+    if (updateProfileDto.birthday) {
+      updateProfileDto.birthday = new Date(updateProfileDto.birthday) as any;
     }
 
     // Update account with new information
